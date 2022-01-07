@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Causality and computation &#8212; Neuromorphic Algorithms Research</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/universe_log_scale-160621.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Neuromorphic Algorithms Research</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Neuromorphic Algorithms Research
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  About me
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction.html">
+   E. Paxon Frady
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Research
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Research/spiking_networks.html">
+   Spiking Neural Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Research/theoretical_neuroscience.html">
+   Theoretical Neuroscience
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Research/resonator_networks.html">
+   Resonator Networks
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Blog
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="blog_quantum_arrow_210323.html">
+   Spacetime and quantum measurements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="blog_fundamental_pressures_210329.html">
+   Evolution dynamics and the fundamental evolutionary pressures
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/blog/blog_causality_computation-210515.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/blog/blog_causality_computation-210515.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feedback-loops-break-sensible-causal-chain">
+   Feedback loops break sensible causal chain
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#causality-in-a-computational-system">
+   Causality in a computational system
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#memory-breaks-temporal-causal-consistency">
+   Memory breaks temporal causal consistency
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computational-and-inferential-thinking-data-science-book-uc-berkeley-course">
+   Computational and Inferential Thinking – data science book, UC Berkeley course.
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Causality and computation</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feedback-loops-break-sensible-causal-chain">
+   Feedback loops break sensible causal chain
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#causality-in-a-computational-system">
+   Causality in a computational system
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#memory-breaks-temporal-causal-consistency">
+   Memory breaks temporal causal consistency
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computational-and-inferential-thinking-data-science-book-uc-berkeley-course">
+   Computational and Inferential Thinking – data science book, UC Berkeley course.
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="causality-and-computation">
+<h1>Causality and computation<a class="headerlink" href="#causality-and-computation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="feedback-loops-break-sensible-causal-chain">
+<h2>Feedback loops break sensible causal chain<a class="headerlink" href="#feedback-loops-break-sensible-causal-chain" title="Permalink to this headline">¶</a></h2>
+<p>What is causality? When we typically want to trace the causal chain of events we can follow the energy.</p>
+<p>If we imagine a pool break. The player strikes the cue ball, adding energy to the system. For now, we’ll consider the player outside of the system.</p>
+<p>The kinetic energy of the cue ball then get transfered to the other billiard balls when it strikes. The energy spreads out among the balls after many collisions.</p>
+<p>If we follow the transfer of kinetic energy, we can discern the causal chain of events. This gives us an easy understanding of what it means to have a causal chain of events.</p>
+<p>As the billiard balls bounce around the pool table, the kinetic energy that was added to the system escapes the system as heat through friction and air resistance.</p>
+<p>But lets consider a system for which there is no friction or air resistance (and no pockets). Again we are back to our particles in a box model of physics, where we are modeling the forces of mass and momentum.</p>
+<p>However, we have to be careful about what exactly is happening the moment two pool balls collide. The collision is mediated by the electromagnetic forces between the atoms on the surfaces of the balls. As the balls approach each other, the negatively charged valence electrons push against each other with increasing strength as the balls get closer and closer. The force increases with proximity, and to us on a macro level it appears that nothing happens until the balls touch. However, the balls never really touch, but rather there is always a small (atomic scale) separation, and only because the EM force is strong at very small distances does it appear to us as a collision. The reality is that the balls are feeling the force of each other all the time, but it is very small until they are close.</p>
+<p>So this is very key to our understanding of causality – particles in the Universe are always feeling the collective forces from all other particles. Particles are always in a feedback loop, where particle A is influenceed by particle B, and B is influenced it in return by A. This sets up a constant recurrent feedback system.</p>
+<p>Further there is relativity, the notion that the rules of physics do not depend
+on the reference frame of the particle. Thus, if we were in particle A’s reference frame, it would appear as if there was a collision from a high-energy particle B, and we would perhaps assign the change in kinetic energy of A as a causal chain of events from particle B. However, if we were in particle B’s reference frame, then we would see energy transfer from A to B, assigning the causal chain as from A to B.</p>
+<p>But this is the key point, it does not really make sense to assign a causal chain of events in this context. A cause changes in B and B causes changes in A, but there is not a clear chain.  A and B are constantly influencing each other, and they are states of a feedback system. In this constant dynamical evolution of the states of the system and when state variables are coupled in a feedback loop, the notion of causal chain is non-sense.</p>
+<p>Eventually in a chaotic system which does not leak any energy, we would see the billiard balls bouncing around indefinitely. We could apply a causal chain from when the outside person added energy to the system,. But once that energy is accounted for, the causal chain of events breaks down, and</p>
+</div>
+<div class="section" id="causality-in-a-computational-system">
+<h2>Causality in a computational system<a class="headerlink" href="#causality-in-a-computational-system" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="memory-breaks-temporal-causal-consistency">
+<h2>Memory breaks temporal causal consistency<a class="headerlink" href="#memory-breaks-temporal-causal-consistency" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="computational-and-inferential-thinking-data-science-book-uc-berkeley-course">
+<h2>Computational and Inferential Thinking – data science book, UC Berkeley course.<a class="headerlink" href="#computational-and-inferential-thinking-data-science-book-uc-berkeley-course" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://inferentialthinking.com/chapters/02/causality-and-experiments.html">https://inferentialthinking.com/chapters/02/causality-and-experiments.html</a></p>
+<p>Cool data science book. Covers John Snow cholera study.</p>
+<p>They build up from “observational” studies to “Randomized Control Trials”, which are needed to establish causal relationships.</p>
+<p>Confounding factors make establishing causality hard. They bring up a study that found correlations between coffee drinking and cancer, but there was also a correlation between coffee drinking and smoking.</p>
+<p>Causality needs a from of active interference in the data set. A randomized control trial has the experimenter actually manipulating the system, interfering with it, which is required for understanding a causal relationship.</p>
+<p>Too often in science this is not possible.</p>
+<p>This doesn’t much cover aspects of high-dimensionality, and collection of large-scale high-dimensional data. Granger causality would be good to cover.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./blog"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="causality-and-computation">
+<h1>Causality and computation<a class="headerlink" href="#causality-and-computation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="feedback-loops-break-sensible-causal-chain">
+<h2>Feedback loops break sensible causal chain<a class="headerlink" href="#feedback-loops-break-sensible-causal-chain" title="Permalink to this headline">¶</a></h2>
+<p>What is causality? When we typically want to trace the causal chain of events we can follow the energy.</p>
+<p>If we imagine a pool break. The player strikes the cue ball, adding energy to the system. For now, we’ll consider the player outside of the system.</p>
+<p>The kinetic energy of the cue ball then get transfered to the other billiard balls when it strikes. The energy spreads out among the balls after many collisions.</p>
+<p>If we follow the transfer of kinetic energy, we can discern the causal chain of events. This gives us an easy understanding of what it means to have a causal chain of events.</p>
+<p>As the billiard balls bounce around the pool table, the kinetic energy that was added to the system escapes the system as heat through friction and air resistance.</p>
+<p>But lets consider a system for which there is no friction or air resistance (and no pockets). Again we are back to our particles in a box model of physics, where we are modeling the forces of mass and momentum.</p>
+<p>However, we have to be careful about what exactly is happening the moment two pool balls collide. The collision is mediated by the electromagnetic forces between the atoms on the surfaces of the balls. As the balls approach each other, the negatively charged valence electrons push against each other with increasing strength as the balls get closer and closer. The force increases with proximity, and to us on a macro level it appears that nothing happens until the balls touch. However, the balls never really touch, but rather there is always a small (atomic scale) separation, and only because the EM force is strong at very small distances does it appear to us as a collision. The reality is that the balls are feeling the force of each other all the time, but it is very small until they are close.</p>
+<p>So this is very key to our understanding of causality – particles in the Universe are always feeling the collective forces from all other particles. Particles are always in a feedback loop, where particle A is influenceed by particle B, and B is influenced it in return by A. This sets up a constant recurrent feedback system.</p>
+<p>Further there is relativity, the notion that the rules of physics do not depend
+on the reference frame of the particle. Thus, if we were in particle A’s reference frame, it would appear as if there was a collision from a high-energy particle B, and we would perhaps assign the change in kinetic energy of A as a causal chain of events from particle B. However, if we were in particle B’s reference frame, then we would see energy transfer from A to B, assigning the causal chain as from A to B.</p>
+<p>But this is the key point, it does not really make sense to assign a causal chain of events in this context. A cause changes in B and B causes changes in A, but there is not a clear chain.  A and B are constantly influencing each other, and they are states of a feedback system. In this constant dynamical evolution of the states of the system and when state variables are coupled in a feedback loop, the notion of causal chain is non-sense.</p>
+<p>Eventually in a chaotic system which does not leak any energy, we would see the billiard balls bouncing around indefinitely. We could apply a causal chain from when the outside person added energy to the system,. But once that energy is accounted for, the causal chain of events breaks down, and</p>
+</div>
+<div class="section" id="causality-in-a-computational-system">
+<h2>Causality in a computational system<a class="headerlink" href="#causality-in-a-computational-system" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="memory-breaks-temporal-causal-consistency">
+<h2>Memory breaks temporal causal consistency<a class="headerlink" href="#memory-breaks-temporal-causal-consistency" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="computational-and-inferential-thinking-data-science-book-uc-berkeley-course">
+<h2>Computational and Inferential Thinking – data science book, UC Berkeley course.<a class="headerlink" href="#computational-and-inferential-thinking-data-science-book-uc-berkeley-course" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://inferentialthinking.com/chapters/02/causality-and-experiments.html">https://inferentialthinking.com/chapters/02/causality-and-experiments.html</a></p>
+<p>Cool data science book. Covers John Snow cholera study.</p>
+<p>They build up from “observational” studies to “Randomized Control Trials”, which are needed to establish causal relationships.</p>
+<p>Confounding factors make establishing causality hard. They bring up a study that found correlations between coffee drinking and cancer, but there was also a correlation between coffee drinking and smoking.</p>
+<p>Causality needs a from of active interference in the data set. A randomized control trial has the experimenter actually manipulating the system, interfering with it, which is required for understanding a causal relationship.</p>
+<p>Too often in science this is not possible.</p>
+<p>This doesn’t much cover aspects of high-dimensionality, and collection of large-scale high-dimensional data. Granger causality would be good to cover.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./blog"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Dr. E. Paxon Frady<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
