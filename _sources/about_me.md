@@ -1,0 +1,10 @@
+# E. Paxon Frady
+
+Hi! I am a neuromorphic algorithms researcher at Intel.
+
+![picture of me](profile_pic.png)
+
+I was previously a post-doc at the Redwood Center for Theoretical Neuroscience at UC Berkeley. I did my Ph.D. in Neuroscience at UC San Diego, and majored in Computation and Neural Systems for undergrad at Caltech. 
+
+
+

@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Threshold Phasor Associative Memory" href="tpam_demo.html" />
-    <link rel="prev" title="E. Paxon Frady" href="../introduction.html" />
+    <link rel="prev" title="E. Paxon Frady" href="../about_me.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -78,7 +78,7 @@
         
       
       
-      <img src="../_static/universe_log_scale-160621.png" class="logo" alt="logo">
+      <img src="../_static/neural_circuit.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Neuromorphic Algorithms Research</h1>
@@ -103,7 +103,7 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction.html">
+  <a class="reference internal" href="../about_me.html">
    E. Paxon Frady
   </a>
  </li>
@@ -206,9 +206,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Research/spiking_networks.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Research/spiking_networks.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -225,6 +225,23 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Research/spiking_networks.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
 
         </div>
 
@@ -353,6 +370,11 @@
 <h2>Neuromorphic nearest neighbor search on Intel’s Pohoiki Springs<a class="headerlink" href="#neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
 <h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>A myriad of data science applications rely on finding the nearest neighbor to an input cue amongst a large database of training samples.
+Neuromorphic computing holds promise in performing nearest neighbor search more efficiently than traditional methods.
+But, the algorithm for nearest neighbor search must be matched to the hardware to realize this potential.</p>
+<p>We used ideas from neuroscience to encode input cues as a spike-timing pattern. In this coding scheme, spikes earlier in time correspond to larger magnitude coefficients in the input cue vector. Through integration of synaptic inputs, the nearest neighbors are computed and the timing of output spikes corresponds to the closest matches, with the earliest spikes being the closest match.</p>
+<p>We built this algorithm at large-scale on Intel’s Pohoiki Springs – a mesh of 768 interconnected Loihi chips capable of simulating nearly 100 million neurons. This implementation was a first-step that is competitive with other large-scale nearest neighbor algorithms in terms of latency and energy efficiency, and it has big advantages in index build-time.</p>
 </div>
 <div class="section" id="id2">
 <h3>Links<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
@@ -417,6 +439,11 @@ Neuromorphic KNN NICE 2020
 <h2>Neuromorphic nearest neighbor search on Intel’s Pohoiki Springs<a class="headerlink" href="#neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
 <h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>A myriad of data science applications rely on finding the nearest neighbor to an input cue amongst a large database of training samples.
+Neuromorphic computing holds promise in performing nearest neighbor search more efficiently than traditional methods.
+But, the algorithm for nearest neighbor search must be matched to the hardware to realize this potential.</p>
+<p>We used ideas from neuroscience to encode input cues as a spike-timing pattern. In this coding scheme, spikes earlier in time correspond to larger magnitude coefficients in the input cue vector. Through integration of synaptic inputs, the nearest neighbors are computed and the timing of output spikes corresponds to the closest matches, with the earliest spikes being the closest match.</p>
+<p>We built this algorithm at large-scale on Intel’s Pohoiki Springs – a mesh of 768 interconnected Loihi chips capable of simulating nearly 100 million neurons. This implementation was a first-step that is competitive with other large-scale nearest neighbor algorithms in terms of latency and energy efficiency, and it has big advantages in index build-time.</p>
 </div>
 <div class="section" id="id2">
 <h3>Links<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
@@ -453,7 +480,7 @@ Neuromorphic KNN NICE 2020
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../introduction.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../about_me.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
