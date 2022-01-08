@@ -51,7 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Theoretical Neuroscience" href="theoretical_neuroscience.html" />
+    <link rel="next" title="Threshold Phasor Associative Memory" href="tpam_demo.html" />
     <link rel="prev" title="E. Paxon Frady" href="../introduction.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -114,37 +114,56 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
+ <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
    Spiking Neural Networks
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tpam_demo.html">
+     Threshold Phasor Associative Memory
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="theoretical_neuroscience.html">
    Theoretical Neuroscience
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sparse_binding_demo.html">
+     Sparse binding demo – What’s the dollar of mexico?
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="resonator_networks.html">
    Resonator Networks
   </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Blog
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../blog/blog_quantum_arrow_210323.html">
-   Spacetime and quantum measurements
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../blog/blog_fundamental_pressures_210329.html">
-   Evolution dynamics and the fundamental evolutionary pressures
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="resonator_template.html">
+     Factorization of shape, color and location
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -187,9 +206,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Research/spiking_networks.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Research/spiking_networks.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -207,23 +226,6 @@
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Research/spiking_networks.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
@@ -240,13 +242,13 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#links">
-     Links
+    <a class="reference internal nav-link" href="#summary">
+     Summary
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summary">
-     Summary
+    <a class="reference internal nav-link" href="#links">
+     Links
     </a>
    </li>
   </ul>
@@ -255,6 +257,18 @@
   <a class="reference internal nav-link" href="#neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs">
    Neuromorphic nearest neighbor search on Intel’s Pohoiki Springs
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Summary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Links
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -281,13 +295,13 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#links">
-     Links
+    <a class="reference internal nav-link" href="#summary">
+     Summary
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summary">
-     Summary
+    <a class="reference internal nav-link" href="#links">
+     Links
     </a>
    </li>
   </ul>
@@ -296,6 +310,18 @@
   <a class="reference internal nav-link" href="#neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs">
    Neuromorphic nearest neighbor search on Intel’s Pohoiki Springs
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Summary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Links
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -308,22 +334,34 @@
 <h1>Spiking Neural Networks<a class="headerlink" href="#spiking-neural-networks" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="robust-computation-with-rhythmic-spike-patterns">
 <h2>Robust Computation with Rhythmic Spike Patterns<a class="headerlink" href="#robust-computation-with-rhythmic-spike-patterns" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="links">
-<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h3>
-<p><a href="https://www.pnas.org/content/116/36/18050"> PNAS </a></p>
-<p><a href="https://www.researchgate.net/publication/335276895_Robust_computation_with_rhythmic_spike_patterns">PDF Available </a></p>
-<p><a href="https://nbviewer.jupyter.org/url/epaxon.github.io/tpam_demo-release-190604.ipynb"> View the TPAM demo notebook </a></p>
-<p><a href="tpam.html"> Learn more! </a></p>
-</div>
 <div class="section" id="summary">
 <h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<p>The basis for how we understand neural networks is linear algebra – vectors and matrices. We see neurons in the brain signal through spikes, and we connect these spikes to vectors through the theory of rate-coding. This means that more spikes from a neuron is related to a larger number in a vector. The synapses between neurons has a synaptic weight, and the spikes influence the target neurons the way that a vector dot products with a weight matrix.</p>
+<p>In this paper, we flesh out an alternative neural code that uses spikes and spike-timing to represent information. The theoretical link between spikes and vectors is the same, except we are now considering complex-valued vectors. Similarly, we use a matrix-vector dot product to represent how neurons communicate with each other through synapses, but again the matrix is also complex-valued.</p>
+<p>The insight of the paper is that complex numbers are related to circles and oscillations. We see oscillations in many different nervous systems and at different frequencies. We show that mathematically, you can consider a single spike as representing a complex number, where the timing of the spike relative to some background oscillation indicates the phase of the complex number. You can also represent a complex-valued weight matrix by including synaptic delays. The spike being delayed by a synaptic delay is equivalent to the phase-shift induced when multiplying two complex numbers.</p>
+<p>In this paper, we use these mathematical connections to build a complex-valued version of the Hopfield network. The Hopfield network is widely known for its description of attractor-dynamics and many theoretical ideas as well as experimental studies point to the use of attractor-dynamics in neural computation. The complex-valued version of the Hopfield network we denoted as Threshold Phasor Associative Memory (TPAM), which allows one to store complex vectors as attractor-states. By providing a cue of a noisy or partial stored pattern, the dynamics of the network would restore the original pattern.</p>
+<p>We then built spiking neural networks that implement these dynamics, which leads to a network that can produce stable, precisely-timed patterns of spiking activity. We explored two different ways of building such a network. The first network uses resonate-and-fire neurons, which have an intrinsic oscillatory dynamics, which is simple and more computationally friendly. The second network is more closely inspired by biology, where neurons are standard integrate-and-fire models and the oscillation is induced through recurrent feedback of inhibitory neurons. This version accounts for some neuroscientific principles, such as Dale’s Law, mimics more closely what is known about neural circuits in the cortex, and is more directly relatable to electro-physiology experiments.</p>
+</div>
+<div class="section" id="links">
+<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.pnas.org/content/116/36/18050">PNAS website</a></p>
+<p><a class="reference external" href="https://www.researchgate.net/publication/335276895_Robust_computation_with_rhythmic_spike_patterns">PDF Available</a></p>
+<p><a class="reference internal" href="tpam_demo.html"><span class="doc std std-doc">TPAM Demo Notebook</span></a></p>
 </div>
 </div>
 <div class="section" id="neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs">
 <h2>Neuromorphic nearest neighbor search on Intel’s Pohoiki Springs<a class="headerlink" href="#neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id2">
+<h3>Links<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <a href="https://dl.acm.org/doi/pdf/10.1145/3381755.3398695?casa_token=0CyCI7vFe30AAAAA:WFOsToDNmS6rJeIUe4H0_ncDO5Ra5VCpAaMwZma8td7rBjcYV8j1BUHHU_ZkojrhZy4zogCz9PuH"> 
 Neuromorphic KNN NICE 2020
 </a></div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -360,22 +398,34 @@ Neuromorphic KNN NICE 2020
 <h1>Spiking Neural Networks<a class="headerlink" href="#spiking-neural-networks" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="robust-computation-with-rhythmic-spike-patterns">
 <h2>Robust Computation with Rhythmic Spike Patterns<a class="headerlink" href="#robust-computation-with-rhythmic-spike-patterns" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="links">
-<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h3>
-<p><a href="https://www.pnas.org/content/116/36/18050"> PNAS </a></p>
-<p><a href="https://www.researchgate.net/publication/335276895_Robust_computation_with_rhythmic_spike_patterns">PDF Available </a></p>
-<p><a href="https://nbviewer.jupyter.org/url/epaxon.github.io/tpam_demo-release-190604.ipynb"> View the TPAM demo notebook </a></p>
-<p><a href="tpam.html"> Learn more! </a></p>
-</div>
 <div class="section" id="summary">
 <h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<p>The basis for how we understand neural networks is linear algebra – vectors and matrices. We see neurons in the brain signal through spikes, and we connect these spikes to vectors through the theory of rate-coding. This means that more spikes from a neuron is related to a larger number in a vector. The synapses between neurons has a synaptic weight, and the spikes influence the target neurons the way that a vector dot products with a weight matrix.</p>
+<p>In this paper, we flesh out an alternative neural code that uses spikes and spike-timing to represent information. The theoretical link between spikes and vectors is the same, except we are now considering complex-valued vectors. Similarly, we use a matrix-vector dot product to represent how neurons communicate with each other through synapses, but again the matrix is also complex-valued.</p>
+<p>The insight of the paper is that complex numbers are related to circles and oscillations. We see oscillations in many different nervous systems and at different frequencies. We show that mathematically, you can consider a single spike as representing a complex number, where the timing of the spike relative to some background oscillation indicates the phase of the complex number. You can also represent a complex-valued weight matrix by including synaptic delays. The spike being delayed by a synaptic delay is equivalent to the phase-shift induced when multiplying two complex numbers.</p>
+<p>In this paper, we use these mathematical connections to build a complex-valued version of the Hopfield network. The Hopfield network is widely known for its description of attractor-dynamics and many theoretical ideas as well as experimental studies point to the use of attractor-dynamics in neural computation. The complex-valued version of the Hopfield network we denoted as Threshold Phasor Associative Memory (TPAM), which allows one to store complex vectors as attractor-states. By providing a cue of a noisy or partial stored pattern, the dynamics of the network would restore the original pattern.</p>
+<p>We then built spiking neural networks that implement these dynamics, which leads to a network that can produce stable, precisely-timed patterns of spiking activity. We explored two different ways of building such a network. The first network uses resonate-and-fire neurons, which have an intrinsic oscillatory dynamics, which is simple and more computationally friendly. The second network is more closely inspired by biology, where neurons are standard integrate-and-fire models and the oscillation is induced through recurrent feedback of inhibitory neurons. This version accounts for some neuroscientific principles, such as Dale’s Law, mimics more closely what is known about neural circuits in the cortex, and is more directly relatable to electro-physiology experiments.</p>
+</div>
+<div class="section" id="links">
+<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.pnas.org/content/116/36/18050">PNAS website</a></p>
+<p><a class="reference external" href="https://www.researchgate.net/publication/335276895_Robust_computation_with_rhythmic_spike_patterns">PDF Available</a></p>
+<p><a class="reference internal" href="tpam_demo.html"><span class="doc std std-doc">TPAM Demo Notebook</span></a></p>
 </div>
 </div>
 <div class="section" id="neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs">
 <h2>Neuromorphic nearest neighbor search on Intel’s Pohoiki Springs<a class="headerlink" href="#neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id2">
+<h3>Links<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <a href="https://dl.acm.org/doi/pdf/10.1145/3381755.3398695?casa_token=0CyCI7vFe30AAAAA:WFOsToDNmS6rJeIUe4H0_ncDO5Ra5VCpAaMwZma8td7rBjcYV8j1BUHHU_ZkojrhZy4zogCz9PuH"> 
 Neuromorphic KNN NICE 2020
 </a></div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -410,10 +460,10 @@ Neuromorphic KNN NICE 2020
             <p class="prev-next-title">E. Paxon Frady</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="theoretical_neuroscience.html" title="next page">
+    <a class='right-next' id="next-link" href="tpam_demo.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Theoretical Neuroscience</p>
+        <p class="prev-next-title">Threshold Phasor Associative Memory</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
