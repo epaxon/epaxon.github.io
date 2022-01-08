@@ -1,5 +1,0 @@
-# Computational Dynamics
-
-```python
-
-```
