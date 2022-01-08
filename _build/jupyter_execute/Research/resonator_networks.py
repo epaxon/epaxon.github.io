@@ -22,9 +22,3 @@
 # <a href="epaxon.github.io/res_utils.py"> It's dangerous to go alone!</a>
 # 
 # 
-
-# In[ ]:
-
-
-
-

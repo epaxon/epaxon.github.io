@@ -4,8 +4,6 @@
 # In[1]:
 
 
-from __future__ import division
-
 from pylab import *
 from brian2 import *
 import time

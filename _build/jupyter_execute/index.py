@@ -8,9 +8,3 @@
 # [Research](Research/spiking_networks.ipynb)
 # 
 # 
-
-# In[ ]:
-
-
-
-
