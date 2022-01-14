@@ -103,7 +103,7 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction.html">
+  <a class="reference internal" href="../about_me.html">
    E. Paxon Frady
   </a>
  </li>
@@ -257,6 +257,35 @@
   <a class="reference internal nav-link" href="#variable-binding-with-sparse-distributed-representations">
    Variable binding with sparse distributed representations
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     Summary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#links">
+     Links
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-theory-of-sequence-indexing-and-working-memory-in-recurrent-neural-networks">
+   A theory of sequence indexing and working memory in recurrent neural networks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Summary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Links
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -281,6 +310,35 @@
   <a class="reference internal nav-link" href="#variable-binding-with-sparse-distributed-representations">
    Variable binding with sparse distributed representations
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     Summary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#links">
+     Links
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-theory-of-sequence-indexing-and-working-memory-in-recurrent-neural-networks">
+   A theory of sequence indexing and working memory in recurrent neural networks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Summary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Links
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -293,7 +351,34 @@
 <h1>Theoretical Neuroscience<a class="headerlink" href="#theoretical-neuroscience" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="variable-binding-with-sparse-distributed-representations">
 <h2>Variable binding with sparse distributed representations<a class="headerlink" href="#variable-binding-with-sparse-distributed-representations" title="Permalink to this headline">¶</a></h2>
-<p><a href="https://arxiv.org/abs/2009.06734"> arXiv </a></p>
+<div class="section" id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<p>The idea of binding has been part of the connectionist literature for quite some time. The concept of binding is not addressed in modern deep learning much at all, but often studies attempt to perform binding in unnatural ways.</p>
+<p>Connectionists in the early 90s realized that there was a need for a way to bind information together in neural representations, and the “superposition catastrophe” was an often cited problem. Early proposals solved this problem by adding the tensor-product operation to connectionism, and Smolensky developed his theory of tensor-product representations.</p>
+<p>The tensor product was key to solving the superposition catastrophe because it was a combinatoric operation, and fundamentally this is the issue. Connectionism needed a way to represent “blue triangle” and “red square” in ways that were unique and non-interfering. This fundamentally leads to needing an operation that has a unique result for every combination of shapes and colors.</p>
+<p>The combinatorics of tensor products, however, leads to the undersirable result that the neural representation of information is also growing combinatorically. Hinton and other called for proposals where combinatoric representations could be described, but without the growth in dimensionality of the representation. This is where VSA was born, with Plate’s proposals of how to bind information together in a fixed dimensionality that still has access to combinatoric representations.</p>
+<p>Since Plate’s proposals, several VSA models were developed which utilize different representations and binding operations. In this paper, we show how all of these VSA models can be unified with tensor-products through the mathematics of compressed sensing. Basically, all VSA binding operations are reductions of the tensor-product.</p>
+<p>One of the biggest issues with linking VSA representations to neuroscience is that VSA models are typically dense representation where every vector element would correspond to neural activation. But representations in the brain are highly sparse. This lead us to explore potential new avenues for binding operations, where we desired a binding operation that maintains sparsity.</p>
+<p>Based on the link between binding and tensor-product reductions, we explored several methods that could result in a sparsity- and dimensionality-preserving binding operation. We identified a previous proposal based on sparse block-codes that achieved all the desirable features of a sparse VSA, and illustrate how to perform computations with the VSA.</p>
+</div>
+<div class="section" id="links">
+<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://arxiv.org/abs/2009.06734">arXiv</a></p>
+<p><a class="reference internal" href="sparse_binding_demo.html"><span class="doc std std-doc">Demo</span></a> of sparse binding based on Kanerva’s example <a class="reference external" href="https://redwood.berkeley.edu/wp-content/uploads/2020/05/kanerva2010what.pdf">What’s the dollar of Mexico?</a></p>
+</div>
+</div>
+<div class="section" id="a-theory-of-sequence-indexing-and-working-memory-in-recurrent-neural-networks">
+<h2>A theory of sequence indexing and working memory in recurrent neural networks<a class="headerlink" href="#a-theory-of-sequence-indexing-and-working-memory-in-recurrent-neural-networks" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Randomized recurrent neural networks, denoted liquid state machines or echo-state networks, were popularized based on their abilities to perform useful computations without the constraint of needing stable states. This inpsired many to think of new ways in which neural networks could be used for computation. However, many treated these networks as a black box, and little was understood as to how they performed their computations.</p>
+<p>We identified how such randomized networks could be described based on the principles of Vector Symbolic Architectures. We realized that you could describe the operations of an echo-state network as forming a time-tag, attaching the input to the time-tag, and holding the input history in working memory. This allowed us to derive a precise theory of memory performance and scaling, as well as methods to optimize performance and memory of such netowrks.</p>
+</div>
+<div class="section" id="id2">
+<h3>Links<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://direct.mit.edu/neco/article-abstract/30/6/1449/8400/A-Theory-of-Sequence-Indexing-and-Working-Memory">NeCo</a></p>
+<p><a class="reference external" href="https://redwood.berkeley.edu/wp-content/uploads/2020/08/frady-sequence-memory.pdf">PDF</a></p>
+</div>
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -333,7 +418,34 @@
 <h1>Theoretical Neuroscience<a class="headerlink" href="#theoretical-neuroscience" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="variable-binding-with-sparse-distributed-representations">
 <h2>Variable binding with sparse distributed representations<a class="headerlink" href="#variable-binding-with-sparse-distributed-representations" title="Permalink to this headline">¶</a></h2>
-<p><a href="https://arxiv.org/abs/2009.06734"> arXiv </a></p>
+<div class="section" id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<p>The idea of binding has been part of the connectionist literature for quite some time. The concept of binding is not addressed in modern deep learning much at all, but often studies attempt to perform binding in unnatural ways.</p>
+<p>Connectionists in the early 90s realized that there was a need for a way to bind information together in neural representations, and the “superposition catastrophe” was an often cited problem. Early proposals solved this problem by adding the tensor-product operation to connectionism, and Smolensky developed his theory of tensor-product representations.</p>
+<p>The tensor product was key to solving the superposition catastrophe because it was a combinatoric operation, and fundamentally this is the issue. Connectionism needed a way to represent “blue triangle” and “red square” in ways that were unique and non-interfering. This fundamentally leads to needing an operation that has a unique result for every combination of shapes and colors.</p>
+<p>The combinatorics of tensor products, however, leads to the undersirable result that the neural representation of information is also growing combinatorically. Hinton and other called for proposals where combinatoric representations could be described, but without the growth in dimensionality of the representation. This is where VSA was born, with Plate’s proposals of how to bind information together in a fixed dimensionality that still has access to combinatoric representations.</p>
+<p>Since Plate’s proposals, several VSA models were developed which utilize different representations and binding operations. In this paper, we show how all of these VSA models can be unified with tensor-products through the mathematics of compressed sensing. Basically, all VSA binding operations are reductions of the tensor-product.</p>
+<p>One of the biggest issues with linking VSA representations to neuroscience is that VSA models are typically dense representation where every vector element would correspond to neural activation. But representations in the brain are highly sparse. This lead us to explore potential new avenues for binding operations, where we desired a binding operation that maintains sparsity.</p>
+<p>Based on the link between binding and tensor-product reductions, we explored several methods that could result in a sparsity- and dimensionality-preserving binding operation. We identified a previous proposal based on sparse block-codes that achieved all the desirable features of a sparse VSA, and illustrate how to perform computations with the VSA.</p>
+</div>
+<div class="section" id="links">
+<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://arxiv.org/abs/2009.06734">arXiv</a></p>
+<p><a class="reference internal" href="sparse_binding_demo.html"><span class="doc std std-doc">Demo</span></a> of sparse binding based on Kanerva’s example <a class="reference external" href="https://redwood.berkeley.edu/wp-content/uploads/2020/05/kanerva2010what.pdf">What’s the dollar of Mexico?</a></p>
+</div>
+</div>
+<div class="section" id="a-theory-of-sequence-indexing-and-working-memory-in-recurrent-neural-networks">
+<h2>A theory of sequence indexing and working memory in recurrent neural networks<a class="headerlink" href="#a-theory-of-sequence-indexing-and-working-memory-in-recurrent-neural-networks" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Randomized recurrent neural networks, denoted liquid state machines or echo-state networks, were popularized based on their abilities to perform useful computations without the constraint of needing stable states. This inpsired many to think of new ways in which neural networks could be used for computation. However, many treated these networks as a black box, and little was understood as to how they performed their computations.</p>
+<p>We identified how such randomized networks could be described based on the principles of Vector Symbolic Architectures. We realized that you could describe the operations of an echo-state network as forming a time-tag, attaching the input to the time-tag, and holding the input history in working memory. This allowed us to derive a precise theory of memory performance and scaling, as well as methods to optimize performance and memory of such netowrks.</p>
+</div>
+<div class="section" id="id2">
+<h3>Links<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://direct.mit.edu/neco/article-abstract/30/6/1449/8400/A-Theory-of-Sequence-Indexing-and-Working-Memory">NeCo</a></p>
+<p><a class="reference external" href="https://redwood.berkeley.edu/wp-content/uploads/2020/08/frady-sequence-memory.pdf">PDF</a></p>
+</div>
 </div>
 <div class="toctree-wrapper compound">
 </div>
