@@ -1,0 +1,7 @@
+# Book settings
+title: Neuromorphic Algorithms Research
+author: Dr. E. Paxon Frady
+logo: neural_circuit.png
+
+execute:
+  execute_notebooks: "off"

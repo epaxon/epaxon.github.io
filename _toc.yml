@@ -1,0 +1,23 @@
+format: jb-book
+root: index.ipynb
+
+parts:
+- caption: About me
+  chapters:
+  - file: about_me.md
+- caption: Research
+  chapters:
+  - file: Research/spiking_networks.ipynb
+    sections: 
+    - file: Research/tpam_demo.ipynb
+  - file: Research/theoretical_neuroscience.ipynb
+    sections:
+    - file: Research/sparse_binding_demo.ipynb
+  - file: Research/resonator_networks.ipynb
+    sections:
+    - file: Research/resonator_template.ipynb
+#- caption: Blog
+# chapters:
+# - file: blog/blog_consciousness_210201.ipynb
+# - file: blog/blog_quantum_arrow_210323.ipynb
+# - file: blog/blog_fundamental_pressures_210329.ipynb
