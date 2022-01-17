@@ -287,6 +287,23 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#efficient-neuromorphic-signal-processing-with-loihi-2">
+   Efficient Neuromorphic Signal Processing with Loihi 2
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Summary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Links
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -340,6 +357,23 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#efficient-neuromorphic-signal-processing-with-loihi-2">
+   Efficient Neuromorphic Signal Processing with Loihi 2
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Summary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Links
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                 </nav>
@@ -351,6 +385,12 @@
 <h1>Spiking Neural Networks<a class="headerlink" href="#spiking-neural-networks" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="robust-computation-with-rhythmic-spike-patterns">
 <h2>Robust Computation with Rhythmic Spike Patterns<a class="headerlink" href="#robust-computation-with-rhythmic-spike-patterns" title="Permalink to this headline">¶</a></h2>
+<!--
+<img src="phasors2spikes-transfer-190612.png" alt="Phasors to spikes"
+	width="60%"/>
+
+-->
+<p><img alt="phasors to spikes" src="../_images/phasors2spikes-transfer-190612.png" /></p>
 <div class="section" id="summary">
 <h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
 <p>The basis for how we understand neural networks is linear algebra – vectors and matrices. We see neurons in the brain signal through spikes, and we connect these spikes to vectors through the theory of rate-coding. This means that more spikes from a neuron is related to a larger number in a vector. The synapses between neurons has a synaptic weight, and the spikes influence the target neurons the way that a vector dot products with a weight matrix.</p>
@@ -368,6 +408,11 @@
 </div>
 <div class="section" id="neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs">
 <h2>Neuromorphic nearest neighbor search on Intel’s Pohoiki Springs<a class="headerlink" href="#neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs" title="Permalink to this headline">¶</a></h2>
+<!--
+<img src="latency_code_knn.png" alt="Latency code"
+	width="60%"/>
+-->
+<p><img alt="Latency coding" src="../_images/latency_code_knn.png" /></p>
 <div class="section" id="id1">
 <h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>A myriad of data science applications rely on finding the nearest neighbor to an input cue amongst a large database of training samples.
@@ -381,6 +426,28 @@ But, the algorithm for nearest neighbor search must be matched to the hardware t
 <a href="https://dl.acm.org/doi/pdf/10.1145/3381755.3398695?casa_token=0CyCI7vFe30AAAAA:WFOsToDNmS6rJeIUe4H0_ncDO5Ra5VCpAaMwZma8td7rBjcYV8j1BUHHU_ZkojrhZy4zogCz9PuH"> 
 Neuromorphic KNN NICE 2020
 </a></div>
+</div>
+<div class="section" id="efficient-neuromorphic-signal-processing-with-loihi-2">
+<h2>Efficient Neuromorphic Signal Processing with Loihi 2<a class="headerlink" href="#efficient-neuromorphic-signal-processing-with-loihi-2" title="Permalink to this headline">¶</a></h2>
+<!--
+<img src="rf_stft.png" alt="STFT with resonate-and-fire neurons"
+	width="60%"/>
+-->
+<p><img alt="RF STFT" src="../_images/spike_spec-follow-num_corr-mean-210630.png" /></p>
+<div class="section" id="id3">
+<h3>Summary<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>The formalism of how to represent complex numbers and perform complex matrix multiplication described in <em>Robust Computation with Rhythmic Spike Patterns</em> leads to the potential to use spike-timing codes to perform Fourier analysis.
+A standard signal processing algorithm is the spectrogram, or short-time fourier transform (STFT).
+This can be computed naturally with the dynamics of Resonate-and-Fire (RF) neurons.
+By simply forming a bank of RF neurons, each neuron with a its own resonant-frequency, then an input signal can be integrated by the neurons and the output spikes correspond to the complex-valued coefficients of the STFT.</p>
+<p>But wait theres more! Complex-valued computations are a great tool for spatio-temporal filtering of video data. We described an algorithm for optic flow estimation based on the classic <a class="reference external" href="http://persci.mit.edu/pub_pdfs/spatio85.pdf">Adelson and Bergen, 1985</a> model.
+In this model, saptio-temporal gabor filters are computed through the integration dynamics of RF neurons. The outputs of this filtering are combined to produce an estimate of optic flow. We showed that this simple and straight-forward method for computing optic flow is competitive with much more complex deep learning networks, but our model is far more efficient.</p>
+<p>Finally, we extend the capabilities of supervised learning to learn with RF neurons. We show a keyword spotting application based on training multi-layer RF networks. Further, we describe how the RF neuron can be extended to a Hopf resonator and how this could be used for signal processing applications.</p>
+</div>
+<div class="section" id="id4">
+<h3>Links<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://arxiv.org/abs/2111.03746">arXiv</a></p>
+</div>
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -420,6 +487,12 @@ Neuromorphic KNN NICE 2020
 <h1>Spiking Neural Networks<a class="headerlink" href="#spiking-neural-networks" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="robust-computation-with-rhythmic-spike-patterns">
 <h2>Robust Computation with Rhythmic Spike Patterns<a class="headerlink" href="#robust-computation-with-rhythmic-spike-patterns" title="Permalink to this headline">¶</a></h2>
+<!--
+<img src="phasors2spikes-transfer-190612.png" alt="Phasors to spikes"
+	width="60%"/>
+
+-->
+<p><img alt="phasors to spikes" src="../_images/phasors2spikes-transfer-190612.png" /></p>
 <div class="section" id="summary">
 <h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
 <p>The basis for how we understand neural networks is linear algebra – vectors and matrices. We see neurons in the brain signal through spikes, and we connect these spikes to vectors through the theory of rate-coding. This means that more spikes from a neuron is related to a larger number in a vector. The synapses between neurons has a synaptic weight, and the spikes influence the target neurons the way that a vector dot products with a weight matrix.</p>
@@ -437,6 +510,11 @@ Neuromorphic KNN NICE 2020
 </div>
 <div class="section" id="neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs">
 <h2>Neuromorphic nearest neighbor search on Intel’s Pohoiki Springs<a class="headerlink" href="#neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs" title="Permalink to this headline">¶</a></h2>
+<!--
+<img src="latency_code_knn.png" alt="Latency code"
+	width="60%"/>
+-->
+<p><img alt="Latency coding" src="../_images/latency_code_knn.png" /></p>
 <div class="section" id="id1">
 <h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>A myriad of data science applications rely on finding the nearest neighbor to an input cue amongst a large database of training samples.
@@ -450,6 +528,28 @@ But, the algorithm for nearest neighbor search must be matched to the hardware t
 <a href="https://dl.acm.org/doi/pdf/10.1145/3381755.3398695?casa_token=0CyCI7vFe30AAAAA:WFOsToDNmS6rJeIUe4H0_ncDO5Ra5VCpAaMwZma8td7rBjcYV8j1BUHHU_ZkojrhZy4zogCz9PuH"> 
 Neuromorphic KNN NICE 2020
 </a></div>
+</div>
+<div class="section" id="efficient-neuromorphic-signal-processing-with-loihi-2">
+<h2>Efficient Neuromorphic Signal Processing with Loihi 2<a class="headerlink" href="#efficient-neuromorphic-signal-processing-with-loihi-2" title="Permalink to this headline">¶</a></h2>
+<!--
+<img src="rf_stft.png" alt="STFT with resonate-and-fire neurons"
+	width="60%"/>
+-->
+<p><img alt="RF STFT" src="../_images/spike_spec-follow-num_corr-mean-210630.png" /></p>
+<div class="section" id="id3">
+<h3>Summary<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>The formalism of how to represent complex numbers and perform complex matrix multiplication described in <em>Robust Computation with Rhythmic Spike Patterns</em> leads to the potential to use spike-timing codes to perform Fourier analysis.
+A standard signal processing algorithm is the spectrogram, or short-time fourier transform (STFT).
+This can be computed naturally with the dynamics of Resonate-and-Fire (RF) neurons.
+By simply forming a bank of RF neurons, each neuron with a its own resonant-frequency, then an input signal can be integrated by the neurons and the output spikes correspond to the complex-valued coefficients of the STFT.</p>
+<p>But wait theres more! Complex-valued computations are a great tool for spatio-temporal filtering of video data. We described an algorithm for optic flow estimation based on the classic <a class="reference external" href="http://persci.mit.edu/pub_pdfs/spatio85.pdf">Adelson and Bergen, 1985</a> model.
+In this model, saptio-temporal gabor filters are computed through the integration dynamics of RF neurons. The outputs of this filtering are combined to produce an estimate of optic flow. We showed that this simple and straight-forward method for computing optic flow is competitive with much more complex deep learning networks, but our model is far more efficient.</p>
+<p>Finally, we extend the capabilities of supervised learning to learn with RF neurons. We show a keyword spotting application based on training multi-layer RF networks. Further, we describe how the RF neuron can be extended to a Hopf resonator and how this could be used for signal processing applications.</p>
+</div>
+<div class="section" id="id4">
+<h3>Links<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://arxiv.org/abs/2111.03746">arXiv</a></p>
+</div>
 </div>
 <div class="toctree-wrapper compound">
 </div>
