@@ -16,6 +16,12 @@ parts:
   - file: Research/resonator_networks.ipynb
     sections:
     - file: Research/resonator_template.ipynb
+- caption: Tutorials
+  chapters:
+  - file: Tutorials/computational_neuroscience.ipynb
+    sections:
+    - file: Tutorials/spiking_basics_brian2.ipynb
+    - file: Tutorials/connecting_if_neurons.ipynb
 #- caption: Blog
 # chapters:
 # - file: blog/blog_consciousness_210201.ipynb
