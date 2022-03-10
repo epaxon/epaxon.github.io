@@ -22,6 +22,7 @@ parts:
     sections:
     - file: Tutorials/spiking_basics_brian2.ipynb
     - file: Tutorials/connecting_if_neurons.ipynb
+    - file: Tutorials/hodgkin_huxley_paradigm.ipynb
 #- caption: Blog
 # chapters:
 # - file: blog/blog_consciousness_210201.ipynb
