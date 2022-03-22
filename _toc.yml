@@ -16,6 +16,7 @@ parts:
   - file: Research/resonator_networks.ipynb
     sections:
     - file: Research/resonator_template.ipynb
+    - file: Research/res_semi_primes-220216.ipynb
 - caption: Tutorials
   chapters:
   - file: Tutorials/computational_neuroscience.ipynb
