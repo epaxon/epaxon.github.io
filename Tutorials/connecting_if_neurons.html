@@ -1,0 +1,1443 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connecting IFR theory to connectionism &#8212; Neuromorphic Algorithms Research</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Hodgkin Huxley Paradigm" href="hodgkin_huxley_paradigm.html" />
+    <link rel="prev" title="Rate-coding with Integrate-and-Fire neurons" href="spiking_basics_brian2.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/neural_circuit.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Neuromorphic Algorithms Research</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Neuromorphic Algorithms Research
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  About me
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about_me.html">
+   E. Paxon Frady
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Research
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Research/spiking_networks.html">
+   Spiking Neural Networks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Research/tpam_demo.html">
+     Threshold Phasor Associative Memory
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Research/theoretical_neuroscience.html">
+   Theoretical Neuroscience
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Research/sparse_binding_demo.html">
+     Sparse binding demo – What’s the dollar of mexico?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Research/resonator_networks.html">
+   Resonator Networks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Research/resonator_template.html">
+     Factorization of shape, color and location
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Research/res_semi_primes-220216.html">
+     Factoring semi-primes with the resonator network
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="computational_neuroscience.html">
+   Computational Neuroscience
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="spiking_basics_brian2.html">
+     Rate-coding with Integrate-and-Fire neurons
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Connecting IFR theory to connectionism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hodgkin_huxley_paradigm.html">
+     The Hodgkin Huxley Paradigm
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Tutorials/connecting_if_neurons.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Tutorials/connecting_if_neurons.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computing-dot-products-with-if-neurons">
+   Computing dot-products with IF neurons
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Connecting IFR theory to connectionism</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computing-dot-products-with-if-neurons">
+   Computing dot-products with IF neurons
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="connecting-ifr-theory-to-connectionism">
+<h1>Connecting IFR theory to connectionism<a class="headerlink" href="#connecting-ifr-theory-to-connectionism" title="Permalink to this headline">¶</a></h1>
+<p>From the IFR experiments, we can see how the IFR is governed as a function of input current. We derived a formula for the IFR, which assumes that the current input into the neuron is constant. However, this approximation will generally hold when the timeconstant of the neuron is fast compared to the changes of the input, and in this regime we can connect the spiking of IF neurons to the theory of connectionism.</p>
+<div class="section" id="computing-dot-products-with-if-neurons">
+<h2>Computing dot-products with IF neurons<a class="headerlink" href="#computing-dot-products-with-if-neurons" title="Permalink to this headline">¶</a></h2>
+<p>It is important to link the output spiking rate to input currents, because this allows us to understand the neuron dynamics from connectionism and deep learning theory. In deep learning, we usually describe individual neurons as performing a weighted sum of inputs, followed by a non-linear transfer function <span class="math notranslate nohighlight">\(\sigma\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+r_i = \sigma ( \sum_j W_{ij} r_j + b_i ) 
+\]</div>
+<p>It is extremely important that we considered the input to the IFR as the current in the eletronic neuron model. This is because in electronic circuits, currents add together. In connectionist theory, we are often computing vector-matrix products, which corresponds to a weighted summation of pre-synaptic neural activity. The summation of a dot product is homologous to the summation of currents in the neuron.</p>
+<p>We can then understand the IFR as equivalent to a non-linear transfer function as used in deep learning networks. When the refractory period is 0, then the IFR is effectively a rectified linear function. With a refractory period, then the IFR becomes saturated, and similar to a sigmoid transfer function.</p>
+<p>Taken together, there is quite predictable behavior from the integration dynamics of integrate-and-fire neurons that can be described theoretically. Under the assumptions that the input dynamics are slow compared to the spiking frequencies, then we can use IFR theory to build networks of spiking neurons that can compute a matrix-vector product followed by a non-linear transfer function.</p>
+<p>So next lets discuss how we design synaptic connections when using integrate-and-fire neurons. Just like when we use integrate-and-fire dynamics as a simplification of spiking neurons in neuroscience, we consider a simplified model of synaptic dyanmics.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.family&#39;</span><span class="p">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span> 
+                     <span class="s1">&#39;font.serif&#39;</span><span class="p">:[</span><span class="s1">&#39;Computer Modern&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s a nice website that has some parameter values of real neurons:
+<a class="reference external" href="https://neuroelectro.org/ephys_prop/index/">https://neuroelectro.org/ephys_prop/index/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Neuron parameters</span>
+<span class="n">C_Ax</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">nF</span> <span class="c1"># Capacitance </span>
+<span class="n">g_l</span> <span class="o">=</span>  <span class="mf">10.0</span> <span class="o">*</span> <span class="n">nS</span> <span class="c1"># leak conductance</span>
+
+<span class="n">E_l</span> <span class="o">=</span> <span class="o">-</span><span class="mf">60.0</span> <span class="o">*</span> <span class="n">mV</span> <span class="c1"># Resting potential</span>
+<span class="n">V_t</span> <span class="o">=</span> <span class="o">-</span><span class="mf">55.0</span> <span class="o">*</span> <span class="n">mV</span> <span class="c1"># Threshold</span>
+<span class="n">V_r</span> <span class="o">=</span> <span class="o">-</span><span class="mf">65.0</span> <span class="o">*</span> <span class="n">mV</span> <span class="c1"># Reset</span>
+
+<span class="n">tref</span><span class="o">=</span><span class="mi">0</span><span class="o">*</span><span class="n">ms</span> <span class="c1"># refractory period</span>
+
+<span class="n">eqs_if</span> <span class="o">=</span> <span class="n">Equations</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">    dV/dt = (g_l * (E_l - V) + I_ext + I_syn) / C_Ax : volt (unless refractory)</span>
+<span class="s1">    I_ext : amp</span>
+<span class="s1">    I_syn : amp</span>
+<span class="s1">    &#39;&#39;&#39;</span><span class="p">)</span>
+
+
+<span class="n">tau_s</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">*</span> <span class="n">ms</span>
+
+<span class="n">s_eqs</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">w : 1</span>
+<span class="s1">I_syn_post = sx * pA : amp (summed)</span>
+<span class="s1">dsx/dt = - sx / tau_s : 1 (clock-driven)</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">s_on_pre</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">sx += w</span>
+<span class="s1">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Neuron time constant:&quot;</span><span class="p">,</span> <span class="n">C_Ax</span><span class="o">/</span><span class="n">g_l</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Threshold current:&quot;</span><span class="p">,</span> <span class="n">g_l</span><span class="o">*</span><span class="p">(</span><span class="n">V_t</span> <span class="o">-</span> <span class="n">E_l</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Neuron time constant: 50. ms
+Threshold current: 50. pA
+</pre></div>
+</div>
+</div>
+</div>
+<p>Above we have defined the standard neuron equations as well as a few new equations for describing the synaptic dynamics. In this model, we give each synapse a weight, which corresponds to the weight in a synaptic weight matrix, and a time-constant, which connects to the dynamics of the synapse. As a computational neuroscientist, and under the Hodgkin-Huxley paradigm, we understand the synapse as being mediated by channels – proteins that regulate the flow of ionic currents through the neuron. Such a synaptic model is an approximation of the channel, and the time-constant of the synapse captures the dynamics of the channel.</p>
+<p>Lets first just do a simple simulation to see what happens when a spike triggers a synapse.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G_pre</span> <span class="o">=</span> <span class="n">SpikeGeneratorGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.25</span><span class="o">*</span><span class="n">second</span><span class="p">])</span>
+
+<span class="n">G_post</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">eqs_if</span><span class="p">,</span> 
+                     <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;V&gt;V_t&#39;</span><span class="p">,</span>
+                     <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;V=V_r&#39;</span><span class="p">,</span> 
+                     <span class="n">refractory</span><span class="o">=</span><span class="n">tref</span><span class="p">)</span>
+
+<span class="n">S_pre_post</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G_pre</span><span class="p">,</span> <span class="n">G_post</span><span class="p">,</span> <span class="n">s_eqs</span><span class="p">,</span> 
+                      <span class="n">on_pre</span><span class="o">=</span><span class="n">s_on_pre</span><span class="p">)</span>
+
+<span class="c1"># Input connections</span>
+<span class="n">S_pre_post</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">S_pre_post</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Set initial conditions</span>
+<span class="n">G_post</span><span class="o">.</span><span class="n">V</span> <span class="o">=</span> <span class="n">E_l</span> <span class="o">*</span> <span class="n">ones</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Monitor the simulation</span>
+<span class="n">SpM_pre</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G_pre</span><span class="p">)</span>
+<span class="n">SpM_post</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G_post</span><span class="p">)</span>
+<span class="n">StM_post</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G_post</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Build the simulation network</span>
+<span class="n">ifr_net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">()</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">G_pre</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">G_post</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">S_pre_post</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">SpM_pre</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">SpM_post</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">StM_post</span><span class="p">)</span>
+
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    Removing unsupported flag &#39;-march=native&#39; from compiler flags. [brian2.codegen.cpp_prefs]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">run_time</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">second</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">)</span>
+<span class="n">tst</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">run_time</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;elapsed&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO       No numerical integration method specified for group &#39;neurongroup&#39;, using method &#39;exact&#39; (took 0.11s). [brian2.stateupdaters.base.method_choice]
+INFO       No numerical integration method specified for group &#39;synapses&#39;, using method &#39;exact&#39; (took 0.03s). [brian2.stateupdaters.base.method_choice]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>elapsed 6.747968912124634
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pre_spikes</span> <span class="o">=</span> <span class="n">SpM_pre</span><span class="o">.</span><span class="n">spike_trains</span><span class="p">()</span>
+<span class="n">post_I</span> <span class="o">=</span> <span class="n">StM_post</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">I_syn</span>
+<span class="n">post_V</span> <span class="o">=</span> <span class="n">StM_post</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">V</span>
+
+<span class="n">subplot</span><span class="p">(</span><span class="mi">311</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">pre_spikes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pre_spikes</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span> <span class="s1">&#39;|k&#39;</span><span class="p">)</span>
+<span class="n">xticks</span><span class="p">([])</span>
+<span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">yticks</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">subplot</span><span class="p">(</span><span class="mi">312</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">StM_post</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">post_I</span><span class="o">/</span><span class="n">pA</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">xticks</span><span class="p">([])</span>
+<span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;I (pA)&#39;</span><span class="p">)</span>
+
+<span class="n">subplot</span><span class="p">(</span><span class="mi">313</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">StM_post</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">post_V</span><span class="o">/</span><span class="n">mV</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;V (mV)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;V (mV)&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;serif&#39;] not found. Falling back to DejaVu Sans.
+findfont: Generic family &#39;serif&#39; not found because none of the following families were found: Computer Modern
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_9_2.png" src="../_images/connecting_if_neurons_9_2.png" />
+</div>
+</div>
+<p>This describes the general idea of the synapse in spiking IF neurons. The pre-synaptic spike triggers an instant jump of the synaptic state variable, in other words the channel is opened. The state variable then decays exponentially back to zero, parameterized by the synaptic time-constant. The voltage of the neuron is then increased from this current, filtered by the RC circuit of the neuron.</p>
+<p>Next, lets connect the spiking neuron dynamics to the underlying mathematical theory of vector matrix products. Again, we are approximating the computations of linear algebra with spiking neuron models. From the IFR theory, we know how the spiking rate relates to the input currents, and this quantity corresponds to the vector coefficients in the matrix-vector product.</p>
+<p>We know that there is also a non-linear transfer function induced by the spiking mechanism. Lets bring in the IFR theory to apply this transfer function to the outputs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ifr</span><span class="p">(</span><span class="n">Id</span><span class="p">):</span>
+    <span class="c1"># the theory doesn&#39;t work for negative inputs, </span>
+    <span class="c1"># we know that these will lead to 0 output spikes, so can just set to 0.</span>
+    <span class="n">Id</span><span class="p">[</span><span class="n">Id</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">t_spike</span> <span class="o">=</span> <span class="n">C_Ax</span> <span class="o">/</span> <span class="n">g_l</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="n">Id</span><span class="o">+</span><span class="n">g_l</span><span class="o">*</span><span class="p">(</span><span class="n">E_l</span> <span class="o">-</span> <span class="n">V_r</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">Id</span><span class="o">+</span><span class="n">g_l</span><span class="o">*</span><span class="p">(</span><span class="n">E_l</span> <span class="o">-</span> <span class="n">V_t</span><span class="p">)))</span> <span class="o">+</span> <span class="n">tref</span>
+    <span class="n">fr</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">t_spike</span>
+    
+    <span class="c1"># Fix the nan values </span>
+    <span class="n">fr</span><span class="p">[</span><span class="n">isnan</span><span class="p">(</span><span class="n">fr</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">return</span> <span class="n">fr</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>So we are going to set up a 1-layer network to simulate a matrix vector product computation with spiking IF neurons. In this demo, I am just going to have a somewhat random configuration, where a the synaptic weights are essentially randomized, and so is the input. We will then compare the spiking rate of the IF neurons with the actual dot product and see how close is the approximation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N_pre</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">N_post</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="n">pre_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_pre</span><span class="p">)</span> <span class="o">*</span> <span class="n">nA</span>
+<span class="n">pre_vec</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">N_pre</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="n">pA</span> 
+<span class="n">pre_vec</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">N_pre</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">90</span> <span class="o">*</span> <span class="n">pA</span>
+<span class="n">pre_vec</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">N_pre</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">120</span> <span class="o">*</span> <span class="n">pA</span>
+
+<span class="n">weights</span> <span class="o">=</span> <span class="mi">20</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N_pre</span><span class="p">,</span> <span class="n">N_post</span><span class="p">)</span> 
+
+<span class="n">post_currents</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">weights</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">pA</span><span class="o">/</span><span class="n">Hz</span><span class="p">,</span> <span class="n">ifr</span><span class="p">(</span><span class="n">pre_vec</span><span class="p">))</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">post_currents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    /opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:208: RuntimeWarning: invalid value encountered in log
+  return func(np.array(x, copy=False), *args, **kwds)
+ [py.warnings]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13a69ad00&gt;]
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_13_2.png" src="../_images/connecting_if_neurons_13_2.png" />
+</div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">pre_vec</span></code> is the input current into the first layer of neurons. This current will be translated to spikes following the IFR theory.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">ifr</span><span class="p">(</span><span class="n">pre_vec</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    /opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:208: RuntimeWarning: invalid value encountered in log
+  return func(np.array(x, copy=False), *args, **kwds)
+ [py.warnings]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13a4c3f40&gt;]
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_15_2.png" src="../_images/connecting_if_neurons_15_2.png" />
+</div>
+</div>
+<p>The spikes of the pre-synaptic neurons with then flow through the synapses and activate the synaptic channels. The post-synaptic neuron will then integrate this current, and the spiking will induce the IFR transfer function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">ifr</span><span class="p">(</span><span class="n">post_currents</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    /opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:208: RuntimeWarning: invalid value encountered in log
+  return func(np.array(x, copy=False), *args, **kwds)
+ [py.warnings]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13a23b6a0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_17_2.png" src="../_images/connecting_if_neurons_17_2.png" />
+</div>
+</div>
+<p>So do note that we also have to consider how the units that we use in the vector model match the units in the physical spiking model. There will effectively be some scale factors that we need to deal with to make sure that the units match. I will try to generally follow the convention where the values in the vectors are in spikes per second, and the values in the weight matrix are in pico-amps.</p>
+<p>Lets plug in the values of the linear algebra model into the spiking dynamic model and observe the outputs. Remember that the IFR is an equilibrium approximation so we will also note the dynamics and the equilibrium result.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G_pre</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="n">N_pre</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">eqs_if</span><span class="p">,</span> 
+                     <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;V&gt;V_t&#39;</span><span class="p">,</span> 
+                     <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;V=V_r&#39;</span><span class="p">,</span> 
+                     <span class="n">refractory</span><span class="o">=</span><span class="n">tref</span><span class="p">)</span>
+
+<span class="n">G_post</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="n">N_post</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">eqs_if</span><span class="p">,</span> 
+                     <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;V&gt;V_t&#39;</span><span class="p">,</span>
+                     <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;V=V_r&#39;</span><span class="p">,</span> 
+                     <span class="n">refractory</span><span class="o">=</span><span class="n">tref</span><span class="p">)</span>
+
+<span class="n">S_pre_post</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G_pre</span><span class="p">,</span> <span class="n">G_post</span><span class="p">,</span> <span class="n">s_eqs</span><span class="p">,</span> 
+                      <span class="n">on_pre</span><span class="o">=</span><span class="n">s_on_pre</span><span class="p">)</span>
+
+<span class="c1"># Input connections</span>
+<span class="n">S_pre_post</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">S_pre_post</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">weights</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="c1"># Set initial conditions</span>
+<span class="n">G_pre</span><span class="o">.</span><span class="n">V</span> <span class="o">=</span> <span class="n">E_l</span> <span class="o">*</span> <span class="n">ones</span><span class="p">(</span><span class="n">N_pre</span><span class="p">)</span>
+<span class="n">G_post</span><span class="o">.</span><span class="n">V</span> <span class="o">=</span> <span class="n">E_l</span> <span class="o">*</span> <span class="n">ones</span><span class="p">(</span><span class="n">N_post</span><span class="p">)</span>
+
+<span class="c1"># Set inputs</span>
+<span class="n">G_pre</span><span class="o">.</span><span class="n">I_ext</span> <span class="o">=</span> <span class="n">pre_vec</span>
+
+<span class="c1"># Monitor the simulation</span>
+<span class="n">SpM_pre</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G_pre</span><span class="p">)</span>
+<span class="n">StM_pre</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G_pre</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">SpM_post</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G_post</span><span class="p">)</span>
+<span class="n">StM_post</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G_post</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Build the simulation network</span>
+<span class="n">ifr_net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">()</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">G_pre</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">G_post</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">S_pre_post</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">SpM_pre</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">StM_pre</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">SpM_post</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">StM_post</span><span class="p">)</span>
+
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">run_time</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">second</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">)</span>
+<span class="n">tst</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">run_time</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;elapsed&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO       No numerical integration method specified for group &#39;neurongroup_1&#39;, using method &#39;exact&#39; (took 0.03s). [brian2.stateupdaters.base.method_choice]
+INFO       No numerical integration method specified for group &#39;neurongroup_2&#39;, using method &#39;exact&#39; (took 0.03s). [brian2.stateupdaters.base.method_choice]
+INFO       No numerical integration method specified for group &#39;synapses_1&#39;, using method &#39;exact&#39; (took 0.02s). [brian2.stateupdaters.base.method_choice]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>elapsed 9.114917039871216
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pre_spikes</span> <span class="o">=</span> <span class="n">SpM_pre</span><span class="o">.</span><span class="n">spike_trains</span><span class="p">()</span>
+<span class="n">tot_pre_spikes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_pre</span><span class="p">)</span>
+<span class="n">fr_pre</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_pre</span><span class="p">)</span>
+
+<span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pre_spikes</span><span class="p">)):</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">pre_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">second</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pre_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">])),</span> <span class="s1">&#39;|k&#39;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pre_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="c1"># estimate based on total spikes during simulation</span>
+        <span class="n">tot_pre_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pre_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        
+
+        <span class="c1"># estimate based on time between spikes</span>
+        <span class="n">fr_pre</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">pre_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    
+<span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">N_pre</span><span class="o">-</span><span class="mf">0.5</span><span class="p">])</span>
+<span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">run_time</span><span class="o">/</span><span class="n">second</span><span class="p">])</span>
+<span class="n">yticks</span><span class="p">([])</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Neuron&#39;)
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_21_1.png" src="../_images/connecting_if_neurons_21_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">fr_pre</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">ifr</span><span class="p">(</span><span class="n">pre_vec</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    /opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:208: RuntimeWarning: invalid value encountered in log
+  return func(np.array(x, copy=False), *args, **kwds)
+ [py.warnings]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x12fbf7970&gt;]
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_22_2.png" src="../_images/connecting_if_neurons_22_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">post_spikes</span> <span class="o">=</span> <span class="n">SpM_post</span><span class="o">.</span><span class="n">spike_trains</span><span class="p">()</span>
+<span class="n">tot_spikes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_post</span><span class="p">)</span>
+<span class="n">fr_post</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_post</span><span class="p">)</span>
+<span class="n">fr_post_filt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_post</span><span class="p">)</span>
+
+<span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">post_spikes</span><span class="p">)):</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">post_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">second</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">post_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">])),</span> <span class="s1">&#39;|k&#39;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">post_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="c1"># estimate based on total spikes during simulation</span>
+        <span class="n">tot_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">post_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+        <span class="c1"># estimate based on time between spikes</span>
+        <span class="n">fr_post</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">post_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+        
+        <span class="c1"># same estimate, but ignore the beginning</span>
+        <span class="n">spikes_filt</span> <span class="o">=</span> <span class="n">post_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">post_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">second</span><span class="p">]</span>
+        
+        <span class="n">fr_post_filt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">spikes_filt</span><span class="p">))</span>
+    
+<span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">N_post</span><span class="o">-</span><span class="mf">0.5</span><span class="p">])</span>
+<span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">run_time</span><span class="o">/</span><span class="n">second</span><span class="p">])</span>
+<span class="n">yticks</span><span class="p">([])</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Neuron&#39;)
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_23_1.png" src="../_images/connecting_if_neurons_23_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">fr_post</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">ifr</span><span class="p">(</span><span class="n">post_currents</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    /opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:208: RuntimeWarning: invalid value encountered in log
+  return func(np.array(x, copy=False), *args, **kwds)
+ [py.warnings]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x138f403a0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_24_2.png" src="../_images/connecting_if_neurons_24_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">fr_post</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">ifr</span><span class="p">(</span><span class="n">post_currents</span><span class="o">/</span><span class="p">(</span><span class="n">second</span><span class="o">/</span><span class="n">tau_s</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    /opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:208: RuntimeWarning: invalid value encountered in log
+  return func(np.array(x, copy=False), *args, **kwds)
+ [py.warnings]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13c1fc910&gt;]
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_25_2.png" src="../_images/connecting_if_neurons_25_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">fr_post_filt</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">ifr</span><span class="p">(</span><span class="n">post_currents</span><span class="o">/</span><span class="p">(</span><span class="n">second</span><span class="o">/</span><span class="n">tau_s</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    /opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:208: RuntimeWarning: invalid value encountered in log
+  return func(np.array(x, copy=False), *args, **kwds)
+ [py.warnings]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x138dd5e50&gt;]
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_26_2.png" src="../_images/connecting_if_neurons_26_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">StM_post</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">StM_post</span><span class="o">.</span><span class="n">V</span><span class="p">[</span><span class="mi">8</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13a3c1d00&gt;]
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_27_1.png" src="../_images/connecting_if_neurons_27_1.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="connecting-ifr-theory-to-connectionism">
+<h1>Connecting IFR theory to connectionism<a class="headerlink" href="#connecting-ifr-theory-to-connectionism" title="Permalink to this headline">¶</a></h1>
+<p>From the IFR experiments, we can see how the IFR is governed as a function of input current. We derived a formula for the IFR, which assumes that the current input into the neuron is constant. However, this approximation will generally hold when the timeconstant of the neuron is fast compared to the changes of the input, and in this regime we can connect the spiking of IF neurons to the theory of connectionism.</p>
+<div class="section" id="computing-dot-products-with-if-neurons">
+<h2>Computing dot-products with IF neurons<a class="headerlink" href="#computing-dot-products-with-if-neurons" title="Permalink to this headline">¶</a></h2>
+<p>It is important to link the output spiking rate to input currents, because this allows us to understand the neuron dynamics from connectionism and deep learning theory. In deep learning, we usually describe individual neurons as performing a weighted sum of inputs, followed by a non-linear transfer function <span class="math notranslate nohighlight">\(\sigma\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+r_i = \sigma ( \sum_j W_{ij} r_j + b_i ) 
+\]</div>
+<p>It is extremely important that we considered the input to the IFR as the current in the eletronic neuron model. This is because in electronic circuits, currents add together. In connectionist theory, we are often computing vector-matrix products, which corresponds to a weighted summation of pre-synaptic neural activity. The summation of a dot product is homologous to the summation of currents in the neuron.</p>
+<p>We can then understand the IFR as equivalent to a non-linear transfer function as used in deep learning networks. When the refractory period is 0, then the IFR is effectively a rectified linear function. With a refractory period, then the IFR becomes saturated, and similar to a sigmoid transfer function.</p>
+<p>Taken together, there is quite predictable behavior from the integration dynamics of integrate-and-fire neurons that can be described theoretically. Under the assumptions that the input dynamics are slow compared to the spiking frequencies, then we can use IFR theory to build networks of spiking neurons that can compute a matrix-vector product followed by a non-linear transfer function.</p>
+<p>So next lets discuss how we design synaptic connections when using integrate-and-fire neurons. Just like when we use integrate-and-fire dynamics as a simplification of spiking neurons in neuroscience, we consider a simplified model of synaptic dyanmics.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.family&#39;</span><span class="p">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span> 
+                     <span class="s1">&#39;font.serif&#39;</span><span class="p">:[</span><span class="s1">&#39;Computer Modern&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s a nice website that has some parameter values of real neurons:
+<a class="reference external" href="https://neuroelectro.org/ephys_prop/index/">https://neuroelectro.org/ephys_prop/index/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Neuron parameters</span>
+<span class="n">C_Ax</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">nF</span> <span class="c1"># Capacitance </span>
+<span class="n">g_l</span> <span class="o">=</span>  <span class="mf">10.0</span> <span class="o">*</span> <span class="n">nS</span> <span class="c1"># leak conductance</span>
+
+<span class="n">E_l</span> <span class="o">=</span> <span class="o">-</span><span class="mf">60.0</span> <span class="o">*</span> <span class="n">mV</span> <span class="c1"># Resting potential</span>
+<span class="n">V_t</span> <span class="o">=</span> <span class="o">-</span><span class="mf">55.0</span> <span class="o">*</span> <span class="n">mV</span> <span class="c1"># Threshold</span>
+<span class="n">V_r</span> <span class="o">=</span> <span class="o">-</span><span class="mf">65.0</span> <span class="o">*</span> <span class="n">mV</span> <span class="c1"># Reset</span>
+
+<span class="n">tref</span><span class="o">=</span><span class="mi">0</span><span class="o">*</span><span class="n">ms</span> <span class="c1"># refractory period</span>
+
+<span class="n">eqs_if</span> <span class="o">=</span> <span class="n">Equations</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">    dV/dt = (g_l * (E_l - V) + I_ext + I_syn) / C_Ax : volt (unless refractory)</span>
+<span class="s1">    I_ext : amp</span>
+<span class="s1">    I_syn : amp</span>
+<span class="s1">    &#39;&#39;&#39;</span><span class="p">)</span>
+
+
+<span class="n">tau_s</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">*</span> <span class="n">ms</span>
+
+<span class="n">s_eqs</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">w : 1</span>
+<span class="s1">I_syn_post = sx * pA : amp (summed)</span>
+<span class="s1">dsx/dt = - sx / tau_s : 1 (clock-driven)</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">s_on_pre</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">sx += w</span>
+<span class="s1">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Neuron time constant:&quot;</span><span class="p">,</span> <span class="n">C_Ax</span><span class="o">/</span><span class="n">g_l</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Threshold current:&quot;</span><span class="p">,</span> <span class="n">g_l</span><span class="o">*</span><span class="p">(</span><span class="n">V_t</span> <span class="o">-</span> <span class="n">E_l</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Neuron time constant: 50. ms
+Threshold current: 50. pA
+</pre></div>
+</div>
+</div>
+</div>
+<p>Above we have defined the standard neuron equations as well as a few new equations for describing the synaptic dynamics. In this model, we give each synapse a weight, which corresponds to the weight in a synaptic weight matrix, and a time-constant, which connects to the dynamics of the synapse. As a computational neuroscientist, and under the Hodgkin-Huxley paradigm, we understand the synapse as being mediated by channels – proteins that regulate the flow of ionic currents through the neuron. Such a synaptic model is an approximation of the channel, and the time-constant of the synapse captures the dynamics of the channel.</p>
+<p>Lets first just do a simple simulation to see what happens when a spike triggers a synapse.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G_pre</span> <span class="o">=</span> <span class="n">SpikeGeneratorGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.25</span><span class="o">*</span><span class="n">second</span><span class="p">])</span>
+
+<span class="n">G_post</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">eqs_if</span><span class="p">,</span> 
+                     <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;V&gt;V_t&#39;</span><span class="p">,</span>
+                     <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;V=V_r&#39;</span><span class="p">,</span> 
+                     <span class="n">refractory</span><span class="o">=</span><span class="n">tref</span><span class="p">)</span>
+
+<span class="n">S_pre_post</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G_pre</span><span class="p">,</span> <span class="n">G_post</span><span class="p">,</span> <span class="n">s_eqs</span><span class="p">,</span> 
+                      <span class="n">on_pre</span><span class="o">=</span><span class="n">s_on_pre</span><span class="p">)</span>
+
+<span class="c1"># Input connections</span>
+<span class="n">S_pre_post</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">S_pre_post</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Set initial conditions</span>
+<span class="n">G_post</span><span class="o">.</span><span class="n">V</span> <span class="o">=</span> <span class="n">E_l</span> <span class="o">*</span> <span class="n">ones</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Monitor the simulation</span>
+<span class="n">SpM_pre</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G_pre</span><span class="p">)</span>
+<span class="n">SpM_post</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G_post</span><span class="p">)</span>
+<span class="n">StM_post</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G_post</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Build the simulation network</span>
+<span class="n">ifr_net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">()</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">G_pre</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">G_post</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">S_pre_post</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">SpM_pre</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">SpM_post</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">StM_post</span><span class="p">)</span>
+
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    Removing unsupported flag &#39;-march=native&#39; from compiler flags. [brian2.codegen.cpp_prefs]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">run_time</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">second</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">)</span>
+<span class="n">tst</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">run_time</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;elapsed&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO       No numerical integration method specified for group &#39;neurongroup&#39;, using method &#39;exact&#39; (took 0.11s). [brian2.stateupdaters.base.method_choice]
+INFO       No numerical integration method specified for group &#39;synapses&#39;, using method &#39;exact&#39; (took 0.03s). [brian2.stateupdaters.base.method_choice]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>elapsed 6.747968912124634
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pre_spikes</span> <span class="o">=</span> <span class="n">SpM_pre</span><span class="o">.</span><span class="n">spike_trains</span><span class="p">()</span>
+<span class="n">post_I</span> <span class="o">=</span> <span class="n">StM_post</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">I_syn</span>
+<span class="n">post_V</span> <span class="o">=</span> <span class="n">StM_post</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">V</span>
+
+<span class="n">subplot</span><span class="p">(</span><span class="mi">311</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">pre_spikes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pre_spikes</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span> <span class="s1">&#39;|k&#39;</span><span class="p">)</span>
+<span class="n">xticks</span><span class="p">([])</span>
+<span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">yticks</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">subplot</span><span class="p">(</span><span class="mi">312</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">StM_post</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">post_I</span><span class="o">/</span><span class="n">pA</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">xticks</span><span class="p">([])</span>
+<span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;I (pA)&#39;</span><span class="p">)</span>
+
+<span class="n">subplot</span><span class="p">(</span><span class="mi">313</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">StM_post</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">post_V</span><span class="o">/</span><span class="n">mV</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;V (mV)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;V (mV)&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;serif&#39;] not found. Falling back to DejaVu Sans.
+findfont: Generic family &#39;serif&#39; not found because none of the following families were found: Computer Modern
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_9_2.png" src="../_images/connecting_if_neurons_9_2.png" />
+</div>
+</div>
+<p>This describes the general idea of the synapse in spiking IF neurons. The pre-synaptic spike triggers an instant jump of the synaptic state variable, in other words the channel is opened. The state variable then decays exponentially back to zero, parameterized by the synaptic time-constant. The voltage of the neuron is then increased from this current, filtered by the RC circuit of the neuron.</p>
+<p>Next, lets connect the spiking neuron dynamics to the underlying mathematical theory of vector matrix products. Again, we are approximating the computations of linear algebra with spiking neuron models. From the IFR theory, we know how the spiking rate relates to the input currents, and this quantity corresponds to the vector coefficients in the matrix-vector product.</p>
+<p>We know that there is also a non-linear transfer function induced by the spiking mechanism. Lets bring in the IFR theory to apply this transfer function to the outputs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ifr</span><span class="p">(</span><span class="n">Id</span><span class="p">):</span>
+    <span class="c1"># the theory doesn&#39;t work for negative inputs, </span>
+    <span class="c1"># we know that these will lead to 0 output spikes, so can just set to 0.</span>
+    <span class="n">Id</span><span class="p">[</span><span class="n">Id</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">t_spike</span> <span class="o">=</span> <span class="n">C_Ax</span> <span class="o">/</span> <span class="n">g_l</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="n">Id</span><span class="o">+</span><span class="n">g_l</span><span class="o">*</span><span class="p">(</span><span class="n">E_l</span> <span class="o">-</span> <span class="n">V_r</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">Id</span><span class="o">+</span><span class="n">g_l</span><span class="o">*</span><span class="p">(</span><span class="n">E_l</span> <span class="o">-</span> <span class="n">V_t</span><span class="p">)))</span> <span class="o">+</span> <span class="n">tref</span>
+    <span class="n">fr</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">t_spike</span>
+    
+    <span class="c1"># Fix the nan values </span>
+    <span class="n">fr</span><span class="p">[</span><span class="n">isnan</span><span class="p">(</span><span class="n">fr</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">return</span> <span class="n">fr</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>So we are going to set up a 1-layer network to simulate a matrix vector product computation with spiking IF neurons. In this demo, I am just going to have a somewhat random configuration, where a the synaptic weights are essentially randomized, and so is the input. We will then compare the spiking rate of the IF neurons with the actual dot product and see how close is the approximation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N_pre</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">N_post</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="n">pre_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_pre</span><span class="p">)</span> <span class="o">*</span> <span class="n">nA</span>
+<span class="n">pre_vec</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">N_pre</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="n">pA</span> 
+<span class="n">pre_vec</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">N_pre</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">90</span> <span class="o">*</span> <span class="n">pA</span>
+<span class="n">pre_vec</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">N_pre</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">120</span> <span class="o">*</span> <span class="n">pA</span>
+
+<span class="n">weights</span> <span class="o">=</span> <span class="mi">20</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N_pre</span><span class="p">,</span> <span class="n">N_post</span><span class="p">)</span> 
+
+<span class="n">post_currents</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">weights</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">pA</span><span class="o">/</span><span class="n">Hz</span><span class="p">,</span> <span class="n">ifr</span><span class="p">(</span><span class="n">pre_vec</span><span class="p">))</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">post_currents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    /opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:208: RuntimeWarning: invalid value encountered in log
+  return func(np.array(x, copy=False), *args, **kwds)
+ [py.warnings]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13a69ad00&gt;]
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_13_2.png" src="../_images/connecting_if_neurons_13_2.png" />
+</div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">pre_vec</span></code> is the input current into the first layer of neurons. This current will be translated to spikes following the IFR theory.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">ifr</span><span class="p">(</span><span class="n">pre_vec</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    /opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:208: RuntimeWarning: invalid value encountered in log
+  return func(np.array(x, copy=False), *args, **kwds)
+ [py.warnings]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13a4c3f40&gt;]
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_15_2.png" src="../_images/connecting_if_neurons_15_2.png" />
+</div>
+</div>
+<p>The spikes of the pre-synaptic neurons with then flow through the synapses and activate the synaptic channels. The post-synaptic neuron will then integrate this current, and the spiking will induce the IFR transfer function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">ifr</span><span class="p">(</span><span class="n">post_currents</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    /opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:208: RuntimeWarning: invalid value encountered in log
+  return func(np.array(x, copy=False), *args, **kwds)
+ [py.warnings]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13a23b6a0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_17_2.png" src="../_images/connecting_if_neurons_17_2.png" />
+</div>
+</div>
+<p>So do note that we also have to consider how the units that we use in the vector model match the units in the physical spiking model. There will effectively be some scale factors that we need to deal with to make sure that the units match. I will try to generally follow the convention where the values in the vectors are in spikes per second, and the values in the weight matrix are in pico-amps.</p>
+<p>Lets plug in the values of the linear algebra model into the spiking dynamic model and observe the outputs. Remember that the IFR is an equilibrium approximation so we will also note the dynamics and the equilibrium result.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G_pre</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="n">N_pre</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">eqs_if</span><span class="p">,</span> 
+                     <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;V&gt;V_t&#39;</span><span class="p">,</span> 
+                     <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;V=V_r&#39;</span><span class="p">,</span> 
+                     <span class="n">refractory</span><span class="o">=</span><span class="n">tref</span><span class="p">)</span>
+
+<span class="n">G_post</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="n">N_post</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">eqs_if</span><span class="p">,</span> 
+                     <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;V&gt;V_t&#39;</span><span class="p">,</span>
+                     <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;V=V_r&#39;</span><span class="p">,</span> 
+                     <span class="n">refractory</span><span class="o">=</span><span class="n">tref</span><span class="p">)</span>
+
+<span class="n">S_pre_post</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G_pre</span><span class="p">,</span> <span class="n">G_post</span><span class="p">,</span> <span class="n">s_eqs</span><span class="p">,</span> 
+                      <span class="n">on_pre</span><span class="o">=</span><span class="n">s_on_pre</span><span class="p">)</span>
+
+<span class="c1"># Input connections</span>
+<span class="n">S_pre_post</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">S_pre_post</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">weights</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="c1"># Set initial conditions</span>
+<span class="n">G_pre</span><span class="o">.</span><span class="n">V</span> <span class="o">=</span> <span class="n">E_l</span> <span class="o">*</span> <span class="n">ones</span><span class="p">(</span><span class="n">N_pre</span><span class="p">)</span>
+<span class="n">G_post</span><span class="o">.</span><span class="n">V</span> <span class="o">=</span> <span class="n">E_l</span> <span class="o">*</span> <span class="n">ones</span><span class="p">(</span><span class="n">N_post</span><span class="p">)</span>
+
+<span class="c1"># Set inputs</span>
+<span class="n">G_pre</span><span class="o">.</span><span class="n">I_ext</span> <span class="o">=</span> <span class="n">pre_vec</span>
+
+<span class="c1"># Monitor the simulation</span>
+<span class="n">SpM_pre</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G_pre</span><span class="p">)</span>
+<span class="n">StM_pre</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G_pre</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">SpM_post</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G_post</span><span class="p">)</span>
+<span class="n">StM_post</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G_post</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Build the simulation network</span>
+<span class="n">ifr_net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">()</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">G_pre</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">G_post</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">S_pre_post</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">SpM_pre</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">StM_pre</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">SpM_post</span><span class="p">)</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">StM_post</span><span class="p">)</span>
+
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">run_time</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">second</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">)</span>
+<span class="n">tst</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">ifr_net</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">run_time</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;elapsed&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO       No numerical integration method specified for group &#39;neurongroup_1&#39;, using method &#39;exact&#39; (took 0.03s). [brian2.stateupdaters.base.method_choice]
+INFO       No numerical integration method specified for group &#39;neurongroup_2&#39;, using method &#39;exact&#39; (took 0.03s). [brian2.stateupdaters.base.method_choice]
+INFO       No numerical integration method specified for group &#39;synapses_1&#39;, using method &#39;exact&#39; (took 0.02s). [brian2.stateupdaters.base.method_choice]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>elapsed 9.114917039871216
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pre_spikes</span> <span class="o">=</span> <span class="n">SpM_pre</span><span class="o">.</span><span class="n">spike_trains</span><span class="p">()</span>
+<span class="n">tot_pre_spikes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_pre</span><span class="p">)</span>
+<span class="n">fr_pre</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_pre</span><span class="p">)</span>
+
+<span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pre_spikes</span><span class="p">)):</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">pre_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">second</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pre_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">])),</span> <span class="s1">&#39;|k&#39;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pre_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="c1"># estimate based on total spikes during simulation</span>
+        <span class="n">tot_pre_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pre_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        
+
+        <span class="c1"># estimate based on time between spikes</span>
+        <span class="n">fr_pre</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">pre_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    
+<span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">N_pre</span><span class="o">-</span><span class="mf">0.5</span><span class="p">])</span>
+<span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">run_time</span><span class="o">/</span><span class="n">second</span><span class="p">])</span>
+<span class="n">yticks</span><span class="p">([])</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Neuron&#39;)
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_21_1.png" src="../_images/connecting_if_neurons_21_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">fr_pre</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">ifr</span><span class="p">(</span><span class="n">pre_vec</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    /opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:208: RuntimeWarning: invalid value encountered in log
+  return func(np.array(x, copy=False), *args, **kwds)
+ [py.warnings]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x12fbf7970&gt;]
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_22_2.png" src="../_images/connecting_if_neurons_22_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">post_spikes</span> <span class="o">=</span> <span class="n">SpM_post</span><span class="o">.</span><span class="n">spike_trains</span><span class="p">()</span>
+<span class="n">tot_spikes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_post</span><span class="p">)</span>
+<span class="n">fr_post</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_post</span><span class="p">)</span>
+<span class="n">fr_post_filt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_post</span><span class="p">)</span>
+
+<span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">post_spikes</span><span class="p">)):</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">post_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">second</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">post_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">])),</span> <span class="s1">&#39;|k&#39;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">post_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="c1"># estimate based on total spikes during simulation</span>
+        <span class="n">tot_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">post_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+        <span class="c1"># estimate based on time between spikes</span>
+        <span class="n">fr_post</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">post_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+        
+        <span class="c1"># same estimate, but ignore the beginning</span>
+        <span class="n">spikes_filt</span> <span class="o">=</span> <span class="n">post_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">post_spikes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">second</span><span class="p">]</span>
+        
+        <span class="n">fr_post_filt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">spikes_filt</span><span class="p">))</span>
+    
+<span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">N_post</span><span class="o">-</span><span class="mf">0.5</span><span class="p">])</span>
+<span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">run_time</span><span class="o">/</span><span class="n">second</span><span class="p">])</span>
+<span class="n">yticks</span><span class="p">([])</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Neuron&#39;)
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_23_1.png" src="../_images/connecting_if_neurons_23_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">fr_post</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">ifr</span><span class="p">(</span><span class="n">post_currents</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    /opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:208: RuntimeWarning: invalid value encountered in log
+  return func(np.array(x, copy=False), *args, **kwds)
+ [py.warnings]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x138f403a0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_24_2.png" src="../_images/connecting_if_neurons_24_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">fr_post</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">ifr</span><span class="p">(</span><span class="n">post_currents</span><span class="o">/</span><span class="p">(</span><span class="n">second</span><span class="o">/</span><span class="n">tau_s</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    /opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:208: RuntimeWarning: invalid value encountered in log
+  return func(np.array(x, copy=False), *args, **kwds)
+ [py.warnings]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13c1fc910&gt;]
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_25_2.png" src="../_images/connecting_if_neurons_25_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">fr_post_filt</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">ifr</span><span class="p">(</span><span class="n">post_currents</span><span class="o">/</span><span class="p">(</span><span class="n">second</span><span class="o">/</span><span class="n">tau_s</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    /opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/brian2/units/fundamentalunits.py:208: RuntimeWarning: invalid value encountered in log
+  return func(np.array(x, copy=False), *args, **kwds)
+ [py.warnings]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x138dd5e50&gt;]
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_26_2.png" src="../_images/connecting_if_neurons_26_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">StM_post</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">StM_post</span><span class="o">.</span><span class="n">V</span><span class="p">[</span><span class="mi">8</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13a3c1d00&gt;]
+</pre></div>
+</div>
+<img alt="../_images/connecting_if_neurons_27_1.png" src="../_images/connecting_if_neurons_27_1.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="spiking_basics_brian2.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Rate-coding with Integrate-and-Fire neurons</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="hodgkin_huxley_paradigm.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Hodgkin Huxley Paradigm</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Dr. E. Paxon Frady<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dualism &#8212; Neuromorphic Algorithms Research</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/neural_circuit.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Neuromorphic Algorithms Research</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Neuromorphic Algorithms Research
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  About me
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about_me.html">
+   E. Paxon Frady
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Research
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Research/spiking_networks.html">
+   Spiking Neural Networks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Research/tpam_demo.html">
+     Threshold Phasor Associative Memory
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Research/theoretical_neuroscience.html">
+   Theoretical Neuroscience
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Research/sparse_binding_demo.html">
+     Sparse binding demo – What’s the dollar of mexico?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Research/resonator_networks.html">
+   Resonator Networks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Research/resonator_template.html">
+     Factorization of shape, color and location
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Research/res_semi_primes-220216.html">
+     Factoring semi-primes with the resonator network
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Tutorials/computational_neuroscience.html">
+   Computational Neuroscience
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tutorials/spiking_basics_brian2.html">
+     Rate-coding with Integrate-and-Fire neurons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tutorials/connecting_if_neurons.html">
+     Connecting IFR theory to connectionism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tutorials/hodgkin_huxley_paradigm.html">
+     The Hodgkin Huxley Paradigm
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/blog/dualism-220301.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/blog/dualism-220301.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dualism-research">
+   Dualism Research
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mind-body-problem">
+     Mind-body problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#history">
+     History
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arguments-for-dualism">
+     Arguments for dualism
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Dualism</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dualism-research">
+   Dualism Research
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mind-body-problem">
+     Mind-body problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#history">
+     History
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arguments-for-dualism">
+     Arguments for dualism
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="dualism">
+<h1>Dualism<a class="headerlink" href="#dualism" title="Permalink to this headline">¶</a></h1>
+<p>I think I have convinced myself now that the dualist universe is real.</p>
+<p>Group theory, number of groups, mathematical forms and their intrinsic truth.</p>
+<p>Is this why the Universe exists?</p>
+<p>Dualist universe inside the universe (physical manifestation of the information processing mathematics);</p>
+<p>Or physical universe because of mathematical universe? existence is because of mathematical truths that are intrinsic and hence the dualist universe, except that the physical universe really is that universe too</p>
+<div class="section" id="dualism-research">
+<h2>Dualism Research<a class="headerlink" href="#dualism-research" title="Permalink to this headline">¶</a></h2>
+<p>Notes from:
+<a class="reference external" href="http://plato.stanford.edu">plato.stanford.edu</a></p>
+<div class="section" id="mind-body-problem">
+<h3>Mind-body problem<a class="headerlink" href="#mind-body-problem" title="Permalink to this headline">¶</a></h3>
+<p>The mind-body problem is the problem: what is the relationship between mind and body? Or alternatively: what is the relationship between mental properties and physical properties?</p>
+<p>Conscious mental events are private to the subject, who has a privileged access to them of a kind no-one has to the physical.</p>
+<p>The ontological question: what are mental states and what are physical states? Is one class a subclass of the other, so that all mental states are physical, or vice versa? Or are mental states and physical states entirely distinct?</p>
+<p>The causal question: do physical states influence mental states? Do mental states influence physical states? If so, how?</p>
+<p>Materialist views say that, despite appearances to the contrary, mental states are just physical states. Behaviourism, functionalism, mind-brain identity theory and the computational theory of mind are examples of how materialists attempt to explain how this can be so.</p>
+<p>Idealist views say that physical states are really mental. This is because the physical world is an empirical world and, as such, it is the intersubjective product of our collective experience.</p>
+<p>In sum, we can say that there is a mind-body problem because both consciousness and thought, broadly construed, seem very different from anything physical and there is no convincing consensus on how to build a satisfactorily unified picture of creatures possessed of both a mind and a body.</p>
+</div>
+<div class="section" id="history">
+<h3>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h3>
+<p>Plato believed that the true substances are not physical bodies, which are ephemeral, but the eternal Forms of which bodies are imperfect copies. These Forms not only make the world possible, they also make it intelligible, because they perform the role of universals, or what Frege called ‘concepts’.</p>
+<p>In Phaedo Plato
+Forms are immaterial and intellect must have an affinity with the Forms it apprehends (78b4–84b8)</p>
+<p>Descartes was a substance dualist. He believed that there were two kinds of substance: matter, of which the essential property is that it is spatially extended; and mind, of which the essential property is that it thinks.</p>
+<p>Descartes’ conception of the relation between mind and body was quite different from that held in the Aristotelian tradition. For Aristotle, there is no exact science of matter. How matter behaves is essentially affected by the form that is in it. You cannot combine just any matter with any form – you cannot make a knife out of butter, nor a human being out of paper – so the nature of the matter is a necessary condition for the nature of the substance. But the nature of the substance does not follow from the nature of its matter alone: there is no ‘bottom up’ account of substances. Matter is a determinable made determinate by form. This was how Aristotle thought that he was able to explain the connection of soul to body: a particular soul exists as the organizing principle in a particular parcel of matter.</p>
+<p>The main uncertainty that faced Descartes and his contemporaries, however, was not where interaction took place, but how two things so different as thought and extension could interact at all. This would be particularly mysterious if one had an impact view of causal interaction, as would anyone influenced by atomism, for whom the paradigm of causation is like two billiard balls cannoning off one another.</p>
+<p>Hume criticised the whole conception of substance for lacking in empirical content: when you search for the owner of the properties that make up a substance, you find nothing but further properties. Consequently, the mind is, he claimed, nothing but a ‘bundle’ or ‘heap’ of impressions and ideas – that is, of particular mental states or events, without an owner. This position has been labelled bundle dualism, and it is a special case of a general bundle theory of substance, according to which objects in general are just organised collections of properties. The problem for the Humean is to explain what binds the elements in the bundle together. This is an issue for any kind of substance, but for material bodies the solution seems fairly straightforward: the unity of a physical bundle is constituted by some form of causal interaction between the elements in the bundle. For the mind, mere causal connection is not enough; some further relation of co-consciousness is required.</p>
+<p>According to the mechanist, the world is, as it would now be expressed, ‘closed under physics’. This means that everything that happens follows from and is in accord with the laws of physics. There is, therefore, no scope for interference in the physical world by the mind in the way that interactionism seems to require. According to the mechanist, the conscious mind is an epiphenomenon</p>
+<p>Some distinguished neurologists, such as Sherrington (1940) and Eccles (Popper and Eccles 1977) have continued to defend dualism as the only theory that can preserve the data of consciousness. Amongst mainstream philosophers, discontent with physicalism led to a modest revival of property dualism in the last decade of the twentieth century. At least some of the reasons for this should become clear below.</p>
+</div>
+<div class="section" id="arguments-for-dualism">
+<h3>Arguments for dualism<a class="headerlink" href="#arguments-for-dualism" title="Permalink to this headline">¶</a></h3>
+<p>The knowledge argument asks us to imagine a future scientist who has lacked a certain sensory modality from birth, but who has acquired a perfect scientific understanding of how this modality operates in others. This scientist – call him Harpo – may have been born stone deaf, but become the world’s greatest expert on the machinery of hearing: he knows everything that there is to know within the range of the physical and behavioural sciences about hearing. Suppose that Harpo, thanks to developments in neurosurgery, has an operation which finally enables him to hear. It is suggested that he will then learn something he did not know before, which can be expressed as what it is like to hear, or the qualitative or phenomenal nature of sound. These qualitative features of experience are generally referred to as qualia. If Harpo learns something new, he did not know everything before. He knew all the physical facts before. So what he learns on coming to hear – the facts about the nature of experience or the nature of qualia – are non-physical.</p>
+<p>Hume is generally credited with devising what is known as the ‘bundle’ theory of the self (Treatise Book I, Part IV, section VI), according to which there are mental states, but no further subject or substance which possesses them. He famously expresses his theory as follows.</p>
+<p>…when I enter most intimately into what I call myself, I always stumble on some particular perception or other, of heat or cold, light or shade,love or hatred, pain or pleasure. I can never catch myself at any time without a perception, and can never observe any thing but the perception.
+Nevertheless, in the Appendix of the same work he expressed dissatisfaction with this account. Somewhat surprisingly, it is not very clear just what his worry was, but it is expressed as follows:</p>
+<p>In short there are two principles, which I cannot render consistent; nor is it in my power to renounce either of them, viz. that all our distinct perceptions are distinct existences, and that the mind never perceives any real connection between distinct existences.</p>
+<p>Aristotle’s worry was that a material organ could not have the range and flexibility that are required for human thought. His worries concerned the cramping effect that matter would have on the range of objects that intellect could accommodate. Parallel modern concerns centre on the restriction that matter would impose on the range of rational processes that we could exhibit. Some of these concerns are of a technical kind. Gödel, for example, believed that his famous theorem showed that there are demonstrably rational forms of mathematical thought of which humans are capable which could not be exhibited by a mechanical or formal system of a sort that a physical mind would have to be. Penrose (1990) has argued that Turing’s halting problem has similar consequences.But there are other less technical and easier to appreciate issues.</p>
+<p>Gödel, for example, believed that his famous theorem showed that there are demonstrably rational forms of mathematical thought of which humans are capable which could not be exhibited by a mechanical or formal system of a sort that a physical mind would have to be. Penrose (1990) has argued that Turing’s halting problem has similar consequences.</p>
+<p>Physicalist theories of thought almost all focus on the model of computing, and when it comes to making problem solving (as opposed to simply calculating) computers, computation comes across what is known as the Frame Problem. This is clearly expounded in Dennett (1984); see also the entry on the frame problem. The problem is that the ‘mechanical mind’ can only follow instructions, cannot see relevance that has not been strictly encoded.This is often expressed by saying it lacks ‘common sense’.</p>
+<p>Benacerraf’s Problem’ (See his 1983). Numbers, it would seem, are abstract objects, yet our intellects operate with them all the time. How does a physical brain interact with an abstract entity? A similar problem could be raised for concepts in general; they are abstract, general entities, not physical particulars, yet they are the meat and drink of thinking. For a dualist about intellect there does not appear to be the same problem. The immaterial intellect is precisely the sort of thing that can grasp abstract objects, such as numbers and universals – in the Aristotelian context, the immaterial intellect is the home of forms.</p>
+<p>John Searle’s famous ‘Chinese Room’ argument (Searle 1980; see also the entry on Chinese room argument) seems to support this conclusion, at least if the material system takes the form of a classical computer, manipulating symbols according to rules. Searle imagines himself in a room with a letter box through which strings of symbols are posted in, and, following a book of rules, he puts out symbols which the rules dictate, given the strings he is receiving. In fact, Searle says, he has been conducting a conversation in Chinese, because the symbols are Chinese script, and the rules those on which a Chinese computer might work, but he has not understood a word. Therefore neither does a computer understand, so we, understanding creatures, are not computers. If Searle is right, this is the end for the classical ‘syntactic engine’ as a model for thought.</p>
+<p>A blow was struck against the computational theory of thought when, in 2000, Fodor produced his The Mind Does Not Work That Way, in which he made clear his belief that the kind of computationalism that he had been describing and developing ever since the 1970s only fits sub-personal informational processing, not conscious, problem solving thought. I say that he ‘made this clear’, because he had always mentioned this reservation, but his claim that what he was describing was ‘the Language of Thought’ led his readers generally to take him to be proposing an account of what we normally consider to be thinking, which is not restricted (even if it includes at all) sub-personal processes. The modest view it is entirely in line with his close colleague Chomsky’s claim that his – Chomsky’s – linguistic theories cannot touch the ‘creative use of language’(See Baker, 2011).</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./blog"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="dualism">
+<h1>Dualism<a class="headerlink" href="#dualism" title="Permalink to this headline">¶</a></h1>
+<p>I think I have convinced myself now that the dualist universe is real.</p>
+<p>Group theory, number of groups, mathematical forms and their intrinsic truth.</p>
+<p>Is this why the Universe exists?</p>
+<p>Dualist universe inside the universe (physical manifestation of the information processing mathematics);</p>
+<p>Or physical universe because of mathematical universe? existence is because of mathematical truths that are intrinsic and hence the dualist universe, except that the physical universe really is that universe too</p>
+<div class="section" id="dualism-research">
+<h2>Dualism Research<a class="headerlink" href="#dualism-research" title="Permalink to this headline">¶</a></h2>
+<p>Notes from:
+<a class="reference external" href="http://plato.stanford.edu">plato.stanford.edu</a></p>
+<div class="section" id="mind-body-problem">
+<h3>Mind-body problem<a class="headerlink" href="#mind-body-problem" title="Permalink to this headline">¶</a></h3>
+<p>The mind-body problem is the problem: what is the relationship between mind and body? Or alternatively: what is the relationship between mental properties and physical properties?</p>
+<p>Conscious mental events are private to the subject, who has a privileged access to them of a kind no-one has to the physical.</p>
+<p>The ontological question: what are mental states and what are physical states? Is one class a subclass of the other, so that all mental states are physical, or vice versa? Or are mental states and physical states entirely distinct?</p>
+<p>The causal question: do physical states influence mental states? Do mental states influence physical states? If so, how?</p>
+<p>Materialist views say that, despite appearances to the contrary, mental states are just physical states. Behaviourism, functionalism, mind-brain identity theory and the computational theory of mind are examples of how materialists attempt to explain how this can be so.</p>
+<p>Idealist views say that physical states are really mental. This is because the physical world is an empirical world and, as such, it is the intersubjective product of our collective experience.</p>
+<p>In sum, we can say that there is a mind-body problem because both consciousness and thought, broadly construed, seem very different from anything physical and there is no convincing consensus on how to build a satisfactorily unified picture of creatures possessed of both a mind and a body.</p>
+</div>
+<div class="section" id="history">
+<h3>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h3>
+<p>Plato believed that the true substances are not physical bodies, which are ephemeral, but the eternal Forms of which bodies are imperfect copies. These Forms not only make the world possible, they also make it intelligible, because they perform the role of universals, or what Frege called ‘concepts’.</p>
+<p>In Phaedo Plato
+Forms are immaterial and intellect must have an affinity with the Forms it apprehends (78b4–84b8)</p>
+<p>Descartes was a substance dualist. He believed that there were two kinds of substance: matter, of which the essential property is that it is spatially extended; and mind, of which the essential property is that it thinks.</p>
+<p>Descartes’ conception of the relation between mind and body was quite different from that held in the Aristotelian tradition. For Aristotle, there is no exact science of matter. How matter behaves is essentially affected by the form that is in it. You cannot combine just any matter with any form – you cannot make a knife out of butter, nor a human being out of paper – so the nature of the matter is a necessary condition for the nature of the substance. But the nature of the substance does not follow from the nature of its matter alone: there is no ‘bottom up’ account of substances. Matter is a determinable made determinate by form. This was how Aristotle thought that he was able to explain the connection of soul to body: a particular soul exists as the organizing principle in a particular parcel of matter.</p>
+<p>The main uncertainty that faced Descartes and his contemporaries, however, was not where interaction took place, but how two things so different as thought and extension could interact at all. This would be particularly mysterious if one had an impact view of causal interaction, as would anyone influenced by atomism, for whom the paradigm of causation is like two billiard balls cannoning off one another.</p>
+<p>Hume criticised the whole conception of substance for lacking in empirical content: when you search for the owner of the properties that make up a substance, you find nothing but further properties. Consequently, the mind is, he claimed, nothing but a ‘bundle’ or ‘heap’ of impressions and ideas – that is, of particular mental states or events, without an owner. This position has been labelled bundle dualism, and it is a special case of a general bundle theory of substance, according to which objects in general are just organised collections of properties. The problem for the Humean is to explain what binds the elements in the bundle together. This is an issue for any kind of substance, but for material bodies the solution seems fairly straightforward: the unity of a physical bundle is constituted by some form of causal interaction between the elements in the bundle. For the mind, mere causal connection is not enough; some further relation of co-consciousness is required.</p>
+<p>According to the mechanist, the world is, as it would now be expressed, ‘closed under physics’. This means that everything that happens follows from and is in accord with the laws of physics. There is, therefore, no scope for interference in the physical world by the mind in the way that interactionism seems to require. According to the mechanist, the conscious mind is an epiphenomenon</p>
+<p>Some distinguished neurologists, such as Sherrington (1940) and Eccles (Popper and Eccles 1977) have continued to defend dualism as the only theory that can preserve the data of consciousness. Amongst mainstream philosophers, discontent with physicalism led to a modest revival of property dualism in the last decade of the twentieth century. At least some of the reasons for this should become clear below.</p>
+</div>
+<div class="section" id="arguments-for-dualism">
+<h3>Arguments for dualism<a class="headerlink" href="#arguments-for-dualism" title="Permalink to this headline">¶</a></h3>
+<p>The knowledge argument asks us to imagine a future scientist who has lacked a certain sensory modality from birth, but who has acquired a perfect scientific understanding of how this modality operates in others. This scientist – call him Harpo – may have been born stone deaf, but become the world’s greatest expert on the machinery of hearing: he knows everything that there is to know within the range of the physical and behavioural sciences about hearing. Suppose that Harpo, thanks to developments in neurosurgery, has an operation which finally enables him to hear. It is suggested that he will then learn something he did not know before, which can be expressed as what it is like to hear, or the qualitative or phenomenal nature of sound. These qualitative features of experience are generally referred to as qualia. If Harpo learns something new, he did not know everything before. He knew all the physical facts before. So what he learns on coming to hear – the facts about the nature of experience or the nature of qualia – are non-physical.</p>
+<p>Hume is generally credited with devising what is known as the ‘bundle’ theory of the self (Treatise Book I, Part IV, section VI), according to which there are mental states, but no further subject or substance which possesses them. He famously expresses his theory as follows.</p>
+<p>…when I enter most intimately into what I call myself, I always stumble on some particular perception or other, of heat or cold, light or shade,love or hatred, pain or pleasure. I can never catch myself at any time without a perception, and can never observe any thing but the perception.
+Nevertheless, in the Appendix of the same work he expressed dissatisfaction with this account. Somewhat surprisingly, it is not very clear just what his worry was, but it is expressed as follows:</p>
+<p>In short there are two principles, which I cannot render consistent; nor is it in my power to renounce either of them, viz. that all our distinct perceptions are distinct existences, and that the mind never perceives any real connection between distinct existences.</p>
+<p>Aristotle’s worry was that a material organ could not have the range and flexibility that are required for human thought. His worries concerned the cramping effect that matter would have on the range of objects that intellect could accommodate. Parallel modern concerns centre on the restriction that matter would impose on the range of rational processes that we could exhibit. Some of these concerns are of a technical kind. Gödel, for example, believed that his famous theorem showed that there are demonstrably rational forms of mathematical thought of which humans are capable which could not be exhibited by a mechanical or formal system of a sort that a physical mind would have to be. Penrose (1990) has argued that Turing’s halting problem has similar consequences.But there are other less technical and easier to appreciate issues.</p>
+<p>Gödel, for example, believed that his famous theorem showed that there are demonstrably rational forms of mathematical thought of which humans are capable which could not be exhibited by a mechanical or formal system of a sort that a physical mind would have to be. Penrose (1990) has argued that Turing’s halting problem has similar consequences.</p>
+<p>Physicalist theories of thought almost all focus on the model of computing, and when it comes to making problem solving (as opposed to simply calculating) computers, computation comes across what is known as the Frame Problem. This is clearly expounded in Dennett (1984); see also the entry on the frame problem. The problem is that the ‘mechanical mind’ can only follow instructions, cannot see relevance that has not been strictly encoded.This is often expressed by saying it lacks ‘common sense’.</p>
+<p>Benacerraf’s Problem’ (See his 1983). Numbers, it would seem, are abstract objects, yet our intellects operate with them all the time. How does a physical brain interact with an abstract entity? A similar problem could be raised for concepts in general; they are abstract, general entities, not physical particulars, yet they are the meat and drink of thinking. For a dualist about intellect there does not appear to be the same problem. The immaterial intellect is precisely the sort of thing that can grasp abstract objects, such as numbers and universals – in the Aristotelian context, the immaterial intellect is the home of forms.</p>
+<p>John Searle’s famous ‘Chinese Room’ argument (Searle 1980; see also the entry on Chinese room argument) seems to support this conclusion, at least if the material system takes the form of a classical computer, manipulating symbols according to rules. Searle imagines himself in a room with a letter box through which strings of symbols are posted in, and, following a book of rules, he puts out symbols which the rules dictate, given the strings he is receiving. In fact, Searle says, he has been conducting a conversation in Chinese, because the symbols are Chinese script, and the rules those on which a Chinese computer might work, but he has not understood a word. Therefore neither does a computer understand, so we, understanding creatures, are not computers. If Searle is right, this is the end for the classical ‘syntactic engine’ as a model for thought.</p>
+<p>A blow was struck against the computational theory of thought when, in 2000, Fodor produced his The Mind Does Not Work That Way, in which he made clear his belief that the kind of computationalism that he had been describing and developing ever since the 1970s only fits sub-personal informational processing, not conscious, problem solving thought. I say that he ‘made this clear’, because he had always mentioned this reservation, but his claim that what he was describing was ‘the Language of Thought’ led his readers generally to take him to be proposing an account of what we normally consider to be thinking, which is not restricted (even if it includes at all) sub-personal processes. The modest view it is entirely in line with his close colleague Chomsky’s claim that his – Chomsky’s – linguistic theories cannot touch the ‘creative use of language’(See Baker, 2011).</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./blog"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Dr. E. Paxon Frady<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

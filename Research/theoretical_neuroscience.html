@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -163,6 +165,45 @@
      Factorization of shape, color and location
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="res_semi_primes-220216.html">
+     Factoring semi-primes with the resonator network
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Tutorials/computational_neuroscience.html">
+   Computational Neuroscience
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tutorials/spiking_basics_brian2.html">
+     Rate-coding with Integrate-and-Fire neurons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tutorials/connecting_if_neurons.html">
+     Connecting IFR theory to connectionism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tutorials/hodgkin_huxley_paradigm.html">
+     The Hodgkin Huxley Paradigm
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -254,8 +295,8 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variable-binding-with-sparse-distributed-representations">
-   Variable binding with sparse distributed representations
+  <a class="reference internal nav-link" href="#a-theory-of-sequence-indexing-and-working-memory-in-recurrent-neural-networks">
+   A theory of sequence indexing and working memory in recurrent neural networks
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -271,8 +312,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-theory-of-sequence-indexing-and-working-memory-in-recurrent-neural-networks">
-   A theory of sequence indexing and working memory in recurrent neural networks
+  <a class="reference internal nav-link" href="#variable-binding-with-sparse-distributed-representations">
+   Variable binding with sparse distributed representations
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -282,6 +323,23 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
+     Links
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computing-on-functions-using-randomized-vector-representations">
+   Computing on Functions Using Randomized Vector Representations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Summary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
      Links
     </a>
    </li>
@@ -307,8 +365,8 @@
                 <nav aria-label="Page">
                     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variable-binding-with-sparse-distributed-representations">
-   Variable binding with sparse distributed representations
+  <a class="reference internal nav-link" href="#a-theory-of-sequence-indexing-and-working-memory-in-recurrent-neural-networks">
+   A theory of sequence indexing and working memory in recurrent neural networks
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -324,8 +382,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-theory-of-sequence-indexing-and-working-memory-in-recurrent-neural-networks">
-   A theory of sequence indexing and working memory in recurrent neural networks
+  <a class="reference internal nav-link" href="#variable-binding-with-sparse-distributed-representations">
+   Variable binding with sparse distributed representations
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -340,6 +398,23 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computing-on-functions-using-randomized-vector-representations">
+   Computing on Functions Using Randomized Vector Representations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Summary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Links
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                 </nav>
@@ -349,6 +424,24 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="theoretical-neuroscience">
 <h1>Theoretical Neuroscience<a class="headerlink" href="#theoretical-neuroscience" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-theory-of-sequence-indexing-and-working-memory-in-recurrent-neural-networks">
+<h2>A theory of sequence indexing and working memory in recurrent neural networks<a class="headerlink" href="#a-theory-of-sequence-indexing-and-working-memory-in-recurrent-neural-networks" title="Permalink to this headline">¶</a></h2>
+<!--
+<img src="image_memory_buffer.png" alt="Memory buffer"
+	width="60%"/>
+-->
+<p><img alt="Image memory buffer" src="../_images/image_memory_buffer.png" /></p>
+<div class="section" id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<p>Randomized recurrent neural networks, denoted liquid state machines or echo-state networks, were popularized based on their abilities to perform useful computations without the constraint of needing stable states. This inpsired many to think of new ways in which neural networks could be used for computation. However, many treated these networks as a black box, and little was understood as to how they performed their computations.</p>
+<p>We identified how such randomized networks could be described based on the principles of Vector Symbolic Architectures. We realized that you could describe the operations of an echo-state network as forming a time-tag, attaching the input to the time-tag, and holding the input history in working memory. This allowed us to derive a precise theory of memory performance and scaling, as well as methods to optimize performance and memory of such netowrks.</p>
+</div>
+<div class="section" id="links">
+<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://direct.mit.edu/neco/article-abstract/30/6/1449/8400/A-Theory-of-Sequence-Indexing-and-Working-Memory">NeCo</a></p>
+<p><a class="reference external" href="https://redwood.berkeley.edu/wp-content/uploads/2020/08/frady-sequence-memory.pdf">PDF</a></p>
+</div>
+</div>
 <div class="section" id="variable-binding-with-sparse-distributed-representations">
 <h2>Variable binding with sparse distributed representations<a class="headerlink" href="#variable-binding-with-sparse-distributed-representations" title="Permalink to this headline">¶</a></h2>
 <!--
@@ -356,8 +449,8 @@
 	width="75%"/>
 -->
 <p><img alt="Sparse binding" src="../_images/sparse_binding.png" /></p>
-<div class="section" id="summary">
-<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>The idea of binding has been part of the connectionist literature for quite some time. The concept of binding is not addressed in modern deep learning much at all, but often studies attempt to perform binding in unnatural ways.</p>
 <p>Connectionists in the early 90s realized that there was a need for a way to bind information together in neural representations, and the “superposition catastrophe” was an often cited problem. Early proposals solved this problem by adding the tensor-product operation to connectionism, and Smolensky developed his theory of tensor-product representations.</p>
 <p>The tensor product was key to solving the superposition catastrophe because it was a combinatoric operation, and fundamentally this is the issue. Connectionism needed a way to represent “blue triangle” and “red square” in ways that were unique and non-interfering. This fundamentally leads to needing an operation that has a unique result for every combination of shapes and colors.</p>
@@ -366,28 +459,25 @@
 <p>One of the biggest issues with linking VSA representations to neuroscience is that VSA models are typically dense representation where every vector element would correspond to neural activation. But representations in the brain are highly sparse. This lead us to explore potential new avenues for binding operations, where we desired a binding operation that maintains sparsity.</p>
 <p>Based on the link between binding and tensor-product reductions, we explored several methods that could result in a sparsity- and dimensionality-preserving binding operation. We identified a previous proposal based on sparse block-codes that achieved all the desirable features of a sparse VSA, and illustrate how to perform computations with the VSA.</p>
 </div>
-<div class="section" id="links">
-<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Links<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://arxiv.org/abs/2009.06734">arXiv</a></p>
 <p><a class="reference internal" href="sparse_binding_demo.html"><span class="doc std std-doc">Demo</span></a> of sparse binding based on Kanerva’s example <a class="reference external" href="https://redwood.berkeley.edu/wp-content/uploads/2020/05/kanerva2010what.pdf">What’s the dollar of Mexico?</a></p>
 </div>
 </div>
-<div class="section" id="a-theory-of-sequence-indexing-and-working-memory-in-recurrent-neural-networks">
-<h2>A theory of sequence indexing and working memory in recurrent neural networks<a class="headerlink" href="#a-theory-of-sequence-indexing-and-working-memory-in-recurrent-neural-networks" title="Permalink to this headline">¶</a></h2>
-<!--
-<img src="image_memory_buffer.png" alt="Memory buffer"
-	width="60%"/>
--->
-<p><img alt="Image memory buffer" src="../_images/image_memory_buffer.png" /></p>
-<div class="section" id="id1">
-<h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>Randomized recurrent neural networks, denoted liquid state machines or echo-state networks, were popularized based on their abilities to perform useful computations without the constraint of needing stable states. This inpsired many to think of new ways in which neural networks could be used for computation. However, many treated these networks as a black box, and little was understood as to how they performed their computations.</p>
-<p>We identified how such randomized networks could be described based on the principles of Vector Symbolic Architectures. We realized that you could describe the operations of an echo-state network as forming a time-tag, attaching the input to the time-tag, and holding the input history in working memory. This allowed us to derive a precise theory of memory performance and scaling, as well as methods to optimize performance and memory of such netowrks.</p>
+<div class="section" id="computing-on-functions-using-randomized-vector-representations">
+<h2>Computing on Functions Using Randomized Vector Representations<a class="headerlink" href="#computing-on-functions-using-randomized-vector-representations" title="Permalink to this headline">¶</a></h2>
+<p><img alt="vfa_kernels" src="../_images/kernels-210322.png" /></p>
+<div class="section" id="id3">
+<h3>Summary<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Vector symbolic architectures (VSA) are frameworks for computing with distributed representations like neural networks. There are multiple flavors of the framework, but each is designed to form and manipulate symbols in high-dimensional vector spaces. This is possible, and goes beyond standard artificial neural networks, because of the binding operation in VSA.</p>
+<p>In this paper, we extend VSA ideas to vector function architectures (VFA), which can encode and manipulate data on smooth manifolds. This is possible by a fromulation for vector representations of continuous values with fractional power encoding. The idea starts with self-binding of a base vector to create a representation of integers: <span class="math notranslate nohighlight">\(\mathbf{z}^i\)</span> is the vector for representing integer <span class="math notranslate nohighlight">\(i\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{z} \in \mathbb{C}^N\)</span> is a random vector. This self-binding process can be extended to continuous values <span class="math notranslate nohighlight">\(x\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{z}^{\beta x}\)</span> represents a continuous number. Such a procedure is a locality-perserving encoding and produces a similarity kernel, where representations of values near <span class="math notranslate nohighlight">\(x\)</span> are similar to the representation for <span class="math notranslate nohighlight">\(x\)</span>, but representations far away are different. The parameter <span class="math notranslate nohighlight">\(\beta\)</span> regulates the width of the similarity kernel.</p>
+<p>In the paper, we explain how the VFA can be generalized to other flavors of VSA, such as sparse block-codes. Further, we explain how to create different types of similarity kernels based on the Bochner theorem. Further, we show how multi-dimensional kernels can be formed using the binding operation of 1-D kernels or using jointly sampled base vectors.</p>
+<p>Finally, we show a few simple applications that links VFA to other methods in machine-learning, such as kernel methods. The VFA archite</p>
 </div>
-<div class="section" id="id2">
-<h3>Links<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://direct.mit.edu/neco/article-abstract/30/6/1449/8400/A-Theory-of-Sequence-Indexing-and-Working-Memory">NeCo</a></p>
-<p><a class="reference external" href="https://redwood.berkeley.edu/wp-content/uploads/2020/08/frady-sequence-memory.pdf">PDF</a></p>
+<div class="section" id="id4">
+<h3>Links<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://arxiv.org/abs/2109.03429">arXiv</a></p>
 </div>
 </div>
 <div class="toctree-wrapper compound">
@@ -426,6 +516,24 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="theoretical-neuroscience">
 <h1>Theoretical Neuroscience<a class="headerlink" href="#theoretical-neuroscience" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-theory-of-sequence-indexing-and-working-memory-in-recurrent-neural-networks">
+<h2>A theory of sequence indexing and working memory in recurrent neural networks<a class="headerlink" href="#a-theory-of-sequence-indexing-and-working-memory-in-recurrent-neural-networks" title="Permalink to this headline">¶</a></h2>
+<!--
+<img src="image_memory_buffer.png" alt="Memory buffer"
+	width="60%"/>
+-->
+<p><img alt="Image memory buffer" src="../_images/image_memory_buffer.png" /></p>
+<div class="section" id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<p>Randomized recurrent neural networks, denoted liquid state machines or echo-state networks, were popularized based on their abilities to perform useful computations without the constraint of needing stable states. This inpsired many to think of new ways in which neural networks could be used for computation. However, many treated these networks as a black box, and little was understood as to how they performed their computations.</p>
+<p>We identified how such randomized networks could be described based on the principles of Vector Symbolic Architectures. We realized that you could describe the operations of an echo-state network as forming a time-tag, attaching the input to the time-tag, and holding the input history in working memory. This allowed us to derive a precise theory of memory performance and scaling, as well as methods to optimize performance and memory of such netowrks.</p>
+</div>
+<div class="section" id="links">
+<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://direct.mit.edu/neco/article-abstract/30/6/1449/8400/A-Theory-of-Sequence-Indexing-and-Working-Memory">NeCo</a></p>
+<p><a class="reference external" href="https://redwood.berkeley.edu/wp-content/uploads/2020/08/frady-sequence-memory.pdf">PDF</a></p>
+</div>
+</div>
 <div class="section" id="variable-binding-with-sparse-distributed-representations">
 <h2>Variable binding with sparse distributed representations<a class="headerlink" href="#variable-binding-with-sparse-distributed-representations" title="Permalink to this headline">¶</a></h2>
 <!--
@@ -433,8 +541,8 @@
 	width="75%"/>
 -->
 <p><img alt="Sparse binding" src="../_images/sparse_binding.png" /></p>
-<div class="section" id="summary">
-<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>The idea of binding has been part of the connectionist literature for quite some time. The concept of binding is not addressed in modern deep learning much at all, but often studies attempt to perform binding in unnatural ways.</p>
 <p>Connectionists in the early 90s realized that there was a need for a way to bind information together in neural representations, and the “superposition catastrophe” was an often cited problem. Early proposals solved this problem by adding the tensor-product operation to connectionism, and Smolensky developed his theory of tensor-product representations.</p>
 <p>The tensor product was key to solving the superposition catastrophe because it was a combinatoric operation, and fundamentally this is the issue. Connectionism needed a way to represent “blue triangle” and “red square” in ways that were unique and non-interfering. This fundamentally leads to needing an operation that has a unique result for every combination of shapes and colors.</p>
@@ -443,28 +551,25 @@
 <p>One of the biggest issues with linking VSA representations to neuroscience is that VSA models are typically dense representation where every vector element would correspond to neural activation. But representations in the brain are highly sparse. This lead us to explore potential new avenues for binding operations, where we desired a binding operation that maintains sparsity.</p>
 <p>Based on the link between binding and tensor-product reductions, we explored several methods that could result in a sparsity- and dimensionality-preserving binding operation. We identified a previous proposal based on sparse block-codes that achieved all the desirable features of a sparse VSA, and illustrate how to perform computations with the VSA.</p>
 </div>
-<div class="section" id="links">
-<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Links<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://arxiv.org/abs/2009.06734">arXiv</a></p>
 <p><a class="reference internal" href="sparse_binding_demo.html"><span class="doc std std-doc">Demo</span></a> of sparse binding based on Kanerva’s example <a class="reference external" href="https://redwood.berkeley.edu/wp-content/uploads/2020/05/kanerva2010what.pdf">What’s the dollar of Mexico?</a></p>
 </div>
 </div>
-<div class="section" id="a-theory-of-sequence-indexing-and-working-memory-in-recurrent-neural-networks">
-<h2>A theory of sequence indexing and working memory in recurrent neural networks<a class="headerlink" href="#a-theory-of-sequence-indexing-and-working-memory-in-recurrent-neural-networks" title="Permalink to this headline">¶</a></h2>
-<!--
-<img src="image_memory_buffer.png" alt="Memory buffer"
-	width="60%"/>
--->
-<p><img alt="Image memory buffer" src="../_images/image_memory_buffer.png" /></p>
-<div class="section" id="id1">
-<h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>Randomized recurrent neural networks, denoted liquid state machines or echo-state networks, were popularized based on their abilities to perform useful computations without the constraint of needing stable states. This inpsired many to think of new ways in which neural networks could be used for computation. However, many treated these networks as a black box, and little was understood as to how they performed their computations.</p>
-<p>We identified how such randomized networks could be described based on the principles of Vector Symbolic Architectures. We realized that you could describe the operations of an echo-state network as forming a time-tag, attaching the input to the time-tag, and holding the input history in working memory. This allowed us to derive a precise theory of memory performance and scaling, as well as methods to optimize performance and memory of such netowrks.</p>
+<div class="section" id="computing-on-functions-using-randomized-vector-representations">
+<h2>Computing on Functions Using Randomized Vector Representations<a class="headerlink" href="#computing-on-functions-using-randomized-vector-representations" title="Permalink to this headline">¶</a></h2>
+<p><img alt="vfa_kernels" src="../_images/kernels-210322.png" /></p>
+<div class="section" id="id3">
+<h3>Summary<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Vector symbolic architectures (VSA) are frameworks for computing with distributed representations like neural networks. There are multiple flavors of the framework, but each is designed to form and manipulate symbols in high-dimensional vector spaces. This is possible, and goes beyond standard artificial neural networks, because of the binding operation in VSA.</p>
+<p>In this paper, we extend VSA ideas to vector function architectures (VFA), which can encode and manipulate data on smooth manifolds. This is possible by a fromulation for vector representations of continuous values with fractional power encoding. The idea starts with self-binding of a base vector to create a representation of integers: <span class="math notranslate nohighlight">\(\mathbf{z}^i\)</span> is the vector for representing integer <span class="math notranslate nohighlight">\(i\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{z} \in \mathbb{C}^N\)</span> is a random vector. This self-binding process can be extended to continuous values <span class="math notranslate nohighlight">\(x\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{z}^{\beta x}\)</span> represents a continuous number. Such a procedure is a locality-perserving encoding and produces a similarity kernel, where representations of values near <span class="math notranslate nohighlight">\(x\)</span> are similar to the representation for <span class="math notranslate nohighlight">\(x\)</span>, but representations far away are different. The parameter <span class="math notranslate nohighlight">\(\beta\)</span> regulates the width of the similarity kernel.</p>
+<p>In the paper, we explain how the VFA can be generalized to other flavors of VSA, such as sparse block-codes. Further, we explain how to create different types of similarity kernels based on the Bochner theorem. Further, we show how multi-dimensional kernels can be formed using the binding operation of 1-D kernels or using jointly sampled base vectors.</p>
+<p>Finally, we show a few simple applications that links VFA to other methods in machine-learning, such as kernel methods. The VFA archite</p>
 </div>
-<div class="section" id="id2">
-<h3>Links<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://direct.mit.edu/neco/article-abstract/30/6/1449/8400/A-Theory-of-Sequence-Indexing-and-Working-Memory">NeCo</a></p>
-<p><a class="reference external" href="https://redwood.berkeley.edu/wp-content/uploads/2020/08/frady-sequence-memory.pdf">PDF</a></p>
+<div class="section" id="id4">
+<h3>Links<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://arxiv.org/abs/2109.03429">arXiv</a></p>
 </div>
 </div>
 <div class="toctree-wrapper compound">
