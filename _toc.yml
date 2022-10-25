@@ -10,6 +10,7 @@ parts:
   - file: Research/spiking_networks.ipynb
     sections: 
     - file: Research/tpam_demo.ipynb
+  - file: Research/neuroscience_data.ipynb
   - file: Research/theoretical_neuroscience.ipynb
     sections:
     - file: Research/sparse_binding_demo.ipynb

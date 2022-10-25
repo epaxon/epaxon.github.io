@@ -1,7 +1,7 @@
 <!-- #region -->
 # E. Paxon Frady
 
-Hi! I am a neuromorphic algorithms researcher at Intel.
+Hi! I am lead neuromorphic algorithms and theory researcher at Intel.
 
 ![picture of me](profile_pic.png)
 
