@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Threshold Phasor Associative Memory" href="tpam_demo.html" />
-    <link rel="prev" title="E. Paxon Frady" href="../about_me.html" />
+    <link rel="prev" title="Sparse binding demo – What’s the dollar of mexico?" href="sparse_binding_demo.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -114,29 +114,17 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
-   Spiking Neural Networks
+ <li class="toctree-l1">
+  <a class="reference internal" href="neuroscience_data.html">
+   Experimental Neuroscience
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="tpam_demo.html">
-     Threshold Phasor Associative Memory
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="theoretical_neuroscience.html">
-   Theoretical Neuroscience
+   Neural Computation
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -144,6 +132,23 @@
    <li class="toctree-l2">
     <a class="reference internal" href="sparse_binding_demo.html">
      Sparse binding demo – What’s the dollar of mexico?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   Spiking Neural Networks
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tpam_demo.html">
+     Threshold Phasor Associative Memory
     </a>
    </li>
   </ul>
@@ -322,8 +327,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#efficient-neuromorphic-signal-processing-with-loihi-2">
-   Efficient Neuromorphic Signal Processing with Loihi 2
+  <a class="reference internal nav-link" href="#efficient-neuromorphic-signal-processing-with-resonator-neurons">
+   Efficient Neuromorphic Signal Processing with Resonator Neurons
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -333,6 +338,23 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
+     Links
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deep-learning-in-spiking-phasor-networks">
+   Deep learning in spiking phasor networks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Summary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
      Links
     </a>
    </li>
@@ -392,8 +414,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#efficient-neuromorphic-signal-processing-with-loihi-2">
-   Efficient Neuromorphic Signal Processing with Loihi 2
+  <a class="reference internal nav-link" href="#efficient-neuromorphic-signal-processing-with-resonator-neurons">
+   Efficient Neuromorphic Signal Processing with Resonator Neurons
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -408,6 +430,23 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deep-learning-in-spiking-phasor-networks">
+   Deep learning in spiking phasor networks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Summary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Links
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                 </nav>
@@ -417,8 +456,10 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="spiking-neural-networks">
 <h1>Spiking Neural Networks<a class="headerlink" href="#spiking-neural-networks" title="Permalink to this headline">¶</a></h1>
+<p>Our work in spiking neural networks links the mathematical connectionists theories used for designing algorithms with ideas for how biological networks use spikes to represent and process information. Traditional theories of spiking in the brain simply relate the spiking rate to the mathematical theories in connectionism. Much of this work focuses on alternative representations for how spikes convey information, where utilizing the precise spike-timing of neurons can be used to more efficiently process information than the rate-coding paradigm.</p>
 <div class="section" id="robust-computation-with-rhythmic-spike-patterns">
 <h2>Robust Computation with Rhythmic Spike Patterns<a class="headerlink" href="#robust-computation-with-rhythmic-spike-patterns" title="Permalink to this headline">¶</a></h2>
+<p>E. Paxon Frady and Friedrich T. Sommer, (2019). PNAS.</p>
 <!--
 <img src="phasors2spikes-transfer-190612.png" alt="Phasors to spikes"
 	width="60%"/>
@@ -442,6 +483,7 @@
 </div>
 <div class="section" id="neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs">
 <h2>Neuromorphic nearest neighbor search on Intel’s Pohoiki Springs<a class="headerlink" href="#neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs" title="Permalink to this headline">¶</a></h2>
+<p>E. Paxon Frady, Garrick Orchard, David Florey, Nabil Imam, Ruoken Liu, Joyesh Mishra, Jonathan Tse, Andreas Wild, Friedrich T. Sommer, and Mike Davies, (2020). NICE</p>
 <!--
 <img src="latency_code_knn.png" alt="Latency code"
 	width="60%"/>
@@ -461,8 +503,9 @@ But, the algorithm for nearest neighbor search must be matched to the hardware t
 Neuromorphic KNN NICE 2020
 </a></div>
 </div>
-<div class="section" id="efficient-neuromorphic-signal-processing-with-loihi-2">
-<h2>Efficient Neuromorphic Signal Processing with Loihi 2<a class="headerlink" href="#efficient-neuromorphic-signal-processing-with-loihi-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="efficient-neuromorphic-signal-processing-with-resonator-neurons">
+<h2>Efficient Neuromorphic Signal Processing with Resonator Neurons<a class="headerlink" href="#efficient-neuromorphic-signal-processing-with-resonator-neurons" title="Permalink to this headline">¶</a></h2>
+<p>E. Paxon Frady, Sophia Sanborn, Sumit Bam Srestha, Daniel Ben-Dayan Rubin, Garrick Orchard, Friedrich T. Sommer, Mike Davies, (2022). JSPS.</p>
 <!--
 <img src="rf_stft.png" alt="STFT with resonate-and-fire neurons"
 	width="60%"/>
@@ -481,6 +524,19 @@ In this model, saptio-temporal gabor filters are computed through the integratio
 <div class="section" id="id4">
 <h3>Links<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://arxiv.org/abs/2111.03746">arXiv</a></p>
+</div>
+</div>
+<div class="section" id="deep-learning-in-spiking-phasor-networks">
+<h2>Deep learning in spiking phasor networks<a class="headerlink" href="#deep-learning-in-spiking-phasor-networks" title="Permalink to this headline">¶</a></h2>
+<p>Connor Bybee, E. Paxon Frady, Friedrich T. Sommer. (2022). arXiv.</p>
+<p><img alt="spike_dl" src="../_images/spike_dl.png" /></p>
+<div class="section" id="id5">
+<h3>Summary<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Our theory of how spike-timing codes can be used to perform complex-valued matrix computations immediately suggests a way to formulate feed-forward deep learning in spiking neural networks. In this paradigm, the neural state space is complex-valued as well as are the synaptic connections. Back-propagation can be used to train these weights like in traditional deep learning, but then the system can be implemented efficiently with spiking neurons. This could lead to more efficient deep networks being executed on neuromorphic spiking hardware.</p>
+</div>
+<div class="section" id="id6">
+<h3>Links<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://arxiv.org/abs/2204.00507">arXiv</a></p>
 </div>
 </div>
 <div class="toctree-wrapper compound">
@@ -519,8 +575,10 @@ In this model, saptio-temporal gabor filters are computed through the integratio
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="spiking-neural-networks">
 <h1>Spiking Neural Networks<a class="headerlink" href="#spiking-neural-networks" title="Permalink to this headline">¶</a></h1>
+<p>Our work in spiking neural networks links the mathematical connectionists theories used for designing algorithms with ideas for how biological networks use spikes to represent and process information. Traditional theories of spiking in the brain simply relate the spiking rate to the mathematical theories in connectionism. Much of this work focuses on alternative representations for how spikes convey information, where utilizing the precise spike-timing of neurons can be used to more efficiently process information than the rate-coding paradigm.</p>
 <div class="section" id="robust-computation-with-rhythmic-spike-patterns">
 <h2>Robust Computation with Rhythmic Spike Patterns<a class="headerlink" href="#robust-computation-with-rhythmic-spike-patterns" title="Permalink to this headline">¶</a></h2>
+<p>E. Paxon Frady and Friedrich T. Sommer, (2019). PNAS.</p>
 <!--
 <img src="phasors2spikes-transfer-190612.png" alt="Phasors to spikes"
 	width="60%"/>
@@ -544,6 +602,7 @@ In this model, saptio-temporal gabor filters are computed through the integratio
 </div>
 <div class="section" id="neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs">
 <h2>Neuromorphic nearest neighbor search on Intel’s Pohoiki Springs<a class="headerlink" href="#neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs" title="Permalink to this headline">¶</a></h2>
+<p>E. Paxon Frady, Garrick Orchard, David Florey, Nabil Imam, Ruoken Liu, Joyesh Mishra, Jonathan Tse, Andreas Wild, Friedrich T. Sommer, and Mike Davies, (2020). NICE</p>
 <!--
 <img src="latency_code_knn.png" alt="Latency code"
 	width="60%"/>
@@ -563,8 +622,9 @@ But, the algorithm for nearest neighbor search must be matched to the hardware t
 Neuromorphic KNN NICE 2020
 </a></div>
 </div>
-<div class="section" id="efficient-neuromorphic-signal-processing-with-loihi-2">
-<h2>Efficient Neuromorphic Signal Processing with Loihi 2<a class="headerlink" href="#efficient-neuromorphic-signal-processing-with-loihi-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="efficient-neuromorphic-signal-processing-with-resonator-neurons">
+<h2>Efficient Neuromorphic Signal Processing with Resonator Neurons<a class="headerlink" href="#efficient-neuromorphic-signal-processing-with-resonator-neurons" title="Permalink to this headline">¶</a></h2>
+<p>E. Paxon Frady, Sophia Sanborn, Sumit Bam Srestha, Daniel Ben-Dayan Rubin, Garrick Orchard, Friedrich T. Sommer, Mike Davies, (2022). JSPS.</p>
 <!--
 <img src="rf_stft.png" alt="STFT with resonate-and-fire neurons"
 	width="60%"/>
@@ -583,6 +643,19 @@ In this model, saptio-temporal gabor filters are computed through the integratio
 <div class="section" id="id4">
 <h3>Links<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://arxiv.org/abs/2111.03746">arXiv</a></p>
+</div>
+</div>
+<div class="section" id="deep-learning-in-spiking-phasor-networks">
+<h2>Deep learning in spiking phasor networks<a class="headerlink" href="#deep-learning-in-spiking-phasor-networks" title="Permalink to this headline">¶</a></h2>
+<p>Connor Bybee, E. Paxon Frady, Friedrich T. Sommer. (2022). arXiv.</p>
+<p><img alt="spike_dl" src="../_images/spike_dl.png" /></p>
+<div class="section" id="id5">
+<h3>Summary<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Our theory of how spike-timing codes can be used to perform complex-valued matrix computations immediately suggests a way to formulate feed-forward deep learning in spiking neural networks. In this paradigm, the neural state space is complex-valued as well as are the synaptic connections. Back-propagation can be used to train these weights like in traditional deep learning, but then the system can be implemented efficiently with spiking neurons. This could lead to more efficient deep networks being executed on neuromorphic spiking hardware.</p>
+</div>
+<div class="section" id="id6">
+<h3>Links<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://arxiv.org/abs/2204.00507">arXiv</a></p>
 </div>
 </div>
 <div class="toctree-wrapper compound">
@@ -614,11 +687,11 @@ In this model, saptio-temporal gabor filters are computed through the integratio
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../about_me.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="sparse_binding_demo.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">E. Paxon Frady</p>
+            <p class="prev-next-title">Sparse binding demo – What’s the dollar of mexico?</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="tpam_demo.html" title="next page">

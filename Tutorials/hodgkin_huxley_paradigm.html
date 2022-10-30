@@ -114,9 +114,14 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Research/neuroscience_data.html">
+   Experimental Neuroscience
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Research/spiking_networks.html">
-   Spiking Neural Networks
+  <a class="reference internal" href="../Research/theoretical_neuroscience.html">
+   Neural Computation
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -125,15 +130,15 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Research/tpam_demo.html">
-     Threshold Phasor Associative Memory
+    <a class="reference internal" href="../Research/sparse_binding_demo.html">
+     Sparse binding demo – What’s the dollar of mexico?
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Research/theoretical_neuroscience.html">
-   Theoretical Neuroscience
+  <a class="reference internal" href="../Research/spiking_networks.html">
+   Spiking Neural Networks
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -142,8 +147,8 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Research/sparse_binding_demo.html">
-     Sparse binding demo – What’s the dollar of mexico?
+    <a class="reference internal" href="../Research/tpam_demo.html">
+     Threshold Phasor Associative Memory
     </a>
    </li>
   </ul>
@@ -371,12 +376,61 @@ The field of computational neuroscience claims only a few nobel prize winners, o
 <p>In the late 1930s and early 1940s, electronics technology was just beginning to take-off.</p>
 <div class="section" id="neuroscience-bootcamp">
 <h2>Neuroscience Bootcamp<a class="headerlink" href="#neuroscience-bootcamp" title="Permalink to this headline">¶</a></h2>
-<p>When I was a grad student at UCSD we would teach entering Neuroscience Ph.D. students a course called “bootcamp”.
-In this course, students would dive into the art of electrophysiology in a two week, 8am-midnight including Saturdays immersive experience.</p>
+<p>The first official experience I had as a Ph. D. student at UCSD was participating in a course that they called “bootcamp”.
+I later joined the lab that conducted bootcamp and would participate as a TA for many years.</p>
+<p>In this course, students would dive into the art of electrophysiology in a two week, 8am-midnight including Saturdays immersive experience.
+This was a little bit to set the tone of grad school – one should expect to have to work from 8am-midnight as a scientist, at least on occassion.
+But the real purpose of this schedule was to create an environment where students could be fully immersed in the program and their scientific community. This temporary removal of the distraction of outside life, along with a shared experience, pulled the students together into a tight-nit community. Because of this, the Neuroscience program was one of the best.</p>
 <p>Electrophysiology is one of the primary techniques for studying the brain, and to perform electrophysiology you must understand the basics of electronics.
-And so, in the very first lesson of boot camp we actually do some work with electrical circuits.</p>
-<p>When you try to record from a neuron, you model the neuron as an electrical circuit. The salty ionic solution that surrounds biological tissue conducts electricity. While the fact that in this medium electricity moves through charged ions rather than through electrons, the rules of electrodynamics are largely the same.</p>
-<p>Maxwell’s equations are thus the tools of the trade. Ohm’s law, capacitance, these are the physical rules used to describe neurons in the brain.</p>
+And so, in the very first lesson of boot camp we actually do some mathematical work with electrical circuits and Maxwell’s equations.</p>
+<p>Mathematics and measurements are a core aspect of science. Whenever we make a measurement as part of an experiment, what we measure is structured into a mathematical model that we call a theory.
+When we try to understand what we record from neurons, we create a model that explains different aspects of the recording. For neurons, we have come to find that the cell membrane behaves like an electrical circuit. The salty ionic solution that surrounds biological tissue conducts electricity. While the fact that in this medium electricity moves through charged ions rather than through electrons, the rules of electrodynamics are largely the same.</p>
+<p>Maxwell’s equations are thus the tools of the trade. Ohm’s law, capacitance, these are the physical rules used to describe neurons in the brain. The recording deveices we use to measure the electical activity of neurons are called electrodes, and as we conduct an experiment we must also create a model to account for the recording apparatus itself.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;100KΩ&#39;</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;0.1μF&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Ground</span><span class="p">()</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;10V&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/hodgkin_huxley_paradigm_4_0.svg" src="../_images/hodgkin_huxley_paradigm_4_0.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Ground</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Battery</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Battery</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/hodgkin_huxley_paradigm_5_0.svg" src="../_images/hodgkin_huxley_paradigm_5_0.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elm</span><span class="o">.</span><span class="n">Battery</span><span class="p">()</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="hodgkin-huxley-1949d">
 <h2>Hodgkin Huxley 1949d<a class="headerlink" href="#hodgkin-huxley-1949d" title="Permalink to this headline">¶</a></h2>
@@ -418,7 +472,7 @@ E = V \log([In]/[Out])
 findfont: Generic family &#39;serif&#39; not found because none of the following families were found: Computer Modern
 </pre></div>
 </div>
-<img alt="../_images/hodgkin_huxley_paradigm_5_2.png" src="../_images/hodgkin_huxley_paradigm_5_2.png" />
+<img alt="../_images/hodgkin_huxley_paradigm_9_2.png" src="../_images/hodgkin_huxley_paradigm_9_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -470,7 +524,7 @@ findfont: Generic family &#39;serif&#39; not found because none of the following
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    Removing unsupported flag &#39;-march=native&#39; from compiler flags. [brian2.codegen.cpp_prefs]
 </pre></div>
 </div>
-<img alt="../_images/hodgkin_huxley_paradigm_6_1.png" src="../_images/hodgkin_huxley_paradigm_6_1.png" />
+<img alt="../_images/hodgkin_huxley_paradigm_10_1.png" src="../_images/hodgkin_huxley_paradigm_10_1.png" />
 </div>
 </div>
 </div>
@@ -534,12 +588,61 @@ The field of computational neuroscience claims only a few nobel prize winners, o
 <p>In the late 1930s and early 1940s, electronics technology was just beginning to take-off.</p>
 <div class="section" id="neuroscience-bootcamp">
 <h2>Neuroscience Bootcamp<a class="headerlink" href="#neuroscience-bootcamp" title="Permalink to this headline">¶</a></h2>
-<p>When I was a grad student at UCSD we would teach entering Neuroscience Ph.D. students a course called “bootcamp”.
-In this course, students would dive into the art of electrophysiology in a two week, 8am-midnight including Saturdays immersive experience.</p>
+<p>The first official experience I had as a Ph. D. student at UCSD was participating in a course that they called “bootcamp”.
+I later joined the lab that conducted bootcamp and would participate as a TA for many years.</p>
+<p>In this course, students would dive into the art of electrophysiology in a two week, 8am-midnight including Saturdays immersive experience.
+This was a little bit to set the tone of grad school – one should expect to have to work from 8am-midnight as a scientist, at least on occassion.
+But the real purpose of this schedule was to create an environment where students could be fully immersed in the program and their scientific community. This temporary removal of the distraction of outside life, along with a shared experience, pulled the students together into a tight-nit community. Because of this, the Neuroscience program was one of the best.</p>
 <p>Electrophysiology is one of the primary techniques for studying the brain, and to perform electrophysiology you must understand the basics of electronics.
-And so, in the very first lesson of boot camp we actually do some work with electrical circuits.</p>
-<p>When you try to record from a neuron, you model the neuron as an electrical circuit. The salty ionic solution that surrounds biological tissue conducts electricity. While the fact that in this medium electricity moves through charged ions rather than through electrons, the rules of electrodynamics are largely the same.</p>
-<p>Maxwell’s equations are thus the tools of the trade. Ohm’s law, capacitance, these are the physical rules used to describe neurons in the brain.</p>
+And so, in the very first lesson of boot camp we actually do some mathematical work with electrical circuits and Maxwell’s equations.</p>
+<p>Mathematics and measurements are a core aspect of science. Whenever we make a measurement as part of an experiment, what we measure is structured into a mathematical model that we call a theory.
+When we try to understand what we record from neurons, we create a model that explains different aspects of the recording. For neurons, we have come to find that the cell membrane behaves like an electrical circuit. The salty ionic solution that surrounds biological tissue conducts electricity. While the fact that in this medium electricity moves through charged ions rather than through electrons, the rules of electrodynamics are largely the same.</p>
+<p>Maxwell’s equations are thus the tools of the trade. Ohm’s law, capacitance, these are the physical rules used to describe neurons in the brain. The recording deveices we use to measure the electical activity of neurons are called electrodes, and as we conduct an experiment we must also create a model to account for the recording apparatus itself.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;100KΩ&#39;</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;0.1μF&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Ground</span><span class="p">()</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;10V&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/hodgkin_huxley_paradigm_4_0.svg" src="../_images/hodgkin_huxley_paradigm_4_0.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Ground</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Battery</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Battery</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/hodgkin_huxley_paradigm_5_0.svg" src="../_images/hodgkin_huxley_paradigm_5_0.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elm</span><span class="o">.</span><span class="n">Battery</span><span class="p">()</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="hodgkin-huxley-1949d">
 <h2>Hodgkin Huxley 1949d<a class="headerlink" href="#hodgkin-huxley-1949d" title="Permalink to this headline">¶</a></h2>
@@ -581,7 +684,7 @@ E = V \log([In]/[Out])
 findfont: Generic family &#39;serif&#39; not found because none of the following families were found: Computer Modern
 </pre></div>
 </div>
-<img alt="../_images/hodgkin_huxley_paradigm_5_2.png" src="../_images/hodgkin_huxley_paradigm_5_2.png" />
+<img alt="../_images/hodgkin_huxley_paradigm_9_2.png" src="../_images/hodgkin_huxley_paradigm_9_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -633,7 +736,7 @@ findfont: Generic family &#39;serif&#39; not found because none of the following
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    Removing unsupported flag &#39;-march=native&#39; from compiler flags. [brian2.codegen.cpp_prefs]
 </pre></div>
 </div>
-<img alt="../_images/hodgkin_huxley_paradigm_6_1.png" src="../_images/hodgkin_huxley_paradigm_6_1.png" />
+<img alt="../_images/hodgkin_huxley_paradigm_10_1.png" src="../_images/hodgkin_huxley_paradigm_10_1.png" />
 </div>
 </div>
 </div>

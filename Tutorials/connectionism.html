@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -112,9 +114,14 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Research/neuroscience_data.html">
+   Experimental Neuroscience
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Research/spiking_networks.html">
-   Spiking Neural Networks
+  <a class="reference internal" href="../Research/theoretical_neuroscience.html">
+   Neural Computation
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -123,15 +130,15 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Research/tpam_demo.html">
-     Threshold Phasor Associative Memory
+    <a class="reference internal" href="../Research/sparse_binding_demo.html">
+     Sparse binding demo – What’s the dollar of mexico?
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Research/theoretical_neuroscience.html">
-   Theoretical Neuroscience
+  <a class="reference internal" href="../Research/spiking_networks.html">
+   Spiking Neural Networks
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -140,8 +147,8 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Research/sparse_binding_demo.html">
-     Sparse binding demo – What’s the dollar of mexico?
+    <a class="reference internal" href="../Research/tpam_demo.html">
+     Threshold Phasor Associative Memory
     </a>
    </li>
   </ul>
@@ -280,6 +287,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vectors-and-symbols">
+   Vectors and Symbols
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vector-algebra-and-boolean-algebra">
+   Vector algebra and boolean algebra
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -291,6 +316,24 @@
             <div class="col-12 col-md-12 pl-md-5 pr-md-5">
             <div id="jb-print-toc">
                 
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vectors-and-symbols">
+   Vectors and Symbols
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vector-algebra-and-boolean-algebra">
+   Vector algebra and boolean algebra
+  </a>
+ </li>
+</ul>
+
+                </nav>
             </div>
             
               <div>
@@ -300,6 +343,93 @@
 <p>In this chapter we will go over the foundations of information processing in neural networks.</p>
 <p>The link between brain function and computation goes back to the invention of the computer. From a modern perspective, we often think about the brain being a computer, but from Turing and Von Neumann’s point of view, the computer was a brain! As they developed the architecture of the modern computer, their explicit goal was to make a machine that can do the mathematical calculations that they were doing inside of their heads. The computer was built to do what the brain does!</p>
 <p>The research into neuroscience had a profound impact on the early design architecture of modern computers</p>
+<div class="section" id="vectors-and-symbols">
+<h2>Vectors and Symbols<a class="headerlink" href="#vectors-and-symbols" title="Permalink to this headline">¶</a></h2>
+<p>In a standard von neumann architecture, we use binary digits to represent information. In connectionism, we use vectors.</p>
+<p>To have the very basic essence of computation, we have to be able to ask, are two represenations the same? For representations of binary digits, the representation is the same if and only if all the bits are the same. Even if one bit is off, then the representations would be considered different.</p>
+<p>Mathematically this can be thought of as a kernel <span class="math notranslate nohighlight">\(K(s_1, s_2) = \delta\)</span>.</p>
+<p>With vector representations, however, the concept of being equal can be more complicated. Rather than a similarity that is binary, the symbols are the same or different, vector representations can have a graded similarity value.
+What is important to understand about vectors in vector spaces is the concept of orthogonality. Orthogonal vectors can be thought of as the symbols used to represent information.</p>
+<p>The similarity between vectors is computed typically through the inner product, sometimes followed by normalization or non-linearities. Essentially, the inner product is geometrically describing how aligned two vectors are in a vector space. If they are aligned (and normalized) then the inner product is one. If they are orthogonal, then the inner product is zero.</p>
+<p>The fact that the inner product between orthogonal vectors is zero is what allows such vectors to act as symbols. In the most straight-forward paradigm of representing symbols, we would consider each entry in the vector to represent that symbol. If the vector is one at that location, then the symbol is present; if it is zero, the symbol is missing. The inner product between two vectors that are representing different symbols is zero; and the inner product of the same vector-symbols is one. Mathematically this aligns representations of symbols in vector spaces with the behavior of symbols in digital computers.</p>
+<p>While we can think of each entry of the vector as acting like a symbol, it doesn’t matter which set of orthogonal vectors are used. We can use a “codebook” to store the set of orthogonal vectors that are essentially the basis functions of symbolic representation.</p>
+<p>We could have a codebook like:
+$<span class="math notranslate nohighlight">\(
+[1,0,0,0; 0,1,0,0; 0,0,1,0; 0,0,0,1]
+\)</span>$
+where each “neuron” is indicating the presence of a symbol. This type of representation is the default/identity of the vector space.</p>
+<p>But we can also have a codebook like:
+$<span class="math notranslate nohighlight">\(
+[]
+\)</span>$
+where instead each symbol is distributed across the “neurons”, but nonetheless the kernel properties of orthogonal vectors makes this representation just as good as any other, at least in terms of basic representations.</p>
+<p>But now we can understand the difference between digital symbols and vector symbols. First, the number of symbols that can be represented is quite different. Any vector space has at most <span class="math notranslate nohighlight">\(N\)</span> orthogonal vectors, where <span class="math notranslate nohighlight">\(N\)</span> is the dimensionality of the vector space. While a digital representations that uses <span class="math notranslate nohighlight">\(N\)</span> bits, can represent <span class="math notranslate nohighlight">\(2^N\)</span> symbols. And by golly, any thing that is exponential is a big deal.</p>
+<p>So what is the benefit of a vector representation? When thinking about symbols, what a vector space allows is the concept of representing multiple symbols in “superposition”. Instead of only being able to indicate the sameness or difference of two digital symbols, vector symbols can indicate, in effect, a full probability distribution over the likelihoods of all the symbols.
+This often leads to the ability to parallelize computations through manipulations of the vector representations.</p>
+<p>So then the standard connectionist framework is that symbols in vector spaces are essentially an orthogonal set of basis vectors. The codebook is a matrix that stores the basis vectors. Any set of orthogonal basis vectors can act like symbols.</p>
+</div>
+<div class="section" id="vector-algebra-and-boolean-algebra">
+<h2>Vector algebra and boolean algebra<a class="headerlink" href="#vector-algebra-and-boolean-algebra" title="Permalink to this headline">¶</a></h2>
+<p>The tools of linear algebra are used to then manipulate vector representations to perform computation.</p>
+<p>Algebra is extremely useful for designing algorithms.</p>
+<p>In digital computers, we utilize boolean algebra as the mathematical framework for building computer algorithms. So we may consider the states of binary variables <code class="docutils literal notranslate"><span class="pre">x1,</span> <span class="pre">x2,</span> <span class="pre">x3</span></code> as part of the algorithm. Based on the conditions of these states we may want to perform different actions. Consider the following example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span>
+
+<span class="k">for</span> <span class="n">x1</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">x2</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">x3</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">x3</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;: &#39;</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">x1</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x2</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">x3</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Option 1&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">x1</span> <span class="ow">and</span> <span class="n">x2</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">x3</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Option 2&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True True True: Option 1, Option 2
+True True False: Option 1, Option 2
+True False True: 
+True False False: Option 1, Option 2
+False True True: 
+False True False: 
+False False True: 
+False False False: 
+</pre></div>
+</div>
+</div>
+</div>
+<p>So in this simple example, we see that whenever Option 1 is triggered, Option 2 is also triggered. The rules of boolean algebra allow us to use mathematics to transform the computations, and we can see that the logic expressions are equivalent.</p>
+<p>In boolean algebra, the <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code> functions behave like the operations <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">+</span></code> in normal algebra. Importantly, the distributive property must be recognized, where the <code class="docutils literal notranslate"><span class="pre">and</span></code> operation distributes over the <code class="docutils literal notranslate"><span class="pre">or</span></code> operation, just like multiplication distributes over addition.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">x1</span> <span class="ow">or</span> <span class="n">x2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x3</span> <span class="ow">or</span> <span class="n">x4</span> <span class="ow">or</span> <span class="n">x5</span><span class="p">)</span> <span class="o">==</span> <span class="p">((</span><span class="n">x1</span> <span class="ow">and</span> <span class="n">x3</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x1</span> <span class="ow">and</span> <span class="n">x4</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x1</span> <span class="ow">and</span> <span class="n">x5</span><span class="p">)</span> 
+                                 <span class="ow">or</span> <span class="p">(</span><span class="n">x2</span> <span class="ow">and</span> <span class="n">x3</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x2</span> <span class="ow">and</span> <span class="n">x4</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x2</span> <span class="ow">and</span> <span class="n">x5</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Theare other binary operations, which are given by truth tables.
+When designing computers, computer engineers build electronic circuits that can perform the logical calculus of these operations.
+But only a subset of all binary operations are needed if one has an algebraic capacity.</p>
+<p>For instance consider the boolean XOR gate, which can be described in a logic table:
+$<span class="math notranslate nohighlight">\(
+x1 | x2 | out \\
+ T |  T |  F \\
+ T |  F |  T \\
+ F |  T |  T \\
+ F |  F |  F
+\)</span>$</p>
+<p>We could design a digital circuit to specifically implement this function, or we can combine the set of <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span></code> operations to make an equivalent circuit.</p>
+<p>def xor(x1, x2):
+return (x1 and not x2) or (x2 and not x1)</p>
+<p>By organizing large circuits of these logic gates, we can perform computations, and given the right machinery we can create a system that is “Turing Complete”. This means that it can perform any logical manipulation of digital variables, and is hence a “Universal Computer”.  We understand the computations through boolean algebra, and a computer is essentially a system that contains digital circuits that perform a set of logic operations as well as machinery that can organize the operations into an algebraic structure.</p>
+<p>Mathematicians have developed the field of group theory to fully generalize the concepts used in algebra. In high-school algebra, we are introduced to different types of number systems – integers, rational numbers, real numbers, complex numbers. Before we converted to binary, before digital computers, mathematicians would perform computations on these numbers using the rules of algebra.</p>
+<p>But not all number systems have the same algebraic properties, and mathematicians set out to catalog all the different types of number systems. This field of research is called Group Theory, and it is quite unlike a typical notion of a mathematical science.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -337,6 +467,93 @@
 <p>In this chapter we will go over the foundations of information processing in neural networks.</p>
 <p>The link between brain function and computation goes back to the invention of the computer. From a modern perspective, we often think about the brain being a computer, but from Turing and Von Neumann’s point of view, the computer was a brain! As they developed the architecture of the modern computer, their explicit goal was to make a machine that can do the mathematical calculations that they were doing inside of their heads. The computer was built to do what the brain does!</p>
 <p>The research into neuroscience had a profound impact on the early design architecture of modern computers</p>
+<div class="section" id="vectors-and-symbols">
+<h2>Vectors and Symbols<a class="headerlink" href="#vectors-and-symbols" title="Permalink to this headline">¶</a></h2>
+<p>In a standard von neumann architecture, we use binary digits to represent information. In connectionism, we use vectors.</p>
+<p>To have the very basic essence of computation, we have to be able to ask, are two represenations the same? For representations of binary digits, the representation is the same if and only if all the bits are the same. Even if one bit is off, then the representations would be considered different.</p>
+<p>Mathematically this can be thought of as a kernel <span class="math notranslate nohighlight">\(K(s_1, s_2) = \delta\)</span>.</p>
+<p>With vector representations, however, the concept of being equal can be more complicated. Rather than a similarity that is binary, the symbols are the same or different, vector representations can have a graded similarity value.
+What is important to understand about vectors in vector spaces is the concept of orthogonality. Orthogonal vectors can be thought of as the symbols used to represent information.</p>
+<p>The similarity between vectors is computed typically through the inner product, sometimes followed by normalization or non-linearities. Essentially, the inner product is geometrically describing how aligned two vectors are in a vector space. If they are aligned (and normalized) then the inner product is one. If they are orthogonal, then the inner product is zero.</p>
+<p>The fact that the inner product between orthogonal vectors is zero is what allows such vectors to act as symbols. In the most straight-forward paradigm of representing symbols, we would consider each entry in the vector to represent that symbol. If the vector is one at that location, then the symbol is present; if it is zero, the symbol is missing. The inner product between two vectors that are representing different symbols is zero; and the inner product of the same vector-symbols is one. Mathematically this aligns representations of symbols in vector spaces with the behavior of symbols in digital computers.</p>
+<p>While we can think of each entry of the vector as acting like a symbol, it doesn’t matter which set of orthogonal vectors are used. We can use a “codebook” to store the set of orthogonal vectors that are essentially the basis functions of symbolic representation.</p>
+<p>We could have a codebook like:
+$<span class="math notranslate nohighlight">\(
+[1,0,0,0; 0,1,0,0; 0,0,1,0; 0,0,0,1]
+\)</span>$
+where each “neuron” is indicating the presence of a symbol. This type of representation is the default/identity of the vector space.</p>
+<p>But we can also have a codebook like:
+$<span class="math notranslate nohighlight">\(
+[]
+\)</span>$
+where instead each symbol is distributed across the “neurons”, but nonetheless the kernel properties of orthogonal vectors makes this representation just as good as any other, at least in terms of basic representations.</p>
+<p>But now we can understand the difference between digital symbols and vector symbols. First, the number of symbols that can be represented is quite different. Any vector space has at most <span class="math notranslate nohighlight">\(N\)</span> orthogonal vectors, where <span class="math notranslate nohighlight">\(N\)</span> is the dimensionality of the vector space. While a digital representations that uses <span class="math notranslate nohighlight">\(N\)</span> bits, can represent <span class="math notranslate nohighlight">\(2^N\)</span> symbols. And by golly, any thing that is exponential is a big deal.</p>
+<p>So what is the benefit of a vector representation? When thinking about symbols, what a vector space allows is the concept of representing multiple symbols in “superposition”. Instead of only being able to indicate the sameness or difference of two digital symbols, vector symbols can indicate, in effect, a full probability distribution over the likelihoods of all the symbols.
+This often leads to the ability to parallelize computations through manipulations of the vector representations.</p>
+<p>So then the standard connectionist framework is that symbols in vector spaces are essentially an orthogonal set of basis vectors. The codebook is a matrix that stores the basis vectors. Any set of orthogonal basis vectors can act like symbols.</p>
+</div>
+<div class="section" id="vector-algebra-and-boolean-algebra">
+<h2>Vector algebra and boolean algebra<a class="headerlink" href="#vector-algebra-and-boolean-algebra" title="Permalink to this headline">¶</a></h2>
+<p>The tools of linear algebra are used to then manipulate vector representations to perform computation.</p>
+<p>Algebra is extremely useful for designing algorithms.</p>
+<p>In digital computers, we utilize boolean algebra as the mathematical framework for building computer algorithms. So we may consider the states of binary variables <code class="docutils literal notranslate"><span class="pre">x1,</span> <span class="pre">x2,</span> <span class="pre">x3</span></code> as part of the algorithm. Based on the conditions of these states we may want to perform different actions. Consider the following example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span>
+
+<span class="k">for</span> <span class="n">x1</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">x2</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">x3</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">x3</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;: &#39;</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">x1</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x2</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">x3</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Option 1&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">x1</span> <span class="ow">and</span> <span class="n">x2</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">x3</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Option 2&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True True True: Option 1, Option 2
+True True False: Option 1, Option 2
+True False True: 
+True False False: Option 1, Option 2
+False True True: 
+False True False: 
+False False True: 
+False False False: 
+</pre></div>
+</div>
+</div>
+</div>
+<p>So in this simple example, we see that whenever Option 1 is triggered, Option 2 is also triggered. The rules of boolean algebra allow us to use mathematics to transform the computations, and we can see that the logic expressions are equivalent.</p>
+<p>In boolean algebra, the <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code> functions behave like the operations <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">+</span></code> in normal algebra. Importantly, the distributive property must be recognized, where the <code class="docutils literal notranslate"><span class="pre">and</span></code> operation distributes over the <code class="docutils literal notranslate"><span class="pre">or</span></code> operation, just like multiplication distributes over addition.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">x1</span> <span class="ow">or</span> <span class="n">x2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x3</span> <span class="ow">or</span> <span class="n">x4</span> <span class="ow">or</span> <span class="n">x5</span><span class="p">)</span> <span class="o">==</span> <span class="p">((</span><span class="n">x1</span> <span class="ow">and</span> <span class="n">x3</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x1</span> <span class="ow">and</span> <span class="n">x4</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x1</span> <span class="ow">and</span> <span class="n">x5</span><span class="p">)</span> 
+                                 <span class="ow">or</span> <span class="p">(</span><span class="n">x2</span> <span class="ow">and</span> <span class="n">x3</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x2</span> <span class="ow">and</span> <span class="n">x4</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x2</span> <span class="ow">and</span> <span class="n">x5</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Theare other binary operations, which are given by truth tables.
+When designing computers, computer engineers build electronic circuits that can perform the logical calculus of these operations.
+But only a subset of all binary operations are needed if one has an algebraic capacity.</p>
+<p>For instance consider the boolean XOR gate, which can be described in a logic table:
+$<span class="math notranslate nohighlight">\(
+x1 | x2 | out \\
+ T |  T |  F \\
+ T |  F |  T \\
+ F |  T |  T \\
+ F |  F |  F
+\)</span>$</p>
+<p>We could design a digital circuit to specifically implement this function, or we can combine the set of <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span></code> operations to make an equivalent circuit.</p>
+<p>def xor(x1, x2):
+return (x1 and not x2) or (x2 and not x1)</p>
+<p>By organizing large circuits of these logic gates, we can perform computations, and given the right machinery we can create a system that is “Turing Complete”. This means that it can perform any logical manipulation of digital variables, and is hence a “Universal Computer”.  We understand the computations through boolean algebra, and a computer is essentially a system that contains digital circuits that perform a set of logic operations as well as machinery that can organize the operations into an algebraic structure.</p>
+<p>Mathematicians have developed the field of group theory to fully generalize the concepts used in algebra. In high-school algebra, we are introduced to different types of number systems – integers, rational numbers, real numbers, complex numbers. Before we converted to binary, before digital computers, mathematicians would perform computations on these numbers using the rules of algebra.</p>
+<p>But not all number systems have the same algebraic properties, and mathematicians set out to catalog all the different types of number systems. This field of research is called Group Theory, and it is quite unlike a typical notion of a mathematical science.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
