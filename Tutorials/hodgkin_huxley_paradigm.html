@@ -176,35 +176,6 @@
   </ul>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Tutorials
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="computational_neuroscience.html">
-   Computational Neuroscience
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="spiking_basics_brian2.html">
-     Rate-coding with Integrate-and-Fire neurons
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="connecting_if_neurons.html">
-     Connecting IFR theory to connectionism
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -307,6 +278,11 @@
    Goldman-Hodgkin-Katz
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hodgkin-and-huxley-experiments">
+   Hodgkin and Huxley experiments
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -339,6 +315,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#goldman-hodgkin-katz">
    Goldman-Hodgkin-Katz
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hodgkin-and-huxley-experiments">
+   Hodgkin and Huxley experiments
   </a>
  </li>
 </ul>
@@ -424,13 +405,6 @@ When we try to understand what we record from neurons, we create a model that ex
 <div class="cell_output docutils container">
 <img alt="../_images/hodgkin_huxley_paradigm_5_0.svg" src="../_images/hodgkin_huxley_paradigm_5_0.svg" /></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elm</span><span class="o">.</span><span class="n">Battery</span><span class="p">()</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="hodgkin-huxley-1949d">
 <h2>Hodgkin Huxley 1949d<a class="headerlink" href="#hodgkin-huxley-1949d" title="Permalink to this headline">¶</a></h2>
@@ -453,11 +427,19 @@ When we try to understand what we record from neurons, we create a model that ex
 E = V \log([In]/[Out])
 \]</div>
 <p>In essence this equation says that the driving force of an ionic current is dependent on the voltage (and charge of ion) as well as the relative concentrations of that particular ion inside and outside of the membrane.</p>
-<p>There are a few primary ions that biology uses, sodium potassium and chlorine (but of course there are even more). Biology primarily evolved in salt-water, very rich in sodium and chlorine ions. However, inside of cells is relatively low concentrations of sodium, but relatively high concentrations of potassium. There are actually proteins that pump out sodium from inside the cell, and pump in potassium, and this is how neurons in the brain achieve their membrane potentials.</p>
+<p>There are a few primary ions that biology uses, sodium potassium and chlorine (but of course there are even more). Biology primarily evolved in salt-water, very rich in sodium and chlorine ions. However, inside of cells is a relatively low concentrations of sodium, and a relatively high concentrations of potassium. There are actually proteins that pump out sodium from inside the cell, and pump in potassium, and this is how neurons in the brain achieve their membrane potentials.</p>
 <p>While the GHK equation governs the driving force of the ionic currents. For many of the ionic currents used in neurons there is a simple approximation. The idea behind this approximation is that although ions are moving across the membrane during the action-potential, the concentrations of ions really does not change so drastically. Especially considering the logarithmic relationship in the GHK equations, it is often possible to ignore the subtle effect of the concentrations changing when computing the driving force of the ion. Under this approximation, the concentration term of the GHK equation can be replaced by a simple “reversal potential”. Since the concentrations do not change much during the dynamics, there is a voltage level at which the driving force switches, i.e. the current reverses direction.</p>
 <p>The reversal potential for sodium (in a typical neuron), which is positively charged, is around +20mV. This means that if the membrane potential of the cell was greater than +20mV, then sodium would move out of the cell, otherwise sodium would move into the cell. The resting potential of a neuron is typically quite negative, -50mV to -80mV. Sodium is also much more concentrated outside of the cell than inside. Thus when the cell is at its resting potential, both the voltage and concentration drive sodium ions into the cell.</p>
 <p>The potassium ion has much the opposite experience. Potassium is also positively charged, and so the electrical force wants to drive the ions to inside of the cell, but the concentration of potassium is high inside the cell and low outside of the cell. This results in the reversal potential for potassium being around -80mV, and so potassium will only go into the cell if the membrane potential is even lower than -80mV.</p>
 <p>These two ions are the primary factors for the action-potential. Sodium rushes into the cell to increase the internal membrane potential. Potassium rushes out of the cell to decrease the membrane potential. In the background, the sodium-potassium pump is constantly trying to maintain the ionic balance so that the neuron can operate.</p>
+</div>
+<div class="section" id="hodgkin-and-huxley-experiments">
+<h2>Hodgkin and Huxley experiments<a class="headerlink" href="#hodgkin-and-huxley-experiments" title="Permalink to this headline">¶</a></h2>
+<p>Prior to world war 2, the field had just recorded from inside the neuron for the first time during the action potential. While spikes were well known electrical phenomena, they had only been recorded externally, which only allows one to measure relative voltage changes. When the first intracellular recordings were done, the field was astounded, the peak of the action-potential increased above the +0mV potential.</p>
+<p>HH and others were drafted into the war effort, where they turned their electronics expertise into advances in communications for the war effort.</p>
+<p>The positive peak of the action potential was the first clue that ionic currents were the culprits. There were two technical advances that allowed HH to finally crack the mystery of the action potential. The first was the use of a chemical from the puffer fish, tetroto-toxin, which blocked the sodium channel and prevented sodium currents from flowing.</p>
+<p>The second advance was the technique of voltage-clamp. Electric transistors were just being developed, and these are crtiical for the amplifiers needed to make electrical recordings. Voltage clamp was a technique where a feedback loop can be introduced into the recording equipment, such that the voltage of the cell could be held at a fixed value, and the currents required to stabilize the voltage were then recorded.</p>
+<p>Taken together HH were able to isolate the currents involved in the action potential.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">exprel</span><span class="p">(</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)))</span>
@@ -636,13 +618,6 @@ When we try to understand what we record from neurons, we create a model that ex
 <div class="cell_output docutils container">
 <img alt="../_images/hodgkin_huxley_paradigm_5_0.svg" src="../_images/hodgkin_huxley_paradigm_5_0.svg" /></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elm</span><span class="o">.</span><span class="n">Battery</span><span class="p">()</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="hodgkin-huxley-1949d">
 <h2>Hodgkin Huxley 1949d<a class="headerlink" href="#hodgkin-huxley-1949d" title="Permalink to this headline">¶</a></h2>
@@ -665,11 +640,19 @@ When we try to understand what we record from neurons, we create a model that ex
 E = V \log([In]/[Out])
 \]</div>
 <p>In essence this equation says that the driving force of an ionic current is dependent on the voltage (and charge of ion) as well as the relative concentrations of that particular ion inside and outside of the membrane.</p>
-<p>There are a few primary ions that biology uses, sodium potassium and chlorine (but of course there are even more). Biology primarily evolved in salt-water, very rich in sodium and chlorine ions. However, inside of cells is relatively low concentrations of sodium, but relatively high concentrations of potassium. There are actually proteins that pump out sodium from inside the cell, and pump in potassium, and this is how neurons in the brain achieve their membrane potentials.</p>
+<p>There are a few primary ions that biology uses, sodium potassium and chlorine (but of course there are even more). Biology primarily evolved in salt-water, very rich in sodium and chlorine ions. However, inside of cells is a relatively low concentrations of sodium, and a relatively high concentrations of potassium. There are actually proteins that pump out sodium from inside the cell, and pump in potassium, and this is how neurons in the brain achieve their membrane potentials.</p>
 <p>While the GHK equation governs the driving force of the ionic currents. For many of the ionic currents used in neurons there is a simple approximation. The idea behind this approximation is that although ions are moving across the membrane during the action-potential, the concentrations of ions really does not change so drastically. Especially considering the logarithmic relationship in the GHK equations, it is often possible to ignore the subtle effect of the concentrations changing when computing the driving force of the ion. Under this approximation, the concentration term of the GHK equation can be replaced by a simple “reversal potential”. Since the concentrations do not change much during the dynamics, there is a voltage level at which the driving force switches, i.e. the current reverses direction.</p>
 <p>The reversal potential for sodium (in a typical neuron), which is positively charged, is around +20mV. This means that if the membrane potential of the cell was greater than +20mV, then sodium would move out of the cell, otherwise sodium would move into the cell. The resting potential of a neuron is typically quite negative, -50mV to -80mV. Sodium is also much more concentrated outside of the cell than inside. Thus when the cell is at its resting potential, both the voltage and concentration drive sodium ions into the cell.</p>
 <p>The potassium ion has much the opposite experience. Potassium is also positively charged, and so the electrical force wants to drive the ions to inside of the cell, but the concentration of potassium is high inside the cell and low outside of the cell. This results in the reversal potential for potassium being around -80mV, and so potassium will only go into the cell if the membrane potential is even lower than -80mV.</p>
 <p>These two ions are the primary factors for the action-potential. Sodium rushes into the cell to increase the internal membrane potential. Potassium rushes out of the cell to decrease the membrane potential. In the background, the sodium-potassium pump is constantly trying to maintain the ionic balance so that the neuron can operate.</p>
+</div>
+<div class="section" id="hodgkin-and-huxley-experiments">
+<h2>Hodgkin and Huxley experiments<a class="headerlink" href="#hodgkin-and-huxley-experiments" title="Permalink to this headline">¶</a></h2>
+<p>Prior to world war 2, the field had just recorded from inside the neuron for the first time during the action potential. While spikes were well known electrical phenomena, they had only been recorded externally, which only allows one to measure relative voltage changes. When the first intracellular recordings were done, the field was astounded, the peak of the action-potential increased above the +0mV potential.</p>
+<p>HH and others were drafted into the war effort, where they turned their electronics expertise into advances in communications for the war effort.</p>
+<p>The positive peak of the action potential was the first clue that ionic currents were the culprits. There were two technical advances that allowed HH to finally crack the mystery of the action potential. The first was the use of a chemical from the puffer fish, tetroto-toxin, which blocked the sodium channel and prevented sodium currents from flowing.</p>
+<p>The second advance was the technique of voltage-clamp. Electric transistors were just being developed, and these are crtiical for the amplifiers needed to make electrical recordings. Voltage clamp was a technique where a feedback loop can be introduced into the recording equipment, such that the voltage of the cell could be held at a fixed value, and the currents required to stabilize the voltage were then recorded.</p>
+<p>Taken together HH were able to isolate the currents involved in the action potential.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">exprel</span><span class="p">(</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)))</span>

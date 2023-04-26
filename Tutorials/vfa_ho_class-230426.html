@@ -1,0 +1,1990 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classificaiton with high-order features &#8212; Neuromorphic Algorithms Research</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/neural_circuit.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Neuromorphic Algorithms Research</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Neuromorphic Algorithms Research
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  About me
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about_me.html">
+   E. Paxon Frady
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Research
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Research/neuroscience_data.html">
+   Experimental Neuroscience
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Research/theoretical_neuroscience.html">
+   Neural Computation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Research/sparse_binding_demo.html">
+     Sparse binding demo – What’s the dollar of mexico?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Research/spiking_networks.html">
+   Spiking Neural Networks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Research/tpam_demo.html">
+     Threshold Phasor Associative Memory
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Research/resonator_networks.html">
+   Resonator Networks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Research/resonator_template.html">
+     Factorization of shape, color and location
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Research/res_semi_primes-220216.html">
+     Factoring semi-primes with the resonator network
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Tutorials/vfa_ho_class-230426.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Tutorials/vfa_ho_class-230426.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Classificaiton with high-order features
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#polynomial-features">
+     Polynomial features
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vsa-binding-and-the-tensor-product">
+       VSA Binding and the tensor product
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classification-with-higher-order-polynomial-features">
+   Classification with higher-order polynomial features
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vsa-ho-feature-classification">
+     VSA HO Feature classification
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Classificaiton with high-order features</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Classificaiton with high-order features
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#polynomial-features">
+     Polynomial features
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vsa-binding-and-the-tensor-product">
+       VSA Binding and the tensor product
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classification-with-higher-order-polynomial-features">
+   Classification with higher-order polynomial features
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vsa-ho-feature-classification">
+     VSA HO Feature classification
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="classificaiton-with-high-order-features">
+<h1>Classificaiton with high-order features<a class="headerlink" href="#classificaiton-with-high-order-features" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tqdm</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">LinearSVC</span>
+<span class="kn">import</span> <span class="nn">sklearn.datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="kn">from</span> <span class="nn">warnings</span> <span class="kn">import</span> <span class="n">simplefilter</span>
+<span class="kn">from</span> <span class="nn">sklearn.exceptions</span> <span class="kn">import</span> <span class="n">ConvergenceWarning</span>
+<span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="n">ConvergenceWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.family&#39;</span><span class="p">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span> 
+                     <span class="s1">&#39;font.serif&#39;</span><span class="p">:[</span><span class="s1">&#39;Computer Modern&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.fft</span> <span class="kn">import</span> <span class="n">fft</span><span class="p">,</span> <span class="n">ifft</span>
+
+<span class="k">def</span> <span class="nf">crvec</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">D</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">rphase</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">D</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">rphase</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span><span class="n">j</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">rphase</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">scvec</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">K</span><span class="p">):</span>
+    <span class="n">letter_vectors_c</span> <span class="o">=</span> <span class="n">crvec</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">D</span><span class="p">):</span>
+        <span class="n">ip</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="n">K</span><span class="p">),</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">letter_vectors_c</span><span class="p">[</span><span class="n">d</span><span class="p">,</span> <span class="n">ip</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        
+    <span class="k">return</span> <span class="n">letter_vectors_c</span>
+
+<span class="k">def</span> <span class="nf">lccvec</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">Kv</span><span class="p">):</span>
+    <span class="c1"># N needs to be multiple of Kv</span>
+    
+    <span class="n">R</span> <span class="o">=</span> <span class="n">N</span><span class="o">/</span><span class="n">Kv</span>
+    
+    <span class="k">assert</span><span class="p">(</span><span class="n">R</span><span class="o">==</span><span class="n">N</span><span class="o">//</span><span class="n">Kv</span><span class="p">)</span>
+    
+    <span class="n">letter_vectors_c</span> <span class="o">=</span> <span class="mi">0</span><span class="o">*</span><span class="n">crvec</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">D</span><span class="p">):</span>
+        <span class="n">ip</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">R</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">Kv</span><span class="p">),</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="n">ip</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">Kv</span><span class="p">))</span>
+        
+        <span class="n">letter_vectors_c</span><span class="p">[</span><span class="n">d</span><span class="p">,</span> <span class="n">ip</span><span class="p">]</span> <span class="o">=</span> <span class="n">crvec</span><span class="p">(</span><span class="n">Kv</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">letter_vectors_c</span>
+    
+<span class="k">def</span> <span class="nf">cconv</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">pa</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pb</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">ifft</span><span class="p">(</span><span class="n">fft</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="n">pa</span> <span class="o">*</span> <span class="n">fft</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="n">pb</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">ccinv</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="c1">#return ifft(np.conj(fft(a)))</span>
+    <span class="k">return</span> <span class="n">ifft</span><span class="p">(</span><span class="n">fft</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">lccI</span><span class="p">(</span><span class="n">Nv</span><span class="p">,</span> <span class="n">Kv</span><span class="p">):</span>
+    <span class="n">vv</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">*</span><span class="n">crvec</span><span class="p">(</span><span class="n">Nv</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> 
+    
+    <span class="n">Rv</span> <span class="o">=</span> <span class="n">Nv</span><span class="o">//</span><span class="n">Kv</span>
+    
+    <span class="n">vvr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">vv</span><span class="p">,</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">Kv</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">Rv</span><span class="p">)])</span>
+    
+    <span class="n">vvr</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    
+    <span class="k">return</span> <span class="n">vvr</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>    
+    
+    
+
+<span class="k">def</span> <span class="nf">lccbind</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="n">vec2</span><span class="p">,</span> <span class="n">Kv</span><span class="p">,</span> <span class="n">pa</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pb</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">Nv</span> <span class="o">=</span> <span class="n">vec1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">Rv</span> <span class="o">=</span> <span class="n">Nv</span><span class="o">/</span><span class="n">Kv</span>
+
+    <span class="n">vec1r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">Kv</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">Rv</span><span class="p">)])</span>
+    <span class="n">vec2r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">vec2</span><span class="p">,</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">Kv</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">Rv</span><span class="p">)])</span>
+
+    <span class="n">vec_br</span> <span class="o">=</span> <span class="n">cconv</span><span class="p">(</span><span class="n">vec1r</span><span class="p">,</span> <span class="n">vec2r</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">)</span>
+
+    <span class="n">vec_b</span> <span class="o">=</span> <span class="n">vec_br</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">vec_b</span>
+
+<span class="k">def</span> <span class="nf">lccperm</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="n">Kv</span><span class="p">,</span> <span class="n">proll</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">Nv</span> <span class="o">=</span> <span class="n">vec1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">Rv</span> <span class="o">=</span> <span class="n">Nv</span><span class="o">/</span><span class="n">Kv</span>
+
+    <span class="n">vec1r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">Kv</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">Rv</span><span class="p">)])</span>
+    
+    <span class="n">vec_perm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">vec1r</span><span class="p">,</span> <span class="n">proll</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">vec_perm</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">lccinv</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="n">Kv</span><span class="p">):</span>
+    <span class="n">Nv</span> <span class="o">=</span> <span class="n">vec1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">Rv</span> <span class="o">=</span> <span class="n">Nv</span><span class="o">/</span><span class="n">Kv</span>
+
+    <span class="n">vec1r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">Kv</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">Rv</span><span class="p">)])</span>
+    
+    <span class="n">vec1_ir</span> <span class="o">=</span> <span class="n">ccinv</span><span class="p">(</span><span class="n">vec1r</span><span class="p">)</span>
+    <span class="n">vec1_i</span> <span class="o">=</span> <span class="n">vec1_ir</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">vec1_i</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="polynomial-features">
+<h2>Polynomial features<a class="headerlink" href="#polynomial-features" title="Permalink to this headline">¶</a></h2>
+<p>Like the kernel trick is another similar idea in machine-learning to compute the higher-order features.</p>
+<div class="section" id="vsa-binding-and-the-tensor-product">
+<h3>VSA Binding and the tensor product<a class="headerlink" href="#vsa-binding-and-the-tensor-product" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sidx</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">ho_features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">sidx</span><span class="p">,</span> <span class="p">:],</span> <span class="n">X</span><span class="p">[</span><span class="n">sidx</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ho_features</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.03866681, -0.00325648],
+       [-0.00325648,  0.00027426]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># can encode the feature space into a vsa vector</span>
+<span class="n">vsaX</span> <span class="o">=</span> <span class="n">lccvec</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+
+<span class="n">vsa_features</span> <span class="o">=</span> <span class="n">vsaX</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">X</span><span class="p">[</span><span class="n">sidx</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vsa_features</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1330ddee0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_9_1.png" src="../_images/vfa_ho_class-230426_9_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># then this is the first order features recovered</span>
+<span class="n">vsa_reconX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">vsaX</span><span class="p">)</span> <span class="o">@</span> <span class="n">vsa_features</span><span class="p">)</span><span class="o">/</span> <span class="n">K</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vsa_reconX</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="n">sidx</span><span class="p">,</span> <span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.19646627  0.01451226] [-0.19663879  0.01656074]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vsa_ho</span> <span class="o">=</span> <span class="n">lccbind</span><span class="p">(</span><span class="n">vsa_features</span><span class="p">,</span> <span class="n">vsa_features</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vsa_ho</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x133147a30&gt;]
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_12_1.png" src="../_images/vfa_ho_class-230426_12_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xx_code</span> <span class="o">=</span> <span class="n">lccbind</span><span class="p">(</span><span class="n">vsaX</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">vsaX</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">K</span><span class="p">)</span>
+<span class="n">xy_code</span> <span class="o">=</span> <span class="n">lccbind</span><span class="p">(</span><span class="n">vsaX</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">vsaX</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">K</span><span class="p">)</span>
+<span class="n">yy_code</span> <span class="o">=</span> <span class="n">lccbind</span><span class="p">(</span><span class="n">vsaX</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">vsaX</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">K</span><span class="p">)</span>
+
+<span class="n">vsa_recon_ho</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">vsa_recon_ho</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">xx_code</span><span class="p">)</span> <span class="o">@</span> <span class="n">vsa_ho</span><span class="p">)</span><span class="o">/</span> <span class="n">K</span>
+
+<span class="c1"># this is actually encoded twice</span>
+<span class="n">vsa_recon_ho</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">xy_code</span><span class="p">)</span> <span class="o">@</span> <span class="n">vsa_ho</span><span class="p">)</span><span class="o">/</span> <span class="n">K</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">vsa_recon_ho</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">xy_code</span><span class="p">)</span> <span class="o">@</span> <span class="n">vsa_ho</span><span class="p">)</span><span class="o">/</span> <span class="n">K</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="n">vsa_recon_ho</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">yy_code</span><span class="p">)</span> <span class="o">@</span> <span class="n">vsa_ho</span><span class="p">)</span><span class="o">/</span> <span class="n">K</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vsa_recon_ho</span><span class="p">,</span> <span class="n">ho_features</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([[ 0.03858529, -0.00305365],
+        [-0.00305365, -0.00172214]]),
+ array([[ 0.03866681, -0.00325648],
+        [-0.00325648,  0.00027426]]))
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="classification-with-higher-order-polynomial-features">
+<h1>Classification with higher-order polynomial features<a class="headerlink" href="#classification-with-higher-order-polynomial-features" title="Permalink to this headline">¶</a></h1>
+<p>Here, we will design a classifier based on the higher order features of the data. Higher-order features are extracted by multiplying together the lower-order features. We would call the input features the “linear” or “first-order” feature space, and any pair-wise products of these features would form “quadratic” or “second-order” features. This can continue with “third-order”, “fourth-order”, etc. with three products between linear features, four products, etc., respectively.</p>
+<p>The second-order features would then be enumerated by the tensor product between the linear vectors.  we are going to just treat each number in the tensor product as a feature. Lets enumerate the higher order features then into the data vectors and again just perform our linear regression classifier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sklearn has some simple datasets</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">make_circles</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Paired</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x133204b20&gt;
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_16_1.png" src="../_images/vfa_ho_class-230426_16_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">7</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">ho_features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:],</span> <span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>   
+<span class="n">Wp_lstsq</span><span class="p">,</span><span class="n">resid</span><span class="p">,</span><span class="n">rank</span><span class="p">,</span><span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">Xp</span><span class="p">,</span><span class="n">y_hot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/xn/hqbqng2d6nz8f1lcyd545kqr0000gn/T/ipykernel_4325/1665104272.py:1: FutureWarning: `rcond` parameter will change to the default of machine precision times ``max(M, N)`` where M and N are the input matrix dimensions.
+To use the future default and silence this warning we advise to pass `rcond=None`, to keep using the old, explicitly pass `rcond=-1`.
+  Wp_lstsq,resid,rank,sigma = np.linalg.lstsq(Xp,y_hot)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">kernel_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">x_samples</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_samples</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">xv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">x_samples</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">iy</span><span class="p">,</span> <span class="n">yv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y_samples</span><span class="p">):</span>
+        
+        <span class="n">cc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">([</span><span class="n">xv</span><span class="p">,</span><span class="n">yv</span><span class="p">,</span> <span class="n">xv</span><span class="o">*</span><span class="n">xv</span><span class="p">,</span> <span class="n">xv</span><span class="o">*</span><span class="n">yv</span><span class="p">,</span> <span class="n">xv</span><span class="o">*</span><span class="n">yv</span><span class="p">,</span> <span class="n">yv</span><span class="o">*</span><span class="n">yv</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">Wp_lstsq</span><span class="p">))</span>
+        <span class="n">kernel_image</span><span class="p">[</span><span class="n">iy</span><span class="p">,</span> <span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="n">cc</span>
+        
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">kernel_image</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">im_extent</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x1331ad6d0&gt;
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_20_1.png" src="../_images/vfa_ho_class-230426_20_1.png" />
+</div>
+</div>
+<p>So, we get a pretty similar result on this dataset where the classes are linearly separable. What about a not linear seperable problem?</p>
+<p>Here, the linear classifier has no chance at forming a good classification boundary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_hot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">y_hot</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">W_lstsq</span><span class="p">,</span><span class="n">resid</span><span class="p">,</span><span class="n">rank</span><span class="p">,</span><span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y_hot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/xn/hqbqng2d6nz8f1lcyd545kqr0000gn/T/ipykernel_4325/2325016662.py:1: FutureWarning: `rcond` parameter will change to the default of machine precision times ``max(M, N)`` where M and N are the input matrix dimensions.
+To use the future default and silence this warning we advise to pass `rcond=None`, to keep using the old, explicitly pass `rcond=-1`.
+  W_lstsq,resid,rank,sigma = np.linalg.lstsq(X,y_hot)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">class_lstsq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">W_lstsq</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">kernel_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">x_samples</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_samples</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">xv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">x_samples</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">iy</span><span class="p">,</span> <span class="n">yv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y_samples</span><span class="p">):</span>
+        <span class="n">cc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">([</span><span class="n">xv</span><span class="p">,</span><span class="n">yv</span><span class="p">],</span> <span class="n">W_lstsq</span><span class="p">))</span>
+        <span class="n">kernel_image</span><span class="p">[</span><span class="n">iy</span><span class="p">,</span> <span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="n">cc</span>
+        
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">kernel_image</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">im_extent</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">class_lstsq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x133234520&gt;
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_27_1.png" src="../_images/vfa_ho_class-230426_27_1.png" />
+</div>
+</div>
+<p>Ok, we could use the kernel trick as before, but another way to solve the problem would be to utilize the higher order features for the classification.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">7</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">ho_features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:],</span> <span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>   
+<span class="n">Wp_lstsq</span><span class="p">,</span><span class="n">resid</span><span class="p">,</span><span class="n">rank</span><span class="p">,</span><span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">Xp</span><span class="p">,</span> <span class="n">y_hot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/xn/hqbqng2d6nz8f1lcyd545kqr0000gn/T/ipykernel_4325/3280079181.py:1: FutureWarning: `rcond` parameter will change to the default of machine precision times ``max(M, N)`` where M and N are the input matrix dimensions.
+To use the future default and silence this warning we advise to pass `rcond=None`, to keep using the old, explicitly pass `rcond=-1`.
+  Wp_lstsq,resid,rank,sigma = np.linalg.lstsq(Xp, y_hot)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">kernel_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">x_samples</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_samples</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">xv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">x_samples</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">iy</span><span class="p">,</span> <span class="n">yv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y_samples</span><span class="p">):</span>
+        
+        <span class="n">cc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">([</span><span class="n">xv</span><span class="p">,</span><span class="n">yv</span><span class="p">,</span> <span class="n">xv</span><span class="o">*</span><span class="n">xv</span><span class="p">,</span> <span class="n">xv</span><span class="o">*</span><span class="n">yv</span><span class="p">,</span> <span class="n">xv</span><span class="o">*</span><span class="n">yv</span><span class="p">,</span> <span class="n">yv</span><span class="o">*</span><span class="n">yv</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">Wp_lstsq</span><span class="p">))</span>
+        <span class="n">kernel_image</span><span class="p">[</span><span class="n">iy</span><span class="p">,</span> <span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="n">cc</span>
+        
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">kernel_image</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">im_extent</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x1307e7160&gt;
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_32_1.png" src="../_images/vfa_ho_class-230426_32_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classp_lstsq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Xp</span><span class="p">,</span> <span class="n">Wp_lstsq</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">kernel_image</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">im_extent</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">classp_lstsq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x13327aa90&gt;
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_34_1.png" src="../_images/vfa_ho_class-230426_34_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Wp_lstsq</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.02139774, -0.02139774],
+       [ 0.00377112, -0.00377112],
+       [ 0.94255122, -0.94255122],
+       [-0.02953673,  0.02953673],
+       [-0.02953673,  0.02953673],
+       [ 0.96247378, -0.96247378],
+       [-0.01816124,  1.01816124]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Right then if we look carefully at the above weights, then we can see what the classifier is doing and how it creates this circular boundary. We can see that there is a large positive weight for the <span class="math notranslate nohighlight">\(x^2\)</span> (row 3) and <span class="math notranslate nohighlight">\(y^2\)</span> (row 6) features in the first column, and then there are large negative weights for the <span class="math notranslate nohighlight">\(x^2\)</span> and <span class="math notranslate nohighlight">\(y^2\)</span> values in the second column, with a large positive weight in the constant row (row 7).</p>
+<p>So, we could even simplify this. Now, I’m just going to make this one feature based on <span class="math notranslate nohighlight">\(x^2 + y^2\)</span>. This is the only feature that the classifier is actually using. Then we can throw away the other info and get essentially the same result.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xp2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">ho_features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:],</span> <span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    
+    <span class="n">Xp2</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">Xp2</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>   
+<span class="n">Wp2_lstsq</span><span class="p">,</span><span class="n">resid</span><span class="p">,</span><span class="n">rank</span><span class="p">,</span><span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">Xp2</span><span class="p">,</span> <span class="n">y_hot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/xn/hqbqng2d6nz8f1lcyd545kqr0000gn/T/ipykernel_4325/3656968834.py:1: FutureWarning: `rcond` parameter will change to the default of machine precision times ``max(M, N)`` where M and N are the input matrix dimensions.
+To use the future default and silence this warning we advise to pass `rcond=None`, to keep using the old, explicitly pass `rcond=-1`.
+  Wp2_lstsq,resid,rank,sigma = np.linalg.lstsq(Xp2, y_hot)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">kernel_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">x_samples</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_samples</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">xv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">x_samples</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">iy</span><span class="p">,</span> <span class="n">yv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y_samples</span><span class="p">):</span>
+        
+        <span class="c1">#cc = np.argmax(np.dot([xv,yv, xv*xv, xv*yv, xv*yv, yv*yv, 1], Wp_lstsq))</span>
+        <span class="n">cc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">([</span><span class="n">xv</span><span class="o">*</span><span class="n">xv</span> <span class="o">+</span> <span class="n">yv</span><span class="o">*</span><span class="n">yv</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">Wp2_lstsq</span><span class="p">))</span>
+        <span class="n">kernel_image</span><span class="p">[</span><span class="n">iy</span><span class="p">,</span> <span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="n">cc</span>
+        
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">kernel_image</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">im_extent</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x126aca1f0&gt;
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_41_1.png" src="../_images/vfa_ho_class-230426_41_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classp2_lstsq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Xp2</span><span class="p">,</span> <span class="n">Wp2_lstsq</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">kernel_image</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">im_extent</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">classp_lstsq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x123fc57c0&gt;
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_43_1.png" src="../_images/vfa_ho_class-230426_43_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Wp_lstsq</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.02139774, -0.02139774],
+       [ 0.00377112, -0.00377112],
+       [ 0.94255122, -0.94255122],
+       [-0.02953673,  0.02953673],
+       [-0.02953673,  0.02953673],
+       [ 0.96247378, -0.96247378],
+       [-0.01816124,  1.01816124]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decision_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">Wp2_lstsq</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">Wp2_lstsq</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">Wp2_lstsq</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">Wp2_lstsq</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">decision_x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5441258999843389
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">([</span><span class="n">Xp2</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]],</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">decision_x</span><span class="p">,</span> <span class="n">decision_x</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="s1">&#39;:k&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1332dda90&gt;]
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_46_1.png" src="../_images/vfa_ho_class-230426_46_1.png" />
+</div>
+</div>
+<div class="section" id="vsa-ho-feature-classification">
+<h2>VSA HO Feature classification<a class="headerlink" href="#vsa-ho-feature-classification" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vsaX</span><span class="p">[</span><span class="mi">0</span><span class="p">,:])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vsaX</span><span class="p">[</span><span class="mi">1</span><span class="p">,:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/matplotlib/cbook/__init__.py:1298: ComplexWarning: Casting complex values to real discards the imaginary part
+  return np.asarray(x, float)
+/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/matplotlib/cbook/__init__.py:1298: ComplexWarning: Casting complex values to real discards the imaginary part
+  return np.asarray(x, float)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13415ad60&gt;]
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_48_2.png" src="../_images/vfa_ho_class-230426_48_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#vsaX = crvec(N,2)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vsa_features</span> <span class="o">=</span> <span class="n">vsaX</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">+</span> <span class="n">lccI</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">K</span><span class="p">)[:,</span><span class="kc">None</span><span class="p">]</span> <span class="c1"># the identity vector is like the bias term</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vsa_features</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(500, 300)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vsa_ho</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">vsa_features</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">vsa_features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+    <span class="n">vsa_ho</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">lccbind</span><span class="p">(</span><span class="n">vsa_features</span><span class="p">[:,</span><span class="n">i</span><span class="p">],</span> <span class="n">vsa_features</span><span class="p">[:,</span><span class="n">i</span><span class="p">],</span> <span class="n">K</span><span class="p">)</span>
+    <span class="c1">#vsa_ho[:,i] = vsa_features[:,i] * vsa_features[:,i] + vsa_features[:,i]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vsa_ho</span><span class="p">[:,</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/matplotlib/cbook/__init__.py:1298: ComplexWarning: Casting complex values to real discards the imaginary part
+  return np.asarray(x, float)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1344ada00&gt;]
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_53_2.png" src="../_images/vfa_ho_class-230426_53_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Wvsa_lstsq</span><span class="p">,</span><span class="n">resid</span><span class="p">,</span><span class="n">rank</span><span class="p">,</span><span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">vsa_ho</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">y_hot</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="mf">1e-1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Wvsa_lstsq = np.linalg.pinv(np.conj(vsa_ho) @ vsa_ho.T) @ np.conj(vsa_ho) @ y_hot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">y_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">40</span><span class="p">)</span>
+
+<span class="n">kernel_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">x_samples</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_samples</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">xv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">x_samples</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">iy</span><span class="p">,</span> <span class="n">yv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y_samples</span><span class="p">):</span>
+        <span class="n">v_f</span> <span class="o">=</span> <span class="n">vsaX</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="p">[</span><span class="n">xv</span><span class="p">,</span> <span class="n">yv</span><span class="p">]</span> <span class="o">+</span> <span class="n">lccI</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+        <span class="n">v_ho</span> <span class="o">=</span> <span class="n">lccbind</span><span class="p">(</span><span class="n">v_f</span><span class="p">,</span> <span class="n">v_f</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+        
+        <span class="n">cc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Wvsa_lstsq</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">v_ho</span><span class="p">))</span>
+        <span class="n">kernel_image</span><span class="p">[</span><span class="n">iy</span><span class="p">,</span> <span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="n">cc</span>
+        
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">kernel_image</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">im_extent</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x134574d90&gt;
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_57_1.png" src="../_images/vfa_ho_class-230426_57_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v_ho</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/matplotlib/cbook/__init__.py:1298: ComplexWarning: Casting complex values to real discards the imaginary part
+  return np.asarray(x, float)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x133509ca0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_58_2.png" src="../_images/vfa_ho_class-230426_58_2.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="classificaiton-with-high-order-features">
+<h1>Classificaiton with high-order features<a class="headerlink" href="#classificaiton-with-high-order-features" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tqdm</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">LinearSVC</span>
+<span class="kn">import</span> <span class="nn">sklearn.datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="kn">from</span> <span class="nn">warnings</span> <span class="kn">import</span> <span class="n">simplefilter</span>
+<span class="kn">from</span> <span class="nn">sklearn.exceptions</span> <span class="kn">import</span> <span class="n">ConvergenceWarning</span>
+<span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="n">ConvergenceWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.family&#39;</span><span class="p">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span> 
+                     <span class="s1">&#39;font.serif&#39;</span><span class="p">:[</span><span class="s1">&#39;Computer Modern&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.fft</span> <span class="kn">import</span> <span class="n">fft</span><span class="p">,</span> <span class="n">ifft</span>
+
+<span class="k">def</span> <span class="nf">crvec</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">D</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">rphase</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">D</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">rphase</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span><span class="n">j</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">rphase</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">scvec</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">K</span><span class="p">):</span>
+    <span class="n">letter_vectors_c</span> <span class="o">=</span> <span class="n">crvec</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">D</span><span class="p">):</span>
+        <span class="n">ip</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="n">K</span><span class="p">),</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">letter_vectors_c</span><span class="p">[</span><span class="n">d</span><span class="p">,</span> <span class="n">ip</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        
+    <span class="k">return</span> <span class="n">letter_vectors_c</span>
+
+<span class="k">def</span> <span class="nf">lccvec</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">Kv</span><span class="p">):</span>
+    <span class="c1"># N needs to be multiple of Kv</span>
+    
+    <span class="n">R</span> <span class="o">=</span> <span class="n">N</span><span class="o">/</span><span class="n">Kv</span>
+    
+    <span class="k">assert</span><span class="p">(</span><span class="n">R</span><span class="o">==</span><span class="n">N</span><span class="o">//</span><span class="n">Kv</span><span class="p">)</span>
+    
+    <span class="n">letter_vectors_c</span> <span class="o">=</span> <span class="mi">0</span><span class="o">*</span><span class="n">crvec</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">D</span><span class="p">):</span>
+        <span class="n">ip</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">R</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">Kv</span><span class="p">),</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="n">ip</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">Kv</span><span class="p">))</span>
+        
+        <span class="n">letter_vectors_c</span><span class="p">[</span><span class="n">d</span><span class="p">,</span> <span class="n">ip</span><span class="p">]</span> <span class="o">=</span> <span class="n">crvec</span><span class="p">(</span><span class="n">Kv</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">letter_vectors_c</span>
+    
+<span class="k">def</span> <span class="nf">cconv</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">pa</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pb</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">ifft</span><span class="p">(</span><span class="n">fft</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="n">pa</span> <span class="o">*</span> <span class="n">fft</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="n">pb</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">ccinv</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="c1">#return ifft(np.conj(fft(a)))</span>
+    <span class="k">return</span> <span class="n">ifft</span><span class="p">(</span><span class="n">fft</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">lccI</span><span class="p">(</span><span class="n">Nv</span><span class="p">,</span> <span class="n">Kv</span><span class="p">):</span>
+    <span class="n">vv</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">*</span><span class="n">crvec</span><span class="p">(</span><span class="n">Nv</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> 
+    
+    <span class="n">Rv</span> <span class="o">=</span> <span class="n">Nv</span><span class="o">//</span><span class="n">Kv</span>
+    
+    <span class="n">vvr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">vv</span><span class="p">,</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">Kv</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">Rv</span><span class="p">)])</span>
+    
+    <span class="n">vvr</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    
+    <span class="k">return</span> <span class="n">vvr</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>    
+    
+    
+
+<span class="k">def</span> <span class="nf">lccbind</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="n">vec2</span><span class="p">,</span> <span class="n">Kv</span><span class="p">,</span> <span class="n">pa</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pb</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">Nv</span> <span class="o">=</span> <span class="n">vec1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">Rv</span> <span class="o">=</span> <span class="n">Nv</span><span class="o">/</span><span class="n">Kv</span>
+
+    <span class="n">vec1r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">Kv</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">Rv</span><span class="p">)])</span>
+    <span class="n">vec2r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">vec2</span><span class="p">,</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">Kv</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">Rv</span><span class="p">)])</span>
+
+    <span class="n">vec_br</span> <span class="o">=</span> <span class="n">cconv</span><span class="p">(</span><span class="n">vec1r</span><span class="p">,</span> <span class="n">vec2r</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="n">pb</span><span class="p">)</span>
+
+    <span class="n">vec_b</span> <span class="o">=</span> <span class="n">vec_br</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">vec_b</span>
+
+<span class="k">def</span> <span class="nf">lccperm</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="n">Kv</span><span class="p">,</span> <span class="n">proll</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">Nv</span> <span class="o">=</span> <span class="n">vec1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">Rv</span> <span class="o">=</span> <span class="n">Nv</span><span class="o">/</span><span class="n">Kv</span>
+
+    <span class="n">vec1r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">Kv</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">Rv</span><span class="p">)])</span>
+    
+    <span class="n">vec_perm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">vec1r</span><span class="p">,</span> <span class="n">proll</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">vec_perm</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">lccinv</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="n">Kv</span><span class="p">):</span>
+    <span class="n">Nv</span> <span class="o">=</span> <span class="n">vec1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">Rv</span> <span class="o">=</span> <span class="n">Nv</span><span class="o">/</span><span class="n">Kv</span>
+
+    <span class="n">vec1r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">vec1</span><span class="p">,</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">Kv</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">Rv</span><span class="p">)])</span>
+    
+    <span class="n">vec1_ir</span> <span class="o">=</span> <span class="n">ccinv</span><span class="p">(</span><span class="n">vec1r</span><span class="p">)</span>
+    <span class="n">vec1_i</span> <span class="o">=</span> <span class="n">vec1_ir</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">vec1_i</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="polynomial-features">
+<h2>Polynomial features<a class="headerlink" href="#polynomial-features" title="Permalink to this headline">¶</a></h2>
+<p>Like the kernel trick is another similar idea in machine-learning to compute the higher-order features.</p>
+<div class="section" id="vsa-binding-and-the-tensor-product">
+<h3>VSA Binding and the tensor product<a class="headerlink" href="#vsa-binding-and-the-tensor-product" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sidx</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">ho_features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">sidx</span><span class="p">,</span> <span class="p">:],</span> <span class="n">X</span><span class="p">[</span><span class="n">sidx</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ho_features</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.03866681, -0.00325648],
+       [-0.00325648,  0.00027426]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># can encode the feature space into a vsa vector</span>
+<span class="n">vsaX</span> <span class="o">=</span> <span class="n">lccvec</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+
+<span class="n">vsa_features</span> <span class="o">=</span> <span class="n">vsaX</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">X</span><span class="p">[</span><span class="n">sidx</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vsa_features</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1330ddee0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_9_1.png" src="../_images/vfa_ho_class-230426_9_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># then this is the first order features recovered</span>
+<span class="n">vsa_reconX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">vsaX</span><span class="p">)</span> <span class="o">@</span> <span class="n">vsa_features</span><span class="p">)</span><span class="o">/</span> <span class="n">K</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vsa_reconX</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="n">sidx</span><span class="p">,</span> <span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.19646627  0.01451226] [-0.19663879  0.01656074]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vsa_ho</span> <span class="o">=</span> <span class="n">lccbind</span><span class="p">(</span><span class="n">vsa_features</span><span class="p">,</span> <span class="n">vsa_features</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vsa_ho</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x133147a30&gt;]
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_12_1.png" src="../_images/vfa_ho_class-230426_12_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xx_code</span> <span class="o">=</span> <span class="n">lccbind</span><span class="p">(</span><span class="n">vsaX</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">vsaX</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">K</span><span class="p">)</span>
+<span class="n">xy_code</span> <span class="o">=</span> <span class="n">lccbind</span><span class="p">(</span><span class="n">vsaX</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">vsaX</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">K</span><span class="p">)</span>
+<span class="n">yy_code</span> <span class="o">=</span> <span class="n">lccbind</span><span class="p">(</span><span class="n">vsaX</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">vsaX</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">K</span><span class="p">)</span>
+
+<span class="n">vsa_recon_ho</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">vsa_recon_ho</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">xx_code</span><span class="p">)</span> <span class="o">@</span> <span class="n">vsa_ho</span><span class="p">)</span><span class="o">/</span> <span class="n">K</span>
+
+<span class="c1"># this is actually encoded twice</span>
+<span class="n">vsa_recon_ho</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">xy_code</span><span class="p">)</span> <span class="o">@</span> <span class="n">vsa_ho</span><span class="p">)</span><span class="o">/</span> <span class="n">K</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">vsa_recon_ho</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">xy_code</span><span class="p">)</span> <span class="o">@</span> <span class="n">vsa_ho</span><span class="p">)</span><span class="o">/</span> <span class="n">K</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="n">vsa_recon_ho</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">yy_code</span><span class="p">)</span> <span class="o">@</span> <span class="n">vsa_ho</span><span class="p">)</span><span class="o">/</span> <span class="n">K</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vsa_recon_ho</span><span class="p">,</span> <span class="n">ho_features</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([[ 0.03858529, -0.00305365],
+        [-0.00305365, -0.00172214]]),
+ array([[ 0.03866681, -0.00325648],
+        [-0.00325648,  0.00027426]]))
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="classification-with-higher-order-polynomial-features">
+<h1>Classification with higher-order polynomial features<a class="headerlink" href="#classification-with-higher-order-polynomial-features" title="Permalink to this headline">¶</a></h1>
+<p>Here, we will design a classifier based on the higher order features of the data. Higher-order features are extracted by multiplying together the lower-order features. We would call the input features the “linear” or “first-order” feature space, and any pair-wise products of these features would form “quadratic” or “second-order” features. This can continue with “third-order”, “fourth-order”, etc. with three products between linear features, four products, etc., respectively.</p>
+<p>The second-order features would then be enumerated by the tensor product between the linear vectors.  we are going to just treat each number in the tensor product as a feature. Lets enumerate the higher order features then into the data vectors and again just perform our linear regression classifier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sklearn has some simple datasets</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">make_circles</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Paired</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x133204b20&gt;
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_16_1.png" src="../_images/vfa_ho_class-230426_16_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">7</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">ho_features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:],</span> <span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>   
+<span class="n">Wp_lstsq</span><span class="p">,</span><span class="n">resid</span><span class="p">,</span><span class="n">rank</span><span class="p">,</span><span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">Xp</span><span class="p">,</span><span class="n">y_hot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/xn/hqbqng2d6nz8f1lcyd545kqr0000gn/T/ipykernel_4325/1665104272.py:1: FutureWarning: `rcond` parameter will change to the default of machine precision times ``max(M, N)`` where M and N are the input matrix dimensions.
+To use the future default and silence this warning we advise to pass `rcond=None`, to keep using the old, explicitly pass `rcond=-1`.
+  Wp_lstsq,resid,rank,sigma = np.linalg.lstsq(Xp,y_hot)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">kernel_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">x_samples</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_samples</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">xv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">x_samples</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">iy</span><span class="p">,</span> <span class="n">yv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y_samples</span><span class="p">):</span>
+        
+        <span class="n">cc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">([</span><span class="n">xv</span><span class="p">,</span><span class="n">yv</span><span class="p">,</span> <span class="n">xv</span><span class="o">*</span><span class="n">xv</span><span class="p">,</span> <span class="n">xv</span><span class="o">*</span><span class="n">yv</span><span class="p">,</span> <span class="n">xv</span><span class="o">*</span><span class="n">yv</span><span class="p">,</span> <span class="n">yv</span><span class="o">*</span><span class="n">yv</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">Wp_lstsq</span><span class="p">))</span>
+        <span class="n">kernel_image</span><span class="p">[</span><span class="n">iy</span><span class="p">,</span> <span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="n">cc</span>
+        
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">kernel_image</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">im_extent</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x1331ad6d0&gt;
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_20_1.png" src="../_images/vfa_ho_class-230426_20_1.png" />
+</div>
+</div>
+<p>So, we get a pretty similar result on this dataset where the classes are linearly separable. What about a not linear seperable problem?</p>
+<p>Here, the linear classifier has no chance at forming a good classification boundary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_hot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">y_hot</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">W_lstsq</span><span class="p">,</span><span class="n">resid</span><span class="p">,</span><span class="n">rank</span><span class="p">,</span><span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y_hot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/xn/hqbqng2d6nz8f1lcyd545kqr0000gn/T/ipykernel_4325/2325016662.py:1: FutureWarning: `rcond` parameter will change to the default of machine precision times ``max(M, N)`` where M and N are the input matrix dimensions.
+To use the future default and silence this warning we advise to pass `rcond=None`, to keep using the old, explicitly pass `rcond=-1`.
+  W_lstsq,resid,rank,sigma = np.linalg.lstsq(X,y_hot)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">class_lstsq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">W_lstsq</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">kernel_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">x_samples</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_samples</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">xv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">x_samples</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">iy</span><span class="p">,</span> <span class="n">yv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y_samples</span><span class="p">):</span>
+        <span class="n">cc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">([</span><span class="n">xv</span><span class="p">,</span><span class="n">yv</span><span class="p">],</span> <span class="n">W_lstsq</span><span class="p">))</span>
+        <span class="n">kernel_image</span><span class="p">[</span><span class="n">iy</span><span class="p">,</span> <span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="n">cc</span>
+        
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">kernel_image</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">im_extent</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">class_lstsq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x133234520&gt;
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_27_1.png" src="../_images/vfa_ho_class-230426_27_1.png" />
+</div>
+</div>
+<p>Ok, we could use the kernel trick as before, but another way to solve the problem would be to utilize the higher order features for the classification.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">7</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">ho_features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:],</span> <span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">Xp</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>   
+<span class="n">Wp_lstsq</span><span class="p">,</span><span class="n">resid</span><span class="p">,</span><span class="n">rank</span><span class="p">,</span><span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">Xp</span><span class="p">,</span> <span class="n">y_hot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/xn/hqbqng2d6nz8f1lcyd545kqr0000gn/T/ipykernel_4325/3280079181.py:1: FutureWarning: `rcond` parameter will change to the default of machine precision times ``max(M, N)`` where M and N are the input matrix dimensions.
+To use the future default and silence this warning we advise to pass `rcond=None`, to keep using the old, explicitly pass `rcond=-1`.
+  Wp_lstsq,resid,rank,sigma = np.linalg.lstsq(Xp, y_hot)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">kernel_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">x_samples</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_samples</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">xv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">x_samples</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">iy</span><span class="p">,</span> <span class="n">yv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y_samples</span><span class="p">):</span>
+        
+        <span class="n">cc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">([</span><span class="n">xv</span><span class="p">,</span><span class="n">yv</span><span class="p">,</span> <span class="n">xv</span><span class="o">*</span><span class="n">xv</span><span class="p">,</span> <span class="n">xv</span><span class="o">*</span><span class="n">yv</span><span class="p">,</span> <span class="n">xv</span><span class="o">*</span><span class="n">yv</span><span class="p">,</span> <span class="n">yv</span><span class="o">*</span><span class="n">yv</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">Wp_lstsq</span><span class="p">))</span>
+        <span class="n">kernel_image</span><span class="p">[</span><span class="n">iy</span><span class="p">,</span> <span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="n">cc</span>
+        
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">kernel_image</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">im_extent</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x1307e7160&gt;
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_32_1.png" src="../_images/vfa_ho_class-230426_32_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classp_lstsq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Xp</span><span class="p">,</span> <span class="n">Wp_lstsq</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">kernel_image</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">im_extent</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">classp_lstsq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x13327aa90&gt;
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_34_1.png" src="../_images/vfa_ho_class-230426_34_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Wp_lstsq</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.02139774, -0.02139774],
+       [ 0.00377112, -0.00377112],
+       [ 0.94255122, -0.94255122],
+       [-0.02953673,  0.02953673],
+       [-0.02953673,  0.02953673],
+       [ 0.96247378, -0.96247378],
+       [-0.01816124,  1.01816124]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Right then if we look carefully at the above weights, then we can see what the classifier is doing and how it creates this circular boundary. We can see that there is a large positive weight for the <span class="math notranslate nohighlight">\(x^2\)</span> (row 3) and <span class="math notranslate nohighlight">\(y^2\)</span> (row 6) features in the first column, and then there are large negative weights for the <span class="math notranslate nohighlight">\(x^2\)</span> and <span class="math notranslate nohighlight">\(y^2\)</span> values in the second column, with a large positive weight in the constant row (row 7).</p>
+<p>So, we could even simplify this. Now, I’m just going to make this one feature based on <span class="math notranslate nohighlight">\(x^2 + y^2\)</span>. This is the only feature that the classifier is actually using. Then we can throw away the other info and get essentially the same result.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xp2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">ho_features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:],</span> <span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    
+    <span class="n">Xp2</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">ho_features</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">Xp2</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>   
+<span class="n">Wp2_lstsq</span><span class="p">,</span><span class="n">resid</span><span class="p">,</span><span class="n">rank</span><span class="p">,</span><span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">Xp2</span><span class="p">,</span> <span class="n">y_hot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/xn/hqbqng2d6nz8f1lcyd545kqr0000gn/T/ipykernel_4325/3656968834.py:1: FutureWarning: `rcond` parameter will change to the default of machine precision times ``max(M, N)`` where M and N are the input matrix dimensions.
+To use the future default and silence this warning we advise to pass `rcond=None`, to keep using the old, explicitly pass `rcond=-1`.
+  Wp2_lstsq,resid,rank,sigma = np.linalg.lstsq(Xp2, y_hot)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">kernel_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">x_samples</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_samples</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">xv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">x_samples</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">iy</span><span class="p">,</span> <span class="n">yv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y_samples</span><span class="p">):</span>
+        
+        <span class="c1">#cc = np.argmax(np.dot([xv,yv, xv*xv, xv*yv, xv*yv, yv*yv, 1], Wp_lstsq))</span>
+        <span class="n">cc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">([</span><span class="n">xv</span><span class="o">*</span><span class="n">xv</span> <span class="o">+</span> <span class="n">yv</span><span class="o">*</span><span class="n">yv</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">Wp2_lstsq</span><span class="p">))</span>
+        <span class="n">kernel_image</span><span class="p">[</span><span class="n">iy</span><span class="p">,</span> <span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="n">cc</span>
+        
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">kernel_image</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">im_extent</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x126aca1f0&gt;
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_41_1.png" src="../_images/vfa_ho_class-230426_41_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classp2_lstsq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Xp2</span><span class="p">,</span> <span class="n">Wp2_lstsq</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">kernel_image</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">im_extent</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">classp_lstsq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x123fc57c0&gt;
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_43_1.png" src="../_images/vfa_ho_class-230426_43_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Wp_lstsq</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.02139774, -0.02139774],
+       [ 0.00377112, -0.00377112],
+       [ 0.94255122, -0.94255122],
+       [-0.02953673,  0.02953673],
+       [-0.02953673,  0.02953673],
+       [ 0.96247378, -0.96247378],
+       [-0.01816124,  1.01816124]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decision_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">Wp2_lstsq</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">Wp2_lstsq</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">Wp2_lstsq</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">Wp2_lstsq</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">decision_x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5441258999843389
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">([</span><span class="n">Xp2</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]],</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">decision_x</span><span class="p">,</span> <span class="n">decision_x</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="s1">&#39;:k&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1332dda90&gt;]
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_46_1.png" src="../_images/vfa_ho_class-230426_46_1.png" />
+</div>
+</div>
+<div class="section" id="vsa-ho-feature-classification">
+<h2>VSA HO Feature classification<a class="headerlink" href="#vsa-ho-feature-classification" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vsaX</span><span class="p">[</span><span class="mi">0</span><span class="p">,:])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vsaX</span><span class="p">[</span><span class="mi">1</span><span class="p">,:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/matplotlib/cbook/__init__.py:1298: ComplexWarning: Casting complex values to real discards the imaginary part
+  return np.asarray(x, float)
+/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/matplotlib/cbook/__init__.py:1298: ComplexWarning: Casting complex values to real discards the imaginary part
+  return np.asarray(x, float)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13415ad60&gt;]
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_48_2.png" src="../_images/vfa_ho_class-230426_48_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#vsaX = crvec(N,2)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vsa_features</span> <span class="o">=</span> <span class="n">vsaX</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">+</span> <span class="n">lccI</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">K</span><span class="p">)[:,</span><span class="kc">None</span><span class="p">]</span> <span class="c1"># the identity vector is like the bias term</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vsa_features</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(500, 300)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vsa_ho</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">vsa_features</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">vsa_features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+    <span class="n">vsa_ho</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">lccbind</span><span class="p">(</span><span class="n">vsa_features</span><span class="p">[:,</span><span class="n">i</span><span class="p">],</span> <span class="n">vsa_features</span><span class="p">[:,</span><span class="n">i</span><span class="p">],</span> <span class="n">K</span><span class="p">)</span>
+    <span class="c1">#vsa_ho[:,i] = vsa_features[:,i] * vsa_features[:,i] + vsa_features[:,i]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vsa_ho</span><span class="p">[:,</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/matplotlib/cbook/__init__.py:1298: ComplexWarning: Casting complex values to real discards the imaginary part
+  return np.asarray(x, float)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1344ada00&gt;]
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_53_2.png" src="../_images/vfa_ho_class-230426_53_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Wvsa_lstsq</span><span class="p">,</span><span class="n">resid</span><span class="p">,</span><span class="n">rank</span><span class="p">,</span><span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">vsa_ho</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">y_hot</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="mf">1e-1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Wvsa_lstsq = np.linalg.pinv(np.conj(vsa_ho) @ vsa_ho.T) @ np.conj(vsa_ho) @ y_hot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">y_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">40</span><span class="p">)</span>
+
+<span class="n">kernel_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">x_samples</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_samples</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">xv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">x_samples</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">iy</span><span class="p">,</span> <span class="n">yv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y_samples</span><span class="p">):</span>
+        <span class="n">v_f</span> <span class="o">=</span> <span class="n">vsaX</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="p">[</span><span class="n">xv</span><span class="p">,</span> <span class="n">yv</span><span class="p">]</span> <span class="o">+</span> <span class="n">lccI</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+        <span class="n">v_ho</span> <span class="o">=</span> <span class="n">lccbind</span><span class="p">(</span><span class="n">v_f</span><span class="p">,</span> <span class="n">v_f</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+        
+        <span class="n">cc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Wvsa_lstsq</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">v_ho</span><span class="p">))</span>
+        <span class="n">kernel_image</span><span class="p">[</span><span class="n">iy</span><span class="p">,</span> <span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="n">cc</span>
+        
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_samples</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">kernel_image</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">im_extent</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x134574d90&gt;
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_57_1.png" src="../_images/vfa_ho_class-230426_57_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v_ho</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/matplotlib/cbook/__init__.py:1298: ComplexWarning: Casting complex values to real discards the imaginary part
+  return np.asarray(x, float)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x133509ca0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/vfa_ho_class-230426_58_2.png" src="../_images/vfa_ho_class-230426_58_2.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Dr. E. Paxon Frady<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
