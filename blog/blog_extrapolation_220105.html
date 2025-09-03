@@ -1,388 +1,466 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Interpolation and Extrapolation in Neural networks &#8212; Neuromorphic Algorithms Research</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
-
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'blog/blog_extrapolation_220105';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
         
       
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
       
-      <img src="../_static/neural_circuit.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Neuromorphic Algorithms Research</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../index.html">
-   Neuromorphic Algorithms Research
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  About me
- </span>
-</p>
+    
+    
+    <img src="../_static/neural_circuit.png" class="logo__image only-light" alt="Neuromorphic Algorithms Research - Home"/>
+    <script>document.write(`<img src="../_static/neural_circuit.png" class="logo__image only-dark" alt="Neuromorphic Algorithms Research - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Neuromorphic Algorithms Research
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About me</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../about_me.html">
-   E. Paxon Frady
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../about_me.html">E. Paxon Frady</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Research
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Research</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Research/neuroscience_data.html">
-   Experimental Neuroscience
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Research/theoretical_neuroscience.html">
-   Neural Computation
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Research/sparse_binding_demo.html">
-     Sparse binding demo – What’s the dollar of mexico?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Research/spiking_networks.html">
-   Spiking Neural Networks
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Research/tpam_demo.html">
-     Threshold Phasor Associative Memory
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Research/resonator_networks.html">
-   Resonator Networks
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Research/resonator_template.html">
-     Factorization of shape, color and location
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Research/res_semi_primes-220216.html">
-     Factoring semi-primes with the resonator network
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Research/neuroscience_data.html">Experimental Neuroscience</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Research/theoretical_neuroscience.html">Neural Computation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Research/sparse_binding_demo.html">Sparse binding demo – What’s the dollar of mexico?</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Research/spiking_networks.html">Spiking Neural Networks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Research/tpam_demo.html">Threshold Phasor Associative Memory</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Research/resonator_networks.html">Resonator Networks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Research/resonator_template.html">Factorization of shape, color and location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Research/res_semi_primes-220216.html">Factoring semi-primes with the resonator network</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Tutorials/computational_neuroscience.html">Computational Neuroscience</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/spiking_basics_brian2.html">Rate-coding with Integrate-and-Fire neurons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/connecting_if_neurons.html">Connecting IFR theory to connectionism</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/blog/blog_extrapolation_220105.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/blog/blog_extrapolation_220105.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-        </div>
-    </div>
-</div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Interpolation and Extrapolation in Neural networks</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
-                
-            </div>
-            
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="interpolation-and-extrapolation-in-neural-networks">
-<h1>Interpolation and Extrapolation in Neural networks<a class="headerlink" href="#interpolation-and-extrapolation-in-neural-networks" title="Permalink to this headline">¶</a></h1>
-<p>Watching machine learning street talk youtube channel, where they discuss with Yann Lecun whether neural networks only interpolate or that they can extrapolate.</p>
-<p><a class="reference external" href="https://www.youtube.com/watch?v=86ib0sfdFtw&amp;ab_channel=MachineLearningStreetTalk">https://www.youtube.com/watch?v=86ib0sfdFtw&amp;ab_channel=MachineLearningStreetTalk</a></p>
-<p>Some frustrating thoughts from one the “god-father” of deep learning. Just so much cringe…</p>
-<p>There is also a paper he references:
-<a class="reference external" href="https://arxiv.org/pdf/2110.09485.pdf">https://arxiv.org/pdf/2110.09485.pdf</a></p>
-<p>“Learning High Dimension Always Amounts to Extrapolation”</p>
-<p>They go into a discussion about even the definition of extrapolation and interpolation, and make some mistakes when thinking about high-dimensional space.</p>
-<p>There is a semantic discussion about what extrapolation even means. Interpolation is when a novel data-point exists inside the convex hull of data-points in the training set. Thus, if a point is within the convex hull of a data-point, then one can use a linear combination of the training points to explain the novel data-point, and this is considered (linear) interpolation.</p>
-<p>But they argue that the likelihood of a data-point being inside the convex hull of training data decreases exponentially (or super-exponentially…) with the dimensionality of the data. Their argument amounts to considerations of the volumes of higher-dimensional object. This on its face is true, since the volume of high-dimensional space grows exponentially, convex hulls inside of this space take up proportionally less of the volume, making it exponentially less likely that a novel point will be inside of the convex hull.</p>
-<p>They are building on a paper that argues that deep networks are not actually defining lower-dimensional latent spaces as a way to model the training data. Rather the data is split into independent volumes that are essentially categorical in nature, and the interpolation that we see is just an artifact of a large number of categories.</p>
-<p>However, this already doesn’t jive well with the realities of a basis set. They are making a mistake that it only matters whats inside the hull, and that outside the hull is completely extraneous. But a basis set is not like this.</p>
-<p>A basis set and a latent space are essentially the same. Lets just consider images. We are always using a basis set to represent the image. If we just represented each pixel, then our basis functions are one-hot vectors the size of the image, with each vector representing one of the pixels. With <span class="math notranslate nohighlight">\(N\)</span> pixel values we can represent any <span class="math notranslate nohighlight">\(N\)</span>-dimensional image. In essence, any image is a linear combination of the basis functions.</p>
-<p>We all know that through PCA or sparse coding we can come up with a more “efficient” basis set for images, where we reduce the total number of basis functions, and thus can represent a <span class="math notranslate nohighlight">\(N\)</span>-pixel image with fewer than <span class="math notranslate nohighlight">\(N\)</span> basis functions. But this is because we are only considering “natural” images, which are compressible. There is of course some lost information when compressing images into a reduced basis set.</p>
-<p>Regardless, it is actually quite trivial to use basis functions as a representation for images. The argument that a point is unlikely to fall into the convex-hull of the basis set is just wrong. Any image <span class="math notranslate nohighlight">\(N\)</span>-dimensional can be represented by a linear-combination of <span class="math notranslate nohighlight">\(N\)</span> orthogonal basis functions. If I just enumerated a set of <span class="math notranslate nohighlight">\(N\)</span> basis functions for each pixel, then every image would fall inside the convex hull, and every image would just be a linear-combination of these basis functions.</p>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./blog"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
-              
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="interpolation-and-extrapolation-in-neural-networks">
-<h1>Interpolation and Extrapolation in Neural networks<a class="headerlink" href="#interpolation-and-extrapolation-in-neural-networks" title="Permalink to this headline">¶</a></h1>
-<p>Watching machine learning street talk youtube channel, where they discuss with Yann Lecun whether neural networks only interpolate or that they can extrapolate.</p>
-<p><a class="reference external" href="https://www.youtube.com/watch?v=86ib0sfdFtw&amp;ab_channel=MachineLearningStreetTalk">https://www.youtube.com/watch?v=86ib0sfdFtw&amp;ab_channel=MachineLearningStreetTalk</a></p>
-<p>Some frustrating thoughts from one the “god-father” of deep learning. Just so much cringe…</p>
-<p>There is also a paper he references:
-<a class="reference external" href="https://arxiv.org/pdf/2110.09485.pdf">https://arxiv.org/pdf/2110.09485.pdf</a></p>
-<p>“Learning High Dimension Always Amounts to Extrapolation”</p>
-<p>They go into a discussion about even the definition of extrapolation and interpolation, and make some mistakes when thinking about high-dimensional space.</p>
-<p>There is a semantic discussion about what extrapolation even means. Interpolation is when a novel data-point exists inside the convex hull of data-points in the training set. Thus, if a point is within the convex hull of a data-point, then one can use a linear combination of the training points to explain the novel data-point, and this is considered (linear) interpolation.</p>
-<p>But they argue that the likelihood of a data-point being inside the convex hull of training data decreases exponentially (or super-exponentially…) with the dimensionality of the data. Their argument amounts to considerations of the volumes of higher-dimensional object. This on its face is true, since the volume of high-dimensional space grows exponentially, convex hulls inside of this space take up proportionally less of the volume, making it exponentially less likely that a novel point will be inside of the convex hull.</p>
-<p>They are building on a paper that argues that deep networks are not actually defining lower-dimensional latent spaces as a way to model the training data. Rather the data is split into independent volumes that are essentially categorical in nature, and the interpolation that we see is just an artifact of a large number of categories.</p>
-<p>However, this already doesn’t jive well with the realities of a basis set. They are making a mistake that it only matters whats inside the hull, and that outside the hull is completely extraneous. But a basis set is not like this.</p>
-<p>A basis set and a latent space are essentially the same. Lets just consider images. We are always using a basis set to represent the image. If we just represented each pixel, then our basis functions are one-hot vectors the size of the image, with each vector representing one of the pixels. With <span class="math notranslate nohighlight">\(N\)</span> pixel values we can represent any <span class="math notranslate nohighlight">\(N\)</span>-dimensional image. In essence, any image is a linear combination of the basis functions.</p>
-<p>We all know that through PCA or sparse coding we can come up with a more “efficient” basis set for images, where we reduce the total number of basis functions, and thus can represent a <span class="math notranslate nohighlight">\(N\)</span>-pixel image with fewer than <span class="math notranslate nohighlight">\(N\)</span> basis functions. But this is because we are only considering “natural” images, which are compressible. There is of course some lost information when compressing images into a reduced basis set.</p>
-<p>Regardless, it is actually quite trivial to use basis functions as a representation for images. The argument that a point is unlikely to fall into the convex-hull of the basis set is just wrong. Any image <span class="math notranslate nohighlight">\(N\)</span>-dimensional can be represented by a linear-combination of <span class="math notranslate nohighlight">\(N\)</span> orthogonal basis functions. If I just enumerated a set of <span class="math notranslate nohighlight">\(N\)</span> basis functions for each pixel, then every image would fall inside the convex hull, and every image would just be a linear-combination of these basis functions.</p>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./blog"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
-              
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-</div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Dr. E. Paxon Frady<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
 
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/blog/blog_extrapolation_220105.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Interpolation and Extrapolation in Neural networks</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="interpolation-and-extrapolation-in-neural-networks">
+<h1>Interpolation and Extrapolation in Neural networks<a class="headerlink" href="#interpolation-and-extrapolation-in-neural-networks" title="Link to this heading">#</a></h1>
+<p>Watching machine learning street talk youtube channel, where they discuss with Yann Lecun whether neural networks only interpolate or that they can extrapolate.</p>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=86ib0sfdFtw&amp;amp;ab_channel=MachineLearningStreetTalk">https://www.youtube.com/watch?v=86ib0sfdFtw&amp;ab_channel=MachineLearningStreetTalk</a></p>
+<p>Some frustrating thoughts from one the “god-father” of deep learning. Just so much cringe…</p>
+<p>There is also a paper he references:
+<a class="reference external" href="https://arxiv.org/pdf/2110.09485.pdf">https://arxiv.org/pdf/2110.09485.pdf</a></p>
+<p>“Learning High Dimension Always Amounts to Extrapolation”</p>
+<p>They go into a discussion about even the definition of extrapolation and interpolation, and make some mistakes when thinking about high-dimensional space.</p>
+<p>There is a semantic discussion about what extrapolation even means. Interpolation is when a novel data-point exists inside the convex hull of data-points in the training set. Thus, if a point is within the convex hull of a data-point, then one can use a linear combination of the training points to explain the novel data-point, and this is considered (linear) interpolation.</p>
+<p>But they argue that the likelihood of a data-point being inside the convex hull of training data decreases exponentially (or super-exponentially…) with the dimensionality of the data. Their argument amounts to considerations of the volumes of higher-dimensional object. This on its face is true, since the volume of high-dimensional space grows exponentially, convex hulls inside of this space take up proportionally less of the volume, making it exponentially less likely that a novel point will be inside of the convex hull.</p>
+<p>They are building on a paper that argues that deep networks are not actually defining lower-dimensional latent spaces as a way to model the training data. Rather the data is split into independent volumes that are essentially categorical in nature, and the interpolation that we see is just an artifact of a large number of categories.</p>
+<p>However, this already doesn’t jive well with the realities of a basis set. They are making a mistake that it only matters whats inside the hull, and that outside the hull is completely extraneous. But a basis set is not like this.</p>
+<p>A basis set and a latent space are essentially the same. Lets just consider images. We are always using a basis set to represent the image. If we just represented each pixel, then our basis functions are one-hot vectors the size of the image, with each vector representing one of the pixels. With <span class="math notranslate nohighlight">\(N\)</span> pixel values we can represent any <span class="math notranslate nohighlight">\(N\)</span>-dimensional image. In essence, any image is a linear combination of the basis functions.</p>
+<p>We all know that through PCA or sparse coding we can come up with a more “efficient” basis set for images, where we reduce the total number of basis functions, and thus can represent a <span class="math notranslate nohighlight">\(N\)</span>-pixel image with fewer than <span class="math notranslate nohighlight">\(N\)</span> basis functions. But this is because we are only considering “natural” images, which are compressible. There is of course some lost information when compressing images into a reduced basis set.</p>
+<p>Regardless, it is actually quite trivial to use basis functions as a representation for images. The argument that a point is unlikely to fall into the convex-hull of the basis set is just wrong. Any image <span class="math notranslate nohighlight">\(N\)</span>-dimensional can be represented by a linear-combination of <span class="math notranslate nohighlight">\(N\)</span> orthogonal basis functions. If I just enumerated a set of <span class="math notranslate nohighlight">\(N\)</span> basis functions for each pixel, then every image would fall inside the convex hull, and every image would just be a linear-combination of these basis functions.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./blog"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr. E. Paxon Frady
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

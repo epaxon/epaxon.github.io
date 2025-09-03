@@ -1,435 +1,396 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Spiking Neural Networks &#8212; Neuromorphic Algorithms Research</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
-
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Research/spiking_networks';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Threshold Phasor Associative Memory" href="tpam_demo.html" />
     <link rel="prev" title="Sparse binding demo – What’s the dollar of mexico?" href="sparse_binding_demo.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/neural_circuit.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Neuromorphic Algorithms Research</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../index.html">
-   Neuromorphic Algorithms Research
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  About me
- </span>
-</p>
+    
+    
+    <img src="../_static/neural_circuit.png" class="logo__image only-light" alt="Neuromorphic Algorithms Research - Home"/>
+    <script>document.write(`<img src="../_static/neural_circuit.png" class="logo__image only-dark" alt="Neuromorphic Algorithms Research - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Neuromorphic Algorithms Research
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About me</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../about_me.html">
-   E. Paxon Frady
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../about_me.html">E. Paxon Frady</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Research
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Research</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="neuroscience_data.html">
-   Experimental Neuroscience
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="theoretical_neuroscience.html">
-   Neural Computation
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sparse_binding_demo.html">
-     Sparse binding demo – What’s the dollar of mexico?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
-   Spiking Neural Networks
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="tpam_demo.html">
-     Threshold Phasor Associative Memory
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="resonator_networks.html">
-   Resonator Networks
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="resonator_template.html">
-     Factorization of shape, color and location
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="res_semi_primes-220216.html">
-     Factoring semi-primes with the resonator network
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="neuroscience_data.html">Experimental Neuroscience</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="theoretical_neuroscience.html">Neural Computation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sparse_binding_demo.html">Sparse binding demo – What’s the dollar of mexico?</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Spiking Neural Networks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tpam_demo.html">Threshold Phasor Associative Memory</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="resonator_networks.html">Resonator Networks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="resonator_template.html">Factorization of shape, color and location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="res_semi_primes-220216.html">Factoring semi-primes with the resonator network</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Tutorials/computational_neuroscience.html">Computational Neuroscience</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/spiking_basics_brian2.html">Rate-coding with Integrate-and-Fire neurons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/connecting_if_neurons.html">Connecting IFR theory to connectionism</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Research/spiking_networks.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Research/spiking_networks.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
         
         
-        
-        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Research/spiking_networks.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
-        </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Spiking Neural Networks</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#robust-computation-with-rhythmic-spike-patterns">
-   Robust Computation with Rhythmic Spike Patterns
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summary">
-     Summary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#links">
-     Links
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs">
-   Neuromorphic nearest neighbor search on Intel’s Pohoiki Springs
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Summary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Links
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#efficient-neuromorphic-signal-processing-with-resonator-neurons">
-   Efficient Neuromorphic Signal Processing with Resonator Neurons
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Summary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Links
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#deep-learning-in-spiking-phasor-networks">
-   Deep learning in spiking phasor networks
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     Summary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     Links
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#robust-computation-with-rhythmic-spike-patterns">Robust Computation with Rhythmic Spike Patterns</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs">Neuromorphic nearest neighbor search on Intel’s Pohoiki Springs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Links</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#efficient-neuromorphic-signal-processing-with-resonator-neurons">Efficient Neuromorphic Signal Processing with Resonator Neurons</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Links</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-in-spiking-phasor-networks">Deep learning in spiking phasor networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Links</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Spiking Neural Networks</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
-                
-                <div>
-                    <h2> Contents </h2>
-                </div>
-                <nav aria-label="Page">
-                    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#robust-computation-with-rhythmic-spike-patterns">
-   Robust Computation with Rhythmic Spike Patterns
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summary">
-     Summary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#links">
-     Links
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs">
-   Neuromorphic nearest neighbor search on Intel’s Pohoiki Springs
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Summary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Links
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#efficient-neuromorphic-signal-processing-with-resonator-neurons">
-   Efficient Neuromorphic Signal Processing with Resonator Neurons
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Summary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Links
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#deep-learning-in-spiking-phasor-networks">
-   Deep learning in spiking phasor networks
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     Summary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     Links
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
 
-                </nav>
-            </div>
-            
-              <div>
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="spiking-neural-networks">
-<h1>Spiking Neural Networks<a class="headerlink" href="#spiking-neural-networks" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="spiking-neural-networks">
+<h1>Spiking Neural Networks<a class="headerlink" href="#spiking-neural-networks" title="Link to this heading">#</a></h1>
 <p>Our work in spiking neural networks links the mathematical connectionists theories used for designing algorithms with ideas for how biological networks use spikes to represent and process information. Traditional theories of spiking in the brain simply relate the spiking rate to the mathematical theories in connectionism. Much of this work focuses on alternative representations for how spikes convey information, where utilizing the precise spike-timing of neurons can be used to more efficiently process information than the rate-coding paradigm.</p>
-<div class="section" id="robust-computation-with-rhythmic-spike-patterns">
-<h2>Robust Computation with Rhythmic Spike Patterns<a class="headerlink" href="#robust-computation-with-rhythmic-spike-patterns" title="Permalink to this headline">¶</a></h2>
+<section id="robust-computation-with-rhythmic-spike-patterns">
+<h2>Robust Computation with Rhythmic Spike Patterns<a class="headerlink" href="#robust-computation-with-rhythmic-spike-patterns" title="Link to this heading">#</a></h2>
 <p>E. Paxon Frady and Friedrich T. Sommer, (2019). PNAS.</p>
 <!--
 <img src="phasors2spikes-transfer-190612.png" alt="Phasors to spikes"
@@ -437,53 +398,53 @@
 
 -->
 <p><img alt="phasors to spikes" src="../_images/phasors2spikes-transfer-190612.png" /></p>
-<div class="section" id="summary">
-<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<section id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h3>
 <p>The basis for how we understand neural networks is linear algebra – vectors and matrices. We see neurons in the brain signal through spikes, and we connect these spikes to vectors through the theory of rate-coding. This means that more spikes from a neuron is related to a larger number in a vector. The synapses between neurons has a synaptic weight, and the spikes influence the target neurons the way that a vector dot products with a weight matrix.</p>
 <p>In this paper, we flesh out an alternative neural code that uses spikes and spike-timing to represent information. The theoretical link between spikes and vectors is the same, except we are now considering complex-valued vectors. Similarly, we use a matrix-vector dot product to represent how neurons communicate with each other through synapses, but again the matrix is also complex-valued.</p>
 <p>The insight of the paper is that complex numbers are related to circles and oscillations. We see oscillations in many different nervous systems and at different frequencies. We show that mathematically, you can consider a single spike as representing a complex number, where the timing of the spike relative to some background oscillation indicates the phase of the complex number. You can also represent a complex-valued weight matrix by including synaptic delays. The spike being delayed by a synaptic delay is equivalent to the phase-shift induced when multiplying two complex numbers.</p>
 <p>In this paper, we use these mathematical connections to build a complex-valued version of the Hopfield network. The Hopfield network is widely known for its description of attractor-dynamics and many theoretical ideas as well as experimental studies point to the use of attractor-dynamics in neural computation. The complex-valued version of the Hopfield network we denoted as Threshold Phasor Associative Memory (TPAM), which allows one to store complex vectors as attractor-states. By providing a cue of a noisy or partial stored pattern, the dynamics of the network would restore the original pattern.</p>
 <p>We then built spiking neural networks that implement these dynamics, which leads to a network that can produce stable, precisely-timed patterns of spiking activity. We explored two different ways of building such a network. The first network uses resonate-and-fire neurons, which have an intrinsic oscillatory dynamics, which is simple and more computationally friendly. The second network is more closely inspired by biology, where neurons are standard integrate-and-fire models and the oscillation is induced through recurrent feedback of inhibitory neurons. This version accounts for some neuroscientific principles, such as Dale’s Law, mimics more closely what is known about neural circuits in the cortex, and is more directly relatable to electro-physiology experiments.</p>
-</div>
-<div class="section" id="links">
-<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="links">
+<h3>Links<a class="headerlink" href="#links" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://www.pnas.org/content/116/36/18050">PNAS website</a></p>
 <p><a class="reference external" href="https://www.researchgate.net/publication/335276895_Robust_computation_with_rhythmic_spike_patterns">PDF Available</a></p>
-<p><a class="reference internal" href="tpam_demo.html"><span class="doc std std-doc">TPAM Demo Notebook</span></a></p>
-</div>
-</div>
-<div class="section" id="neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs">
-<h2>Neuromorphic nearest neighbor search on Intel’s Pohoiki Springs<a class="headerlink" href="#neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="tpam_demo.html"><span class="std std-doc">TPAM Demo Notebook</span></a></p>
+</section>
+</section>
+<section id="neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs">
+<h2>Neuromorphic nearest neighbor search on Intel’s Pohoiki Springs<a class="headerlink" href="#neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs" title="Link to this heading">#</a></h2>
 <p>E. Paxon Frady, Garrick Orchard, David Florey, Nabil Imam, Ruoken Liu, Joyesh Mishra, Jonathan Tse, Andreas Wild, Friedrich T. Sommer, and Mike Davies, (2020). NICE</p>
 <!--
 <img src="latency_code_knn.png" alt="Latency code"
 	width="60%"/>
 -->
 <p><img alt="Latency coding" src="../_images/latency_code_knn.png" /></p>
-<div class="section" id="id1">
-<h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<section id="id1">
+<h3>Summary<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>A myriad of data science applications rely on finding the nearest neighbor to an input cue amongst a large database of training samples.
 Neuromorphic computing holds promise in performing nearest neighbor search more efficiently than traditional methods.
 But, the algorithm for nearest neighbor search must be matched to the hardware to realize this potential.</p>
 <p>We used ideas from neuroscience to encode input cues as a spike-timing pattern. In this coding scheme, spikes earlier in time correspond to larger magnitude coefficients in the input cue vector. Through integration of synaptic inputs, the nearest neighbors are computed and the timing of output spikes corresponds to the closest matches, with the earliest spikes being the closest match.</p>
 <p>We built this algorithm at large-scale on Intel’s Pohoiki Springs – a mesh of 768 interconnected Loihi chips capable of simulating nearly 100 million neurons. This implementation was a first-step that is competitive with other large-scale nearest neighbor algorithms in terms of latency and energy efficiency, and it has big advantages in index build-time.</p>
-</div>
-<div class="section" id="id2">
-<h3>Links<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id2">
+<h3>Links<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <a href="https://dl.acm.org/doi/pdf/10.1145/3381755.3398695?casa_token=0CyCI7vFe30AAAAA:WFOsToDNmS6rJeIUe4H0_ncDO5Ra5VCpAaMwZma8td7rBjcYV8j1BUHHU_ZkojrhZy4zogCz9PuH"> 
 Neuromorphic KNN NICE 2020
-</a></div>
-</div>
-<div class="section" id="efficient-neuromorphic-signal-processing-with-resonator-neurons">
-<h2>Efficient Neuromorphic Signal Processing with Resonator Neurons<a class="headerlink" href="#efficient-neuromorphic-signal-processing-with-resonator-neurons" title="Permalink to this headline">¶</a></h2>
+</a></section>
+</section>
+<section id="efficient-neuromorphic-signal-processing-with-resonator-neurons">
+<h2>Efficient Neuromorphic Signal Processing with Resonator Neurons<a class="headerlink" href="#efficient-neuromorphic-signal-processing-with-resonator-neurons" title="Link to this heading">#</a></h2>
 <p>E. Paxon Frady, Sophia Sanborn, Sumit Bam Srestha, Daniel Ben-Dayan Rubin, Garrick Orchard, Friedrich T. Sommer, Mike Davies, (2022). JSPS.</p>
 <!--
 <img src="rf_stft.png" alt="STFT with resonate-and-fire neurons"
 	width="60%"/>
 -->
 <p><img alt="RF STFT" src="../_images/spike_spec-follow-num_corr-mean-210630.png" /></p>
-<div class="section" id="id3">
-<h3>Summary<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<section id="id3">
+<h3>Summary<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>The formalism of how to represent complex numbers and perform complex matrix multiplication described in <em>Robust Computation with Rhythmic Spike Patterns</em> leads to the potential to use spike-timing codes to perform Fourier analysis.
 A standard signal processing algorithm is the spectrogram, or short-time fourier transform (STFT).
 This can be computed naturally with the dynamics of Resonate-and-Fire (RF) neurons.
@@ -491,28 +452,28 @@ By simply forming a bank of RF neurons, each neuron with a its own resonant-freq
 <p>But wait theres more! Complex-valued computations are a great tool for spatio-temporal filtering of video data. We described an algorithm for optic flow estimation based on the classic <a class="reference external" href="http://persci.mit.edu/pub_pdfs/spatio85.pdf">Adelson and Bergen, 1985</a> model.
 In this model, saptio-temporal gabor filters are computed through the integration dynamics of RF neurons. The outputs of this filtering are combined to produce an estimate of optic flow. We showed that this simple and straight-forward method for computing optic flow is competitive with much more complex deep learning networks, but our model is far more efficient.</p>
 <p>Finally, we extend the capabilities of supervised learning to learn with RF neurons. We show a keyword spotting application based on training multi-layer RF networks. Further, we describe how the RF neuron can be extended to a Hopf resonator and how this could be used for signal processing applications.</p>
-</div>
-<div class="section" id="id4">
-<h3>Links<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id4">
+<h3>Links<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://arxiv.org/abs/2111.03746">arXiv</a></p>
-</div>
-</div>
-<div class="section" id="deep-learning-in-spiking-phasor-networks">
-<h2>Deep learning in spiking phasor networks<a class="headerlink" href="#deep-learning-in-spiking-phasor-networks" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="deep-learning-in-spiking-phasor-networks">
+<h2>Deep learning in spiking phasor networks<a class="headerlink" href="#deep-learning-in-spiking-phasor-networks" title="Link to this heading">#</a></h2>
 <p>Connor Bybee, E. Paxon Frady, Friedrich T. Sommer. (2022). arXiv.</p>
 <p><img alt="spike_dl" src="../_images/spike_dl.png" /></p>
-<div class="section" id="id5">
-<h3>Summary<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<section id="id5">
+<h3>Summary<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>Our theory of how spike-timing codes can be used to perform complex-valued matrix computations immediately suggests a way to formulate feed-forward deep learning in spiking neural networks. In this paradigm, the neural state space is complex-valued as well as are the synaptic connections. Back-propagation can be used to train these weights like in traditional deep learning, but then the system can be implemented efficiently with spiking neurons. This could lead to more efficient deep networks being executed on neuromorphic spiking hardware.</p>
-</div>
-<div class="section" id="id6">
-<h3>Links<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id6">
+<h3>Links<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://arxiv.org/abs/2204.00507">arXiv</a></p>
-</div>
-</div>
+</section>
+</section>
 <div class="toctree-wrapper compound">
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -526,7 +487,7 @@ In this model, saptio-temporal gabor filters are computed through the integratio
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./Research"
         },
         predefinedOutput: true
@@ -534,163 +495,122 @@ In this model, saptio-temporal gabor filters are computed through the integratio
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="spiking-neural-networks">
-<h1>Spiking Neural Networks<a class="headerlink" href="#spiking-neural-networks" title="Permalink to this headline">¶</a></h1>
-<p>Our work in spiking neural networks links the mathematical connectionists theories used for designing algorithms with ideas for how biological networks use spikes to represent and process information. Traditional theories of spiking in the brain simply relate the spiking rate to the mathematical theories in connectionism. Much of this work focuses on alternative representations for how spikes convey information, where utilizing the precise spike-timing of neurons can be used to more efficiently process information than the rate-coding paradigm.</p>
-<div class="section" id="robust-computation-with-rhythmic-spike-patterns">
-<h2>Robust Computation with Rhythmic Spike Patterns<a class="headerlink" href="#robust-computation-with-rhythmic-spike-patterns" title="Permalink to this headline">¶</a></h2>
-<p>E. Paxon Frady and Friedrich T. Sommer, (2019). PNAS.</p>
-<!--
-<img src="phasors2spikes-transfer-190612.png" alt="Phasors to spikes"
-	width="60%"/>
 
--->
-<p><img alt="phasors to spikes" src="../_images/phasors2spikes-transfer-190612.png" /></p>
-<div class="section" id="summary">
-<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
-<p>The basis for how we understand neural networks is linear algebra – vectors and matrices. We see neurons in the brain signal through spikes, and we connect these spikes to vectors through the theory of rate-coding. This means that more spikes from a neuron is related to a larger number in a vector. The synapses between neurons has a synaptic weight, and the spikes influence the target neurons the way that a vector dot products with a weight matrix.</p>
-<p>In this paper, we flesh out an alternative neural code that uses spikes and spike-timing to represent information. The theoretical link between spikes and vectors is the same, except we are now considering complex-valued vectors. Similarly, we use a matrix-vector dot product to represent how neurons communicate with each other through synapses, but again the matrix is also complex-valued.</p>
-<p>The insight of the paper is that complex numbers are related to circles and oscillations. We see oscillations in many different nervous systems and at different frequencies. We show that mathematically, you can consider a single spike as representing a complex number, where the timing of the spike relative to some background oscillation indicates the phase of the complex number. You can also represent a complex-valued weight matrix by including synaptic delays. The spike being delayed by a synaptic delay is equivalent to the phase-shift induced when multiplying two complex numbers.</p>
-<p>In this paper, we use these mathematical connections to build a complex-valued version of the Hopfield network. The Hopfield network is widely known for its description of attractor-dynamics and many theoretical ideas as well as experimental studies point to the use of attractor-dynamics in neural computation. The complex-valued version of the Hopfield network we denoted as Threshold Phasor Associative Memory (TPAM), which allows one to store complex vectors as attractor-states. By providing a cue of a noisy or partial stored pattern, the dynamics of the network would restore the original pattern.</p>
-<p>We then built spiking neural networks that implement these dynamics, which leads to a network that can produce stable, precisely-timed patterns of spiking activity. We explored two different ways of building such a network. The first network uses resonate-and-fire neurons, which have an intrinsic oscillatory dynamics, which is simple and more computationally friendly. The second network is more closely inspired by biology, where neurons are standard integrate-and-fire models and the oscillation is induced through recurrent feedback of inhibitory neurons. This version accounts for some neuroscientific principles, such as Dale’s Law, mimics more closely what is known about neural circuits in the cortex, and is more directly relatable to electro-physiology experiments.</p>
-</div>
-<div class="section" id="links">
-<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://www.pnas.org/content/116/36/18050">PNAS website</a></p>
-<p><a class="reference external" href="https://www.researchgate.net/publication/335276895_Robust_computation_with_rhythmic_spike_patterns">PDF Available</a></p>
-<p><a class="reference internal" href="tpam_demo.html"><span class="doc std std-doc">TPAM Demo Notebook</span></a></p>
-</div>
-</div>
-<div class="section" id="neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs">
-<h2>Neuromorphic nearest neighbor search on Intel’s Pohoiki Springs<a class="headerlink" href="#neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs" title="Permalink to this headline">¶</a></h2>
-<p>E. Paxon Frady, Garrick Orchard, David Florey, Nabil Imam, Ruoken Liu, Joyesh Mishra, Jonathan Tse, Andreas Wild, Friedrich T. Sommer, and Mike Davies, (2020). NICE</p>
-<!--
-<img src="latency_code_knn.png" alt="Latency code"
-	width="60%"/>
--->
-<p><img alt="Latency coding" src="../_images/latency_code_knn.png" /></p>
-<div class="section" id="id1">
-<h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>A myriad of data science applications rely on finding the nearest neighbor to an input cue amongst a large database of training samples.
-Neuromorphic computing holds promise in performing nearest neighbor search more efficiently than traditional methods.
-But, the algorithm for nearest neighbor search must be matched to the hardware to realize this potential.</p>
-<p>We used ideas from neuroscience to encode input cues as a spike-timing pattern. In this coding scheme, spikes earlier in time correspond to larger magnitude coefficients in the input cue vector. Through integration of synaptic inputs, the nearest neighbors are computed and the timing of output spikes corresponds to the closest matches, with the earliest spikes being the closest match.</p>
-<p>We built this algorithm at large-scale on Intel’s Pohoiki Springs – a mesh of 768 interconnected Loihi chips capable of simulating nearly 100 million neurons. This implementation was a first-step that is competitive with other large-scale nearest neighbor algorithms in terms of latency and energy efficiency, and it has big advantages in index build-time.</p>
-</div>
-<div class="section" id="id2">
-<h3>Links<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<a href="https://dl.acm.org/doi/pdf/10.1145/3381755.3398695?casa_token=0CyCI7vFe30AAAAA:WFOsToDNmS6rJeIUe4H0_ncDO5Ra5VCpAaMwZma8td7rBjcYV8j1BUHHU_ZkojrhZy4zogCz9PuH"> 
-Neuromorphic KNN NICE 2020
-</a></div>
-</div>
-<div class="section" id="efficient-neuromorphic-signal-processing-with-resonator-neurons">
-<h2>Efficient Neuromorphic Signal Processing with Resonator Neurons<a class="headerlink" href="#efficient-neuromorphic-signal-processing-with-resonator-neurons" title="Permalink to this headline">¶</a></h2>
-<p>E. Paxon Frady, Sophia Sanborn, Sumit Bam Srestha, Daniel Ben-Dayan Rubin, Garrick Orchard, Friedrich T. Sommer, Mike Davies, (2022). JSPS.</p>
-<!--
-<img src="rf_stft.png" alt="STFT with resonate-and-fire neurons"
-	width="60%"/>
--->
-<p><img alt="RF STFT" src="../_images/spike_spec-follow-num_corr-mean-210630.png" /></p>
-<div class="section" id="id3">
-<h3>Summary<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p>The formalism of how to represent complex numbers and perform complex matrix multiplication described in <em>Robust Computation with Rhythmic Spike Patterns</em> leads to the potential to use spike-timing codes to perform Fourier analysis.
-A standard signal processing algorithm is the spectrogram, or short-time fourier transform (STFT).
-This can be computed naturally with the dynamics of Resonate-and-Fire (RF) neurons.
-By simply forming a bank of RF neurons, each neuron with a its own resonant-frequency, then an input signal can be integrated by the neurons and the output spikes correspond to the complex-valued coefficients of the STFT.</p>
-<p>But wait theres more! Complex-valued computations are a great tool for spatio-temporal filtering of video data. We described an algorithm for optic flow estimation based on the classic <a class="reference external" href="http://persci.mit.edu/pub_pdfs/spatio85.pdf">Adelson and Bergen, 1985</a> model.
-In this model, saptio-temporal gabor filters are computed through the integration dynamics of RF neurons. The outputs of this filtering are combined to produce an estimate of optic flow. We showed that this simple and straight-forward method for computing optic flow is competitive with much more complex deep learning networks, but our model is far more efficient.</p>
-<p>Finally, we extend the capabilities of supervised learning to learn with RF neurons. We show a keyword spotting application based on training multi-layer RF networks. Further, we describe how the RF neuron can be extended to a Hopf resonator and how this could be used for signal processing applications.</p>
-</div>
-<div class="section" id="id4">
-<h3>Links<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://arxiv.org/abs/2111.03746">arXiv</a></p>
-</div>
-</div>
-<div class="section" id="deep-learning-in-spiking-phasor-networks">
-<h2>Deep learning in spiking phasor networks<a class="headerlink" href="#deep-learning-in-spiking-phasor-networks" title="Permalink to this headline">¶</a></h2>
-<p>Connor Bybee, E. Paxon Frady, Friedrich T. Sommer. (2022). arXiv.</p>
-<p><img alt="spike_dl" src="../_images/spike_dl.png" /></p>
-<div class="section" id="id5">
-<h3>Summary<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>Our theory of how spike-timing codes can be used to perform complex-valued matrix computations immediately suggests a way to formulate feed-forward deep learning in spiking neural networks. In this paradigm, the neural state space is complex-valued as well as are the synaptic connections. Back-propagation can be used to train these weights like in traditional deep learning, but then the system can be implemented efficiently with spiking neurons. This could lead to more efficient deep networks being executed on neuromorphic spiking hardware.</p>
-</div>
-<div class="section" id="id6">
-<h3>Links<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://arxiv.org/abs/2204.00507">arXiv</a></p>
-</div>
-</div>
-<div class="toctree-wrapper compound">
-</div>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./Research"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="sparse_binding_demo.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Sparse binding demo – What’s the dollar of mexico?</p>
-        </div>
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="sparse_binding_demo.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Sparse binding demo – What’s the dollar of mexico?</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="tpam_demo.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="tpam_demo.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Threshold Phasor Associative Memory</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Dr. E. Paxon Frady<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-      </div>
-    </div>
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#robust-computation-with-rhythmic-spike-patterns">Robust Computation with Rhythmic Spike Patterns</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuromorphic-nearest-neighbor-search-on-intel-s-pohoiki-springs">Neuromorphic nearest neighbor search on Intel’s Pohoiki Springs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Links</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#efficient-neuromorphic-signal-processing-with-resonator-neurons">Efficient Neuromorphic Signal Processing with Resonator Neurons</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Links</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-learning-in-spiking-phasor-networks">Deep learning in spiking phasor networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Links</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr. E. Paxon Frady
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -1,545 +1,479 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Resonator Networks &#8212; Neuromorphic Algorithms Research</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
-
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Research/resonator_networks';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Factorization of shape, color and location" href="resonator_template.html" />
     <link rel="prev" title="Threshold Phasor Associative Memory" href="tpam_demo.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/neural_circuit.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Neuromorphic Algorithms Research</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../index.html">
-   Neuromorphic Algorithms Research
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  About me
- </span>
-</p>
+    
+    
+    <img src="../_static/neural_circuit.png" class="logo__image only-light" alt="Neuromorphic Algorithms Research - Home"/>
+    <script>document.write(`<img src="../_static/neural_circuit.png" class="logo__image only-dark" alt="Neuromorphic Algorithms Research - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Neuromorphic Algorithms Research
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About me</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../about_me.html">
-   E. Paxon Frady
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../about_me.html">E. Paxon Frady</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Research
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Research</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="neuroscience_data.html">
-   Experimental Neuroscience
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="theoretical_neuroscience.html">
-   Neural Computation
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sparse_binding_demo.html">
-     Sparse binding demo – What’s the dollar of mexico?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="spiking_networks.html">
-   Spiking Neural Networks
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="tpam_demo.html">
-     Threshold Phasor Associative Memory
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
-   Resonator Networks
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="resonator_template.html">
-     Factorization of shape, color and location
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="res_semi_primes-220216.html">
-     Factoring semi-primes with the resonator network
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="neuroscience_data.html">Experimental Neuroscience</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="theoretical_neuroscience.html">Neural Computation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sparse_binding_demo.html">Sparse binding demo – What’s the dollar of mexico?</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="spiking_networks.html">Spiking Neural Networks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tpam_demo.html">Threshold Phasor Associative Memory</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Resonator Networks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="resonator_template.html">Factorization of shape, color and location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="res_semi_primes-220216.html">Factoring semi-primes with the resonator network</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Tutorials/computational_neuroscience.html">Computational Neuroscience</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/spiking_basics_brian2.html">Rate-coding with Integrate-and-Fire neurons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/connecting_if_neurons.html">Connecting IFR theory to connectionism</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Research/resonator_networks.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Research/resonator_networks.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
         
         
-        
-        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Research/resonator_networks.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
-        </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Resonator Networks</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resonator-networks-1-an-efficient-solution-for-factorization-of-distributed-data-structures">
-   Resonator Networks 1: An efficient solution for factorization of distributed data structures
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summary">
-     Summary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#links">
-     Links
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resonator-networks-2-factorization-performance-and-capacity-compared-to-optimization-based-methods">
-   Resonator Networks 2: Factorization performance and capacity compared to optimization-based methods
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Summary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Links
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#integer-factorization-with-compositional-distributed-representations">
-   Integer Factorization with Compositional Distributed Representations
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Summary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Links
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#neuromorphic-visual-scene-understanding-with-resonator-networks">
-   Neuromorphic Visual Scene Understanding with Resonator Networks
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     Summary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     Links
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#neuromorphic-visual-odometry-with-resonator-networks">
-   Neuromorphic Visual Odometry with Resonator Networks
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     Summary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     Links
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resonator-networks-1-an-efficient-solution-for-factorization-of-distributed-data-structures">Resonator Networks 1: An efficient solution for factorization of distributed data structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resonator-networks-2-factorization-performance-and-capacity-compared-to-optimization-based-methods">Resonator Networks 2: Factorization performance and capacity compared to optimization-based methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Links</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-factorization-with-compositional-distributed-representations">Integer Factorization with Compositional Distributed Representations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Links</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuromorphic-visual-scene-understanding-with-resonator-networks">Neuromorphic Visual Scene Understanding with Resonator Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Links</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuromorphic-visual-odometry-with-resonator-networks">Neuromorphic Visual Odometry with Resonator Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Links</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Resonator Networks</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
-                
-                <div>
-                    <h2> Contents </h2>
-                </div>
-                <nav aria-label="Page">
-                    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resonator-networks-1-an-efficient-solution-for-factorization-of-distributed-data-structures">
-   Resonator Networks 1: An efficient solution for factorization of distributed data structures
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summary">
-     Summary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#links">
-     Links
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resonator-networks-2-factorization-performance-and-capacity-compared-to-optimization-based-methods">
-   Resonator Networks 2: Factorization performance and capacity compared to optimization-based methods
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Summary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Links
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#integer-factorization-with-compositional-distributed-representations">
-   Integer Factorization with Compositional Distributed Representations
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Summary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Links
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#neuromorphic-visual-scene-understanding-with-resonator-networks">
-   Neuromorphic Visual Scene Understanding with Resonator Networks
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     Summary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     Links
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#neuromorphic-visual-odometry-with-resonator-networks">
-   Neuromorphic Visual Odometry with Resonator Networks
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     Summary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     Links
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
 
-                </nav>
-            </div>
-            
-              <div>
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="resonator-networks">
-<h1>Resonator Networks<a class="headerlink" href="#resonator-networks" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="resonator-networks">
+<h1>Resonator Networks<a class="headerlink" href="#resonator-networks" title="Link to this heading">#</a></h1>
 <p>The resonator network is an exciting new neural network design that is capable of solving challenging computational problems. The resonator network is unlike most neural networks in AI and in computational neuroscience.</p>
 <p>The resonator is for solving combinatorial search problems or factorization problems. We believe that many problems in perception and cognition are of this variety and that these problems aren’t suitable for standard deep learning neural networks. Factorization problems can be memorized, but they do not generalize in the same way as standard pattern matching or classification problems.</p>
 <p>The architecture of the resonator network also includes an operation between neural populations that is very unfamiliar to both deep learning and computational neuroscience: the binding operation. The binding operation is a way of expressing combinatoric conjunctions of features into a vector space. This is what gives VSA flexibility to express data structures in neural activity.</p>
 <p>The opposite of binding is factorization. This relates to many fundamental problems in computer science, like the factorization of prime numbers and other combinatorial NP problems. These problems are challenging due to their scaling and complexity, but are not really conceptually hard for a computer to solve, they just require a lot of computational work. In fact, algorithmically, these problems are some of the easiest – you just have to brute force guess and check all possible factors to decide which factors are present in a given factorization problem.</p>
 <p>The resonator network’s approach to solving such problems uses the VSA principle of superposition. With superposition, neural populations can hold multiple guesses for one of the factors and test them simultaneously. However, the price of simultaneous inference is crosstalk noise. The resonator network performs such an inference step iteratively, and uses attractor dynamics to “clean-up” the result of each inference step. By iteratively performing inference and clean-up the resonator network searches through the combinatoric solution space, and when it finds the right combination the dynamics rapidly converge to a stable state.</p>
-<div class="section" id="resonator-networks-1-an-efficient-solution-for-factorization-of-distributed-data-structures">
-<h2>Resonator Networks 1: An efficient solution for factorization of distributed data structures<a class="headerlink" href="#resonator-networks-1-an-efficient-solution-for-factorization-of-distributed-data-structures" title="Permalink to this headline">¶</a></h2>
+<section id="resonator-networks-1-an-efficient-solution-for-factorization-of-distributed-data-structures">
+<h2>Resonator Networks 1: An efficient solution for factorization of distributed data structures<a class="headerlink" href="#resonator-networks-1-an-efficient-solution-for-factorization-of-distributed-data-structures" title="Link to this heading">#</a></h2>
 <p>E. Paxon Frady, Spencer Kent, Bruno A. Olshausen, Friedrich T. Sommer. (2020) Neural Computation. 32(12):2311-2331.</p>
 <p><img alt="resonator_circuit_diagram" src="../_images/resonator_circuit_diagram.png" /></p>
-<div class="section" id="summary">
-<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<section id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h3>
 <p>In the first resonator network paper, we explain the concept behind the resonator network – search in superposition. We describe how VSA can be used to create data structures, like a tree, and show that fully manipulating this data structure often leads to a combinatoric search problem. For a tree data structure, the problem is to find a certain item that is in the tree, and we describe how tree search can be done with the resonator network.</p>
 <p>We also describe how simple geometric transformations onto objects are fundamentally bindings between the object shape and its transformation. This means that understanding a simple scene, of e.g., numbers positioned in different locations, can indeed be expressed as a factorization problem.</p>
-</div>
-<div class="section" id="links">
-<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="links">
+<h3>Links<a class="headerlink" href="#links" title="Link to this heading">#</a></h3>
 <p><a href="https://redwood.berkeley.edu/wp-content/uploads/2020/11/frady2020resonator.pdf"> PDF: Resonator networks 1 </a></p>
-</div>
-</div>
-<div class="section" id="resonator-networks-2-factorization-performance-and-capacity-compared-to-optimization-based-methods">
-<h2>Resonator Networks 2: Factorization performance and capacity compared to optimization-based methods<a class="headerlink" href="#resonator-networks-2-factorization-performance-and-capacity-compared-to-optimization-based-methods" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="resonator-networks-2-factorization-performance-and-capacity-compared-to-optimization-based-methods">
+<h2>Resonator Networks 2: Factorization performance and capacity compared to optimization-based methods<a class="headerlink" href="#resonator-networks-2-factorization-performance-and-capacity-compared-to-optimization-based-methods" title="Link to this heading">#</a></h2>
 <p>Spencer Kent, E. Paxon Frady, Friedrich T. Sommer, Bruno A. Olshausen. (2020) Neural Computation 32(12): 2332-2388.</p>
 <p><img alt="resonator_performance" src="../_images/resonator_performance_comparison.png" /></p>
-<div class="section" id="id1">
-<h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<section id="id1">
+<h3>Summary<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>In the second paper on resonator networks, we examine the empirical performance on a standardized vector factorization problem and compare the resonator network to conventional optimization methods. We show that the resonator network is solving much more complex problems than what conventional approaches can handle.</p>
 <p>We speculate that this performance improvement is due to the fact that the resonator network does not have a conventional energy landscape. Unlike the optimization methods, which always follow the local gradient of an energy landscape, the resonator network has dynamics that cannot be described by an energy or lyapunov function. This means that there are poentially chaotic and cyclic states in the network, and it cannot be guaranteed to converge. However, the performance limitation of most optimization methods is due to getting stuck in local-minima.</p>
 <p>While the resonator network cannot be mathematically guaranteed to converge, we see empirically that it does converge to the right answer with high-probability if the problem size is under the network’s operational capacity. The operational capacity is based on the total number of combinations in the search space. We show that as the size of the resonator network scales up, the operational capacity of the network increases quadratically.</p>
-</div>
-<div class="section" id="id2">
-<h3>Links<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id2">
+<h3>Links<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p><a href="https://redwood.berkeley.edu/wp-content/uploads/2020/11/kent2020resonator.pdf"> PDF: Resonator networks 2 </a></p>
-</div>
-</div>
-<div class="section" id="integer-factorization-with-compositional-distributed-representations">
-<h2>Integer Factorization with Compositional Distributed Representations<a class="headerlink" href="#integer-factorization-with-compositional-distributed-representations" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="integer-factorization-with-compositional-distributed-representations">
+<h2>Integer Factorization with Compositional Distributed Representations<a class="headerlink" href="#integer-factorization-with-compositional-distributed-representations" title="Link to this heading">#</a></h2>
 <p>Denis Kleyko, Connor Bybee, Amir Khosrowshahi, Dmitri E. Nikonov, Friedrich T. Sommer, E. Paxon Frady. (2022) Neuro-inspired computational elements conference.</p>
 <p><img alt="integer_factorization" src="../_images/res_int_factor-220319.png" /></p>
-<div class="section" id="id3">
-<h3>Summary<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<section id="id3">
+<h3>Summary<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>Factoring integers is a well-known problem in computer science and in fact it serves as the back-bone of encryption. This is one of many problems that are “NP” or non-polynomial, which means that you effectively have to use brute-force methods to find the answer. As the problems get harder and harder, these brute-force methods scale exponentially in complexity, which can be virutally impossible to solve.</p>
-<p>The problem of integer factorization is fundamentally related to the problem of vector factorization that the resonator network can solve. In this paper, we explain new methods for mapping integers onto VSA vectors based on <span class="xref myst">fractional power encodings</span>. The key is that through this method we can generate VSA vectors that represent integers, and, importantly, the binding of vectors creates a vector representation that is the product of the integers. This means that by solving vector factorization, we can solve integer factorization.</p>
+<p>The problem of integer factorization is fundamentally related to the problem of vector factorization that the resonator network can solve. In this paper, we explain new methods for mapping integers onto VSA vectors based on <a class="reference internal" href="#"><span class="xref myst">fractional power encodings</span></a>. The key is that through this method we can generate VSA vectors that represent integers, and, importantly, the binding of vectors creates a vector representation that is the product of the integers. This means that by solving vector factorization, we can solve integer factorization.</p>
 <p>We explain how to set-up the resonator network to solve the factorization of semi-primes and other composite numbers and measure the performance and scaling empirically.</p>
-</div>
-<div class="section" id="id4">
-<h3>Links<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id4">
+<h3>Links<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="http://arxiv.org/abs/2203.00920">arXiv paper</a></p>
-<p><a class="reference internal" href="res_semi_primes-220216.html"><span class="doc std std-doc">Factoring semi primes demo</span></a></p>
-</div>
-</div>
-<div class="section" id="neuromorphic-visual-scene-understanding-with-resonator-networks">
-<h2>Neuromorphic Visual Scene Understanding with Resonator Networks<a class="headerlink" href="#neuromorphic-visual-scene-understanding-with-resonator-networks" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="res_semi_primes-220216.html"><span class="std std-doc">Factoring semi primes demo</span></a></p>
+</section>
+</section>
+<section id="neuromorphic-visual-scene-understanding-with-resonator-networks">
+<h2>Neuromorphic Visual Scene Understanding with Resonator Networks<a class="headerlink" href="#neuromorphic-visual-scene-understanding-with-resonator-networks" title="Link to this heading">#</a></h2>
 <p>Alpha Renner, Lazar Supic, Andreea Danielescu, Giacomo Indiveri, Bruno A. Olshausen, Yulia Sandamirskaya, Friedrich T. Sommer, E. Paxon Frady. (2022) arXiv:2208.12880</p>
 <p><img alt="res_diagram" src="../_images/res-diagram-srtc-input-2l-220517.png" /></p>
-<div class="section" id="id5">
-<h3>Summary<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<section id="id5">
+<h3>Summary<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>In this work, we describe methods for inferring the factors of variation of simple objects based on a generative model. This extends classic ideas in cognition based on the brain performing an “analysis by synthesis” of the environment. The computational challenge that the brain solves is the process of inverting the generative model of the scene. We show how one can use distributed vector representations to build the generative model, and how the resonator network can then be used to find the individual factors of variation that compose each object. We start by explaining how vector binding operations can act as the equivariant transform to operations like translation, and we show how the resonator network can be designed to localize objects. We then explain how non-commutative transforms, such as rotation and scaling can be used in conjunction mediated by the log-polar transform. This type of scene can then be inverted by a hierarchical resonator network. Finally, we explain how all of this can be implemented on neuromorphic hardware, with a simple demonstration of the system working on Intel’s Loihi neuromorphic computing chip.</p>
-</div>
-<div class="section" id="id6">
-<h3>Links<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id6">
+<h3>Links<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://arxiv.org/abs/2208.12880">arXiv paper</a></p>
-</div>
-</div>
-<div class="section" id="neuromorphic-visual-odometry-with-resonator-networks">
-<h2>Neuromorphic Visual Odometry with Resonator Networks<a class="headerlink" href="#neuromorphic-visual-odometry-with-resonator-networks" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="neuromorphic-visual-odometry-with-resonator-networks">
+<h2>Neuromorphic Visual Odometry with Resonator Networks<a class="headerlink" href="#neuromorphic-visual-odometry-with-resonator-networks" title="Link to this heading">#</a></h2>
 <p>Alpha Renner, Lazar Supic, Andreea Danielescu, Giacomo Indiveri, E. Paxon Frady, Friedrich T. Sommer, Yulia Sandamirskaya. (2022) arXiv:2209.02000.</p>
 <p><img alt="res-vis_odometry.png" src="../_images/res-vis_odometry.png" /></p>
-<div class="section" id="id7">
-<h3>Summary<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<section id="id7">
+<h3>Summary<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>With the ability to use the resonator network to extract the transaltion, rotation and scaling of objects in a visual scene, we extended the network to tackle the problem of visual odometry in robotics. Visual odometry is the task of using vision to track motion through space. Visual motion tracking has an advantage over integration of inertial measurements as it is less prone to drift. In this use-case, the resonator network is augmented with a spatial map of the environment that it integrates over time. The map is used by the resonator network to align the visual input and factor out the differences in rotation and translation. The estimates in turn are used to incorporate the visual input into the map. This is also known as simultaneous localization and mapping. We benchmarked this network on a few datasets for visual odometry and show how the resonator network</p>
-</div>
-<div class="section" id="id8">
-<h3>Links<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id8">
+<h3>Links<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://arxiv.org/abs/2209.02000">arXiv paper</a></p>
-</div>
-</div>
+</section>
+</section>
 <div class="toctree-wrapper compound">
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -553,7 +487,7 @@
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./Research"
         },
         predefinedOutput: true
@@ -561,156 +495,127 @@
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="resonator-networks">
-<h1>Resonator Networks<a class="headerlink" href="#resonator-networks" title="Permalink to this headline">¶</a></h1>
-<p>The resonator network is an exciting new neural network design that is capable of solving challenging computational problems. The resonator network is unlike most neural networks in AI and in computational neuroscience.</p>
-<p>The resonator is for solving combinatorial search problems or factorization problems. We believe that many problems in perception and cognition are of this variety and that these problems aren’t suitable for standard deep learning neural networks. Factorization problems can be memorized, but they do not generalize in the same way as standard pattern matching or classification problems.</p>
-<p>The architecture of the resonator network also includes an operation between neural populations that is very unfamiliar to both deep learning and computational neuroscience: the binding operation. The binding operation is a way of expressing combinatoric conjunctions of features into a vector space. This is what gives VSA flexibility to express data structures in neural activity.</p>
-<p>The opposite of binding is factorization. This relates to many fundamental problems in computer science, like the factorization of prime numbers and other combinatorial NP problems. These problems are challenging due to their scaling and complexity, but are not really conceptually hard for a computer to solve, they just require a lot of computational work. In fact, algorithmically, these problems are some of the easiest – you just have to brute force guess and check all possible factors to decide which factors are present in a given factorization problem.</p>
-<p>The resonator network’s approach to solving such problems uses the VSA principle of superposition. With superposition, neural populations can hold multiple guesses for one of the factors and test them simultaneously. However, the price of simultaneous inference is crosstalk noise. The resonator network performs such an inference step iteratively, and uses attractor dynamics to “clean-up” the result of each inference step. By iteratively performing inference and clean-up the resonator network searches through the combinatoric solution space, and when it finds the right combination the dynamics rapidly converge to a stable state.</p>
-<div class="section" id="resonator-networks-1-an-efficient-solution-for-factorization-of-distributed-data-structures">
-<h2>Resonator Networks 1: An efficient solution for factorization of distributed data structures<a class="headerlink" href="#resonator-networks-1-an-efficient-solution-for-factorization-of-distributed-data-structures" title="Permalink to this headline">¶</a></h2>
-<p>E. Paxon Frady, Spencer Kent, Bruno A. Olshausen, Friedrich T. Sommer. (2020) Neural Computation. 32(12):2311-2331.</p>
-<p><img alt="resonator_circuit_diagram" src="../_images/resonator_circuit_diagram.png" /></p>
-<div class="section" id="summary">
-<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
-<p>In the first resonator network paper, we explain the concept behind the resonator network – search in superposition. We describe how VSA can be used to create data structures, like a tree, and show that fully manipulating this data structure often leads to a combinatoric search problem. For a tree data structure, the problem is to find a certain item that is in the tree, and we describe how tree search can be done with the resonator network.</p>
-<p>We also describe how simple geometric transformations onto objects are fundamentally bindings between the object shape and its transformation. This means that understanding a simple scene, of e.g., numbers positioned in different locations, can indeed be expressed as a factorization problem.</p>
-</div>
-<div class="section" id="links">
-<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h3>
-<p><a href="https://redwood.berkeley.edu/wp-content/uploads/2020/11/frady2020resonator.pdf"> PDF: Resonator networks 1 </a></p>
-</div>
-</div>
-<div class="section" id="resonator-networks-2-factorization-performance-and-capacity-compared-to-optimization-based-methods">
-<h2>Resonator Networks 2: Factorization performance and capacity compared to optimization-based methods<a class="headerlink" href="#resonator-networks-2-factorization-performance-and-capacity-compared-to-optimization-based-methods" title="Permalink to this headline">¶</a></h2>
-<p>Spencer Kent, E. Paxon Frady, Friedrich T. Sommer, Bruno A. Olshausen. (2020) Neural Computation 32(12): 2332-2388.</p>
-<p><img alt="resonator_performance" src="../_images/resonator_performance_comparison.png" /></p>
-<div class="section" id="id1">
-<h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>In the second paper on resonator networks, we examine the empirical performance on a standardized vector factorization problem and compare the resonator network to conventional optimization methods. We show that the resonator network is solving much more complex problems than what conventional approaches can handle.</p>
-<p>We speculate that this performance improvement is due to the fact that the resonator network does not have a conventional energy landscape. Unlike the optimization methods, which always follow the local gradient of an energy landscape, the resonator network has dynamics that cannot be described by an energy or lyapunov function. This means that there are poentially chaotic and cyclic states in the network, and it cannot be guaranteed to converge. However, the performance limitation of most optimization methods is due to getting stuck in local-minima.</p>
-<p>While the resonator network cannot be mathematically guaranteed to converge, we see empirically that it does converge to the right answer with high-probability if the problem size is under the network’s operational capacity. The operational capacity is based on the total number of combinations in the search space. We show that as the size of the resonator network scales up, the operational capacity of the network increases quadratically.</p>
-</div>
-<div class="section" id="id2">
-<h3>Links<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p><a href="https://redwood.berkeley.edu/wp-content/uploads/2020/11/kent2020resonator.pdf"> PDF: Resonator networks 2 </a></p>
-</div>
-</div>
-<div class="section" id="integer-factorization-with-compositional-distributed-representations">
-<h2>Integer Factorization with Compositional Distributed Representations<a class="headerlink" href="#integer-factorization-with-compositional-distributed-representations" title="Permalink to this headline">¶</a></h2>
-<p>Denis Kleyko, Connor Bybee, Amir Khosrowshahi, Dmitri E. Nikonov, Friedrich T. Sommer, E. Paxon Frady. (2022) Neuro-inspired computational elements conference.</p>
-<p><img alt="integer_factorization" src="../_images/res_int_factor-220319.png" /></p>
-<div class="section" id="id3">
-<h3>Summary<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p>Factoring integers is a well-known problem in computer science and in fact it serves as the back-bone of encryption. This is one of many problems that are “NP” or non-polynomial, which means that you effectively have to use brute-force methods to find the answer. As the problems get harder and harder, these brute-force methods scale exponentially in complexity, which can be virutally impossible to solve.</p>
-<p>The problem of integer factorization is fundamentally related to the problem of vector factorization that the resonator network can solve. In this paper, we explain new methods for mapping integers onto VSA vectors based on <span class="xref myst">fractional power encodings</span>. The key is that through this method we can generate VSA vectors that represent integers, and, importantly, the binding of vectors creates a vector representation that is the product of the integers. This means that by solving vector factorization, we can solve integer factorization.</p>
-<p>We explain how to set-up the resonator network to solve the factorization of semi-primes and other composite numbers and measure the performance and scaling empirically.</p>
-</div>
-<div class="section" id="id4">
-<h3>Links<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="http://arxiv.org/abs/2203.00920">arXiv paper</a></p>
-<p><a class="reference internal" href="res_semi_primes-220216.html"><span class="doc std std-doc">Factoring semi primes demo</span></a></p>
-</div>
-</div>
-<div class="section" id="neuromorphic-visual-scene-understanding-with-resonator-networks">
-<h2>Neuromorphic Visual Scene Understanding with Resonator Networks<a class="headerlink" href="#neuromorphic-visual-scene-understanding-with-resonator-networks" title="Permalink to this headline">¶</a></h2>
-<p>Alpha Renner, Lazar Supic, Andreea Danielescu, Giacomo Indiveri, Bruno A. Olshausen, Yulia Sandamirskaya, Friedrich T. Sommer, E. Paxon Frady. (2022) arXiv:2208.12880</p>
-<p><img alt="res_diagram" src="../_images/res-diagram-srtc-input-2l-220517.png" /></p>
-<div class="section" id="id5">
-<h3>Summary<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>In this work, we describe methods for inferring the factors of variation of simple objects based on a generative model. This extends classic ideas in cognition based on the brain performing an “analysis by synthesis” of the environment. The computational challenge that the brain solves is the process of inverting the generative model of the scene. We show how one can use distributed vector representations to build the generative model, and how the resonator network can then be used to find the individual factors of variation that compose each object. We start by explaining how vector binding operations can act as the equivariant transform to operations like translation, and we show how the resonator network can be designed to localize objects. We then explain how non-commutative transforms, such as rotation and scaling can be used in conjunction mediated by the log-polar transform. This type of scene can then be inverted by a hierarchical resonator network. Finally, we explain how all of this can be implemented on neuromorphic hardware, with a simple demonstration of the system working on Intel’s Loihi neuromorphic computing chip.</p>
-</div>
-<div class="section" id="id6">
-<h3>Links<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://arxiv.org/abs/2208.12880">arXiv paper</a></p>
-</div>
-</div>
-<div class="section" id="neuromorphic-visual-odometry-with-resonator-networks">
-<h2>Neuromorphic Visual Odometry with Resonator Networks<a class="headerlink" href="#neuromorphic-visual-odometry-with-resonator-networks" title="Permalink to this headline">¶</a></h2>
-<p>Alpha Renner, Lazar Supic, Andreea Danielescu, Giacomo Indiveri, E. Paxon Frady, Friedrich T. Sommer, Yulia Sandamirskaya. (2022) arXiv:2209.02000.</p>
-<p><img alt="res-vis_odometry.png" src="../_images/res-vis_odometry.png" /></p>
-<div class="section" id="id7">
-<h3>Summary<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<p>With the ability to use the resonator network to extract the transaltion, rotation and scaling of objects in a visual scene, we extended the network to tackle the problem of visual odometry in robotics. Visual odometry is the task of using vision to track motion through space. Visual motion tracking has an advantage over integration of inertial measurements as it is less prone to drift. In this use-case, the resonator network is augmented with a spatial map of the environment that it integrates over time. The map is used by the resonator network to align the visual input and factor out the differences in rotation and translation. The estimates in turn are used to incorporate the visual input into the map. This is also known as simultaneous localization and mapping. We benchmarked this network on a few datasets for visual odometry and show how the resonator network</p>
-</div>
-<div class="section" id="id8">
-<h3>Links<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://arxiv.org/abs/2209.02000">arXiv paper</a></p>
-</div>
-</div>
-<div class="toctree-wrapper compound">
-</div>
-</div>
 
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./Research"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="tpam_demo.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Threshold Phasor Associative Memory</p>
-        </div>
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tpam_demo.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Threshold Phasor Associative Memory</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="resonator_template.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="resonator_template.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Factorization of shape, color and location</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Dr. E. Paxon Frady<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-      </div>
-    </div>
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resonator-networks-1-an-efficient-solution-for-factorization-of-distributed-data-structures">Resonator Networks 1: An efficient solution for factorization of distributed data structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resonator-networks-2-factorization-performance-and-capacity-compared-to-optimization-based-methods">Resonator Networks 2: Factorization performance and capacity compared to optimization-based methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Links</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-factorization-with-compositional-distributed-representations">Integer Factorization with Compositional Distributed Representations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Links</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuromorphic-visual-scene-understanding-with-resonator-networks">Neuromorphic Visual Scene Understanding with Resonator Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Links</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuromorphic-visual-odometry-with-resonator-networks">Neuromorphic Visual Odometry with Resonator Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Links</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr. E. Paxon Frady
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
