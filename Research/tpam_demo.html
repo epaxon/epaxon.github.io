@@ -382,18 +382,8 @@ document.write(`
 
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">})</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;text.usetex&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;text.latex.preamble&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="sa">r</span><span class="s1">&#39;\usepackage</span><span class="si">{amsmath}</span><span class="s1">&#39;</span><span class="p">,</span>
-    <span class="sa">r</span><span class="s1">&#39;\usepackage</span><span class="si">{amssymb}</span><span class="s1">&#39;</span><span class="p">]</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.family&#39;</span><span class="p">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span> 
                      <span class="s1">&#39;font.serif&#39;</span><span class="p">:[</span><span class="s1">&#39;Computer Modern&#39;</span><span class="p">]})</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    /var/folders/xn/hqbqng2d6nz8f1lcyd545kqr0000gn/T/ipykernel_11723/2963649728.py:11: MatplotlibDeprecationWarning: Support for setting an rcParam that expects a str value to a non-str value is deprecated since 3.5 and support will be removed two minor releases later.
-  matplotlib.rcParams[&#39;text.latex.preamble&#39;] = [
- [py.warnings]
 </pre></div>
 </div>
 </div>
@@ -532,10 +522,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x126e0fa30&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x12891ef40&gt;]
 </pre></div>
 </div>
-<img alt="../_images/920434220794635ac76ebfe05cc7fd120aa719e9e302dbadae83ca2e1388da34.png" src="../_images/920434220794635ac76ebfe05cc7fd120aa719e9e302dbadae83ca2e1388da34.png" />
+<img alt="../_images/ff9841d956d741b45cbeea2fc432b5b3af7748f273a70d149145a6f981657ec4.png" src="../_images/ff9841d956d741b45cbeea2fc432b5b3af7748f273a70d149145a6f981657ec4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -558,7 +548,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Target&#39;)
 </pre></div>
 </div>
-<img alt="../_images/e78b4261d73df6e461580391f3f9df9bbff656c5e2fbaa39777bf739b9a45a7e.png" src="../_images/e78b4261d73df6e461580391f3f9df9bbff656c5e2fbaa39777bf739b9a45a7e.png" />
+<img alt="../_images/bfb97a4bae1f5e72d7fc0575fc32f0b06892e686f6c737beeae865a9cb05c6e1.png" src="../_images/bfb97a4bae1f5e72d7fc0575fc32f0b06892e686f6c737beeae865a9cb05c6e1.png" />
 </div>
 </div>
 </section>
@@ -591,7 +581,7 @@ document.write(`
 <span class="n">omega</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">Hz</span>
 <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span>
 
-<span class="n">eqs2</span> <span class="o">=</span> <span class="n">Equation</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="n">eqs2</span> <span class="o">=</span> <span class="n">Equations</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
 <span class="s1">    du/dt = ll * u - omega * v : 1</span>
 <span class="s1">    dv/dt = omega * u + ll * v : 1</span>
 <span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
@@ -739,15 +729,12 @@ WARNING    &#39;i&#39; is an internal variable of group &#39;synapses&#39;, but 
 <span class="c1">#complex_net.restore(&#39;init&#39;)</span>
 <span class="n">tst</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="n">complex_net</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">run_time</span><span class="p">)</span>
-<span class="nb">print</span> <span class="s2">&quot;elapsed&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tst</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;elapsed&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tst</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/xn/hqbqng2d6nz8f1lcyd545kqr0000gn/T/ipykernel_11723/3181787432.py&quot;</span><span class="gt">, line </span><span class="mi">5</span>
-    <span class="nb">print</span> <span class="s2">&quot;elapsed&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">tst</span>
-          <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>elapsed 9.009353876113892
 </pre></div>
 </div>
 </div>
@@ -769,6 +756,9 @@ WARNING    &#39;i&#39; is an internal variable of group &#39;synapses&#39;, but 
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/5a7b28e158dbe778542056e519cdd3462d5e806bed298bb9b5fb334dbddda205.png" src="../_images/5a7b28e158dbe778542056e519cdd3462d5e806bed298bb9b5fb334dbddda205.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -822,6 +812,12 @@ WARNING    &#39;i&#39; is an internal variable of group &#39;synapses&#39;, but 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25 == 25
+</pre></div>
+</div>
+<img alt="../_images/40fdacaf6c44b9d2b0f9787c76c0ce6ceab74ff1184995360998dc29a4450eb1.png" src="../_images/40fdacaf6c44b9d2b0f9787c76c0ce6ceab74ff1184995360998dc29a4450eb1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -845,6 +841,9 @@ WARNING    &#39;i&#39; is an internal variable of group &#39;synapses&#39;, but 
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/35cc8b4e57778e9ec6bb16b3b6b388fe5bea0cdcad2545e8300c7df483dd4ee6.png" src="../_images/35cc8b4e57778e9ec6bb16b3b6b388fe5bea0cdcad2545e8300c7df483dd4ee6.png" />
 </div>
 </div>
 </section>
@@ -977,7 +976,7 @@ WARNING    &#39;i&#39; is an internal variable of group &#39;synapses&#39;, but 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;RC delay:&#39;, 7.93700478 * msecond)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RC delay: 7.93700478 ms
 </pre></div>
 </div>
 </div>
@@ -1043,7 +1042,7 @@ WARNING    &#39;i&#39; is an internal variable of group &#39;synapses&#39;, but 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    &quot;i&quot; is an internal variable of group &quot;synapses_2&quot;, but also exists in the run namespace with the value 0. The internal variable will be used. [brian2.groups.group.Group.resolve.resolution_conflict]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING    &#39;i&#39; is an internal variable of group &#39;synapses_2&#39;, but also exists in the run namespace with the value 0. The internal variable will be used. [brian2.groups.group.Group.resolve.resolution_conflict]
 </pre></div>
 </div>
 </div>
@@ -1084,7 +1083,7 @@ WARNING    &#39;i&#39; is an internal variable of group &#39;synapses&#39;, but 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;elapsed&#39;, 22.22504687309265)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>elapsed 17.035866022109985
 </pre></div>
 </div>
 </div>
@@ -1121,10 +1120,10 @@ WARNING    &#39;i&#39; is an internal variable of group &#39;synapses&#39;, but 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>203.5 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>204.4 ms
 </pre></div>
 </div>
-<img alt="../_images/a65370dc13d7a834bd9ada6cb8578435f2ec25db199918c40cde413af041948a.png" src="../_images/a65370dc13d7a834bd9ada6cb8578435f2ec25db199918c40cde413af041948a.png" />
+<img alt="../_images/45508cf4436a2fd6edd3da9ea91c343407047e9ad23e6b68145da4be7d3bbcbe.png" src="../_images/45508cf4436a2fd6edd3da9ea91c343407047e9ad23e6b68145da4be7d3bbcbe.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1150,10 +1149,10 @@ WARNING    &#39;i&#39; is an internal variable of group &#39;synapses&#39;, but 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(25, &#39;==&#39;, 25)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25 == 25
 </pre></div>
 </div>
-<img alt="../_images/878014ed5af68538a32623d73bfe8d7e0ac80877123b93d847dda5cab64ea4ec.png" src="../_images/878014ed5af68538a32623d73bfe8d7e0ac80877123b93d847dda5cab64ea4ec.png" />
+<img alt="../_images/7e183897a50f959064478a99bd4ab049f188e4c1a434b7ea0cdf1dd7e4967cea.png" src="../_images/7e183897a50f959064478a99bd4ab049f188e4c1a434b7ea0cdf1dd7e4967cea.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1208,10 +1207,10 @@ WARNING    &#39;i&#39; is an internal variable of group &#39;synapses&#39;, but 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(25, &#39;==&#39;, 25)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25 == 25
 </pre></div>
 </div>
-<img alt="../_images/8d9231185065e7367cc18dc7e1754e88e245cfe6010678938e6d4648d15fe184.png" src="../_images/8d9231185065e7367cc18dc7e1754e88e245cfe6010678938e6d4648d15fe184.png" />
+<img alt="../_images/e4ead9db72d8a063672683392d49eaa1aed80606a44b00284c44f26dc46ea5ef.png" src="../_images/e4ead9db72d8a063672683392d49eaa1aed80606a44b00284c44f26dc46ea5ef.png" />
 </div>
 </div>
 </section>
